@@ -2,7 +2,9 @@
 {
     public class CartVIewModel
     {
-        public int Id { get; set; }
-        public string UserId { get; set; }
+      
+        public List<CartItemViewModel> CartItems { get; set; } = new();
+        public double Total { get; set; }
+        public bool HasItems => CartItems != null && CartItems.Any();
     }
 }

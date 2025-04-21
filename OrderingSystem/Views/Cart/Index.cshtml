@@ -1,73 +1,85 @@
-﻿@model OrderingSystem.Models.Cart
+﻿@model OrderingSystem.ViewModels.CartVIewModel
 @{
 
 }
 
 @Html.AntiForgeryToken()
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Product</th>
-            <th>Qty</th>
-            <th>Price</th>
-            <th>Subtotal</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.CartItems)
-        {
+@if (!Model.HasItems)
+{
+    <div class="alert alert-warning mt-3 text-center">
+        Your cart is empty.
+    </div>
+}
+else
+{
+    <table class="table">
+        <thead>
             <tr>
-                <td>@item.Product.Name</td>
-                <td>
-                    @if (!string.IsNullOrEmpty(item.Product.ImageUrl))
-                    {
-                        <img src="@item.Product.ImageUrl" width="80" height="80" class="img-thumbnail" />
-                    }
-                    else
-                    {
-                        <span class="text-muted">No Image</span>
-                    }
-                </td>
-                <td>
-                    @*  <form asp-action="Update" method="post">
+                <th>Name</th>
+                <th>Product</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model.CartItems)
+            {
+                <tr>
+                    <td>@item.Product.Name</td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.Product.ImageUrl))
+                        {
+                            <img src="@item.Product.ImageUrl" width="80" height="80" class="img-thumbnail" />
+                        }
+                        else
+                        {
+                            <span class="text-muted">No Image</span>
+                        }
+                    </td>
+                    <td>
+                        @*  <form asp-action="Update" method="post">
                 <input type="hidden" name="cartItemId" value="@item.Id" />
                 <input type="number" name="quantity" value="@item.Quantity" min="1" class="form-control d-inline" style="width: 60px;" />
                 <button type="submit" class="btn btn-sm btn-outline-primary">Update</button>
                 </form> *@
 
-                    <div class="quantity-controls input-group" data-id="@item.Id" data-price="@item.Product.Price">
-                        <button class="btn btn-outline-secondary btn-sm minus">−</button>
-                        <input type="text" class="qty form-control d-inline-block text-center" value="@item.Quantity" readonly />
-                        <button class="btn btn-outline-secondary btn-sm plus">+</button>
-                    </div>
+                        <div class="quantity-controls input-group" data-id="@item.Id" data-price="@item.Product.Price">
+                            <button class="btn btn-outline-secondary btn-sm minus">−</button>
+                            <input type="text" class="qty form-control d-inline-block text-center" value="@item.Quantity" readonly />
+                            <button class="btn btn-outline-secondary btn-sm plus">+</button>
+                        </div>
 
 
-                </td>
-                <td>₱@item.Product.Price.ToString("N2")</td>
-                <td id="subtotal-@item.Id">₱@((item.Product.Price * item.Quantity).ToString("N2"))</td>
-                <td>
-                    <a asp-action="Remove" asp-route-cartItemId="@item.Id" class="btn btn-sm btn-danger">Remove</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-<h5 class="text-end">
-    Total:₱
-    <span id="overall-total">
-        @Model.CartItems.Sum(x => x.Product.Price * x.Quantity).ToString("N2")
-    </span>
-</h5>
+                    </td>
+                    <td>₱@item.Product.Price.ToString("N2")</td>
+                    <td id="subtotal-@item.Id">₱@((item.Product.Price * item.Quantity).ToString("N2"))</td>
+                    <td>
+                        <a asp-action="Remove" asp-route-cartItemId="@item.Id" class="btn btn-sm btn-danger">Remove</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <h5 class="text-end">
+        Total:₱
+        <span id="overall-total">
+            @Model.CartItems.Sum(x => x.Product.Price * x.Quantity).ToString("N2")
+        </span>
+    </h5>
 
-<div class="checkout-order-container">
+    <div class="checkout-order-container">
 
-    <a asp-controller="Order" class="btn btn-warning text-white">Order more</a>
-    <a class="btn btn-success">Proceed to checkout</a>
+        <a asp-controller="Order" class="btn btn-warning text-white">Order more</a>
+        <a asp-controller="Checkout" class="btn btn-success" id="btn-checkout">Proceed to checkout</a>
 
-</div>
+    </div>
+}
+
+
 <!-- Reloder -->
 <div id="loader" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#fff9; z-index:9999;">
     <div class="d-flex justify-content-center align-items-center h-100">

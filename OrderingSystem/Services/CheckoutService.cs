@@ -24,7 +24,16 @@ namespace OrderingSystem.Services
                 Fullname = user.Fullname,
                 PhoneNumber = user.PhoneNumber,
                 Address = user.Address,
-                CartItems = cart.CartItems
+                CartItems = cart.CartItems.Select(x => new CartItemViewModel
+                {
+                    Id = x.Id,
+                    ProductId = x.ProductId,
+                    Product = x.Product,
+                    CartId = x.CartId,
+                    Cart = x.Cart,
+                    Quantity = x.Quantity
+
+                }).ToList()
             };
         }
     }

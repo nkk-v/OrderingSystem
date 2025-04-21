@@ -1,5 +1,6 @@
 ﻿using OrderingSystem.Models;
 using OrderingSystem.Repositories;
+using OrderingSystem.ViewModels;
 
 namespace OrderingSystem.Services
 {
@@ -22,9 +23,28 @@ namespace OrderingSystem.Services
             return await _cartRepo.GetCartItemCountByUser(userId);
         }
 
-        public async Task<Cart> GetUserCart(string userId)
+        public async Task<CartVIewModel> GetUserCart(string userId)
         {
-            return await _cartRepo.GetUserCart(userId);
+            var cart = await _cartRepo.GetUserCart(userId);
+
+            if (cart == null) return new CartVIewModel { CartItems = new List<CartItemViewModel>(), Total = 0};
+
+            var viewModel = new CartVIewModel
+            {
+                CartItems = cart.CartItems.Select(item => new CartItemViewModel
+                {
+                    Id = item.Id,
+                    CartId = item.CartId,
+                    ProductId = item.ProductId,
+                    Cart = item.Cart,
+                    Product = item.Product,
+                    Quantity = item.Quantity
+
+                }).ToList(),
+                Total = cart.CartItems.Sum(x => x.Price * x.Quantity)
+            };
+
+            return viewModel;
         }
 
         public async Task RemoveItem(int cartItemId)

@@ -13,8 +13,6 @@ $(document).ready(function () {
     });
 });
 
-
-
 $(document).ready(function () {
     $('.plus, .minus').on('click', function () {
         const button = $(this);

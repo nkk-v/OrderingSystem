@@ -11,7 +11,7 @@ namespace OrderingSystem.ViewModels
         public string DeliveryOption { get; set; }
         public DateTime? ScheduledDelivery { get; set; }
         public string? DeliveryNote { get; set; }
-        public List<CartItem> CartItems { get; set; }
+        public List<CartItemViewModel> CartItems { get; set; }
         public double TotalAmout => CartItems.Sum(x => x.Price * x.Quantity);
     }
 }

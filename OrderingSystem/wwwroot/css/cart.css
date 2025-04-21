@@ -34,3 +34,7 @@
     .checkout-order-container .btn-warning{
         background-color: #ff6a00;
     }
+
+.input-group{
+    width: 120px;
+}
