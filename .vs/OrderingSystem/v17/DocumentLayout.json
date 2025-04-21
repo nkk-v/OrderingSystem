@@ -1,0 +1,207 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Git\\OrderingSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\repositories\\categoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\repositories\\categoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\repositories\\cartrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\repositories\\cartrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\services\\checkoutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\services\\checkoutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\services\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\services\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\repositories\\icartrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\repositories\\icartrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\services\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\services\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CartVIewModel.cs",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\ViewModels\\CartVIewModel.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\ViewModels\\CartVIewModel.cs",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\ViewModels\\CartVIewModel.cs",
+              "RelativeToolTip": "OrderingSystem\\ViewModels\\CartVIewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:52:22.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Models\\Cart.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\Models\\Cart.cs",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Models\\Cart.cs",
+              "RelativeToolTip": "OrderingSystem\\Models\\Cart.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:50:01.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Cart\\Index.cshtml",
+              "RelativeDocumentMoniker": "OrderingSystem\\Views\\Cart\\Index.cshtml",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Cart\\Index.cshtml",
+              "RelativeToolTip": "OrderingSystem\\Views\\Cart\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-21T06:49:33.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CheckoutController.cs",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Controllers\\CheckoutController.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\Controllers\\CheckoutController.cs",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Controllers\\CheckoutController.cs",
+              "RelativeToolTip": "OrderingSystem\\Controllers\\CheckoutController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:47:47.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CheckoutService.cs",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Services\\CheckoutService.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\Services\\CheckoutService.cs",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Services\\CheckoutService.cs",
+              "RelativeToolTip": "OrderingSystem\\Services\\CheckoutService.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAABoAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:47:28.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryRepo.cs",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Repositories\\CategoryRepo.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\Repositories\\CategoryRepo.cs",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Repositories\\CategoryRepo.cs",
+              "RelativeToolTip": "OrderingSystem\\Repositories\\CategoryRepo.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:43:11.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Services\\CategoryService.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\Services\\CategoryService.cs",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Services\\CategoryService.cs",
+              "RelativeToolTip": "OrderingSystem\\Services\\CategoryService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:42:59.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ICartRepo.cs",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Repositories\\ICartRepo.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\Repositories\\ICartRepo.cs",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Repositories\\ICartRepo.cs",
+              "RelativeToolTip": "OrderingSystem\\Repositories\\ICartRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:42:50.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CartRepo.cs",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Repositories\\CartRepo.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\Repositories\\CartRepo.cs",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Repositories\\CartRepo.cs",
+              "RelativeToolTip": "OrderingSystem\\Repositories\\CartRepo.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:42:48.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CartService.cs",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Services\\CartService.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\Services\\CartService.cs",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Services\\CartService.cs",
+              "RelativeToolTip": "OrderingSystem\\Services\\CartService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:42:44.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ICartService.cs",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Services\\ICartService.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\Services\\ICartService.cs",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Services\\ICartService.cs",
+              "RelativeToolTip": "OrderingSystem\\Services\\ICartService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T06:42:39.255Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

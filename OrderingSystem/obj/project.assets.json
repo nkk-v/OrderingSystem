@@ -4741,11 +4741,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\nikko\\OrderingSystem\\OrderingSystem\\OrderingSystem.csproj",
+      "projectUniqueName": "C:\\Git\\OrderingSystem\\OrderingSystem\\OrderingSystem.csproj",
       "projectName": "OrderingSystem",
-      "projectPath": "C:\\Users\\User\\Desktop\\nikko\\OrderingSystem\\OrderingSystem\\OrderingSystem.csproj",
+      "projectPath": "C:\\Git\\OrderingSystem\\OrderingSystem\\OrderingSystem.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\nikko\\OrderingSystem\\OrderingSystem\\obj\\",
+      "outputPath": "C:\\Git\\OrderingSystem\\OrderingSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
