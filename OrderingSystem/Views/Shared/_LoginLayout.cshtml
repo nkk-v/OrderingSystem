@@ -1,0 +1,52 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<User> signInManager;
+
+<ul class="navbar-nav ms-auto">
+    @if (signInManager.IsSignedIn(User))
+    {
+        var username = User.Identity?.Name;
+
+        <li class="nav-item">
+            <div class="button-cart">
+
+                <label>0</label>
+
+                <button>
+                    <span class="material-symbols-outlined">
+                        shopping_cart
+                    </span>
+                </button>
+
+            </div>
+            @* <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">Cart</a> *@
+        </li>
+
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i> @username
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                <li>
+                    <a class="dropdown-item" asp-controller="Account" asp-action="Profile">View Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="dropdown-item" asp-controller="Account" asp-action="logout">Logout</a>
+                </li>
+            </ul>
+        </li>
+
+       
+
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="btn btn-sm btn-warning" asp-area="" asp-controller="Account" asp-action="login">Sign In</a>
+            
+        </li>
+    }
+</ul>
+
+

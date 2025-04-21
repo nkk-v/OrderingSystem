@@ -1,0 +1,47 @@
+﻿@{
+    // Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+@model OrderingSystem.ViewModels.LoginViewModel
+
+
+<div class="login-container-body">
+    <div class="login-container">
+
+        <h3 class="mb-3">Login</h3>
+
+        @if (ViewData["error"] != null)
+        {
+            <div class="alert alert-success">@ViewData["error"]</div>
+        }
+
+        <form asp-action="login" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <input type="text" class="form-control" asp-for="Username" id="username" placeholder="Enter your username" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" asp-for="Password" id="password" placeholder="Enter your password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <p>Don't have an account? <a asp-action="register">Signup</a> </p>
+                <span><a asp-action="register">Forgot Password</a></span>
+            </div>
+
+            <div>
+                <input type="submit" class="btn btn-success w-100" value="Login" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

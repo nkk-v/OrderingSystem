@@ -1,0 +1,40 @@
+﻿
+.login-container-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+h3{
+    text-align: center;
+}
+
+.login-container{
+    border: 1px solid #e91414;
+    background-color: white;
+    padding: 25px 30px;
+    border-radius: 4px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.register-container {
+    border: 1px solid #e91414;
+    background-color: white;
+    padding: 25px 30px;
+    border-radius: 4px;
+}
+
+
+.cart-container{
+    position: relative;
+}
+
+.cart-button{
+    border: none;
+}
+
+.button-cart label {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

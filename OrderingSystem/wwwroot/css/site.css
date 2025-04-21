@@ -1,0 +1,24 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-link.active {
+   /* border-bottom: 2px solid #ffc107;*/
+}
+.nav-link{
+    color: black;
+}
+
+.navbar-nav .nav-item a{
+    color: black;
+}
+
+
+.nav-item{
+    list-style: none;
+}
+
+.btn-warning {
+    border-radius: 25px;
+    padding: 8px 20px;
+}

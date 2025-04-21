@@ -1,0 +1,132 @@
+﻿@{
+    // Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+@model OrderingSystem.ViewModels.RegisterViewModel
+
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <!-- Controls width on different screen sizes -->
+            <div class="card shadow rounded-4">
+                <div class="card-body p-4">
+                    @if (ViewData["Message"] != null)
+                    {
+                        <div class="alert alert-success">
+                            @ViewData["Message"] 
+                        </div>
+                    }
+                    <h3 class="text-center mb-4">Create an Account</h3>
+                    <form asp-action="register" method="post">
+                     
+                        <div class="form-floating mb-3">
+                            <input asp-for="Fullname" class="form-control" placeholder="Username">
+                            <label asp-for="Fullname">Name</label>
+                            <span asp-validation-for="Fullname" class="text-danger small"></span>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input asp-for="Address" class="form-control" placeholder="Username">
+                            <label asp-for="Address">Address</label>
+                            <span asp-validation-for="Address" class="text-danger small"></span>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input asp-for="ContactNumber" class="form-control" placeholder="Username">
+                            <label asp-for="ContactNumber">Contact Number</label>
+                            <span asp-validation-for="ContactNumber" class="text-danger small"></span>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input asp-for="Username" class="form-control" placeholder="Username">
+                            <label asp-for="Username">Username</label>
+                            <span asp-validation-for="Username" class="text-danger small"></span>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input asp-for="Password" class="form-control" placeholder="Password" type="password">
+                            <label asp-for="Password">Password</label>
+                            <span asp-validation-for="Password" class="text-danger small"></span>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password" type="password">
+                            <label asp-for="ConfirmPassword">Confirm Password</label>
+                            <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                        </div>
+
+                        <div class="text-center mt-3">
+                            <a asp-action="Login">Already have an account? Log in</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@* <div class="register-container">
+
+    <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Register Account</h3>
+
+    @if (ViewData["Message"] != null)
+    {
+        <div class="alert alert-success">
+            @ViewData["Message"] <p>
+                Click here to
+                <a asp-action="login">Signin</a>
+            </p>
+        </div>
+    }
+    <form asp-action="register" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-floating mb-3">
+
+            <input asp-for="Fullname" id="Fullname" class="form-control" placeholder="Name" autocomplete="name" />
+            <label asp-for="Fullname" class="form-label">Name</label>
+            <span asp-validation-for="Fullname" class="text-danger"></span>
+
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="Address" id="Address" class="form-control" placeholder="Address" />
+            <label asp-for="Address" class="form-label">Address</label>
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="Username" id="Username" class="form-control" placeholder="Username" />
+            <label asp-for="Username" class="form-label">Username</label>
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="tel" asp-for="ContactNumber" id="ContactNumber" class="form-control" placeholder="Mobile Contact Number" oninput="this.value=this.value.replace(/[^0-9]/g,'')" maxlength="11" />
+            <label asp-for="ContactNumber" class="form-label">Contact Number</label>
+            <span asp-validation-for="ContactNumber" class="text-danger"></span>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input asp-for="Password" id="Password" class="form-control" placeholder="Password" />
+            <label asp-for="Password" class="form-label">Password</label>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-floating mb-3">
+            <input asp-for="ConfirmPassword" id="ConfirmPassword" class="form-control" placeholder="Confirm Password" />
+            <label asp-for="ConfirmPassword" class="form-label">Confirm Password</label>
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+        
+
+        <div>
+            <input type="submit" class="btn btn-success w-100" value="Register" />
+        </div>
+    </form>
+</div> *@
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

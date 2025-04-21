@@ -1,0 +1,49 @@
+﻿@model OrderingSystem.ViewModels.UserAccountViewModel
+
+@{
+    ViewData["Title"] = "My Account";
+}
+
+<h2>My Account</h2>
+<p>Hello @Model.Fullname</p>
+
+<ul class="nav nav-tabs" id="accountTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button" role="tab">Your Details</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab">My Orders</button>
+    </li>
+</ul>
+
+<div class="card p-4">
+    <table class="table table-borderless">
+        <tr>
+            <td><strong>Name</strong></td>
+            <td>@Model.Fullname</td>
+        </tr>
+        <tr>
+            <td><strong>Username</strong></td>
+            <td>@Model.Username</td>
+        </tr>
+        <tr>
+            <td><strong>Password</strong></td>
+            <td><a href="#" data-bs-toggle="modal" data-bs-target="#changePasswordModal">Change Password</a></td>
+        </tr>
+    </table>
+</div>
+
+<!-- Change Password Modal -->
+<div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Change Password</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="changePasswordModalBody">
+                <!-- Form content will be loaded here -->
+            </div>
+        </div>
+    </div>
+</div>
