@@ -1,9 +1,95 @@
 ﻿@model OrderingSystem.ViewModels.CheckoutViewModel
 @{
 }
-<h5>Your Detail</h5>
-<div>
-    <form method="post">
-        <input type="text" asp-for="Fullname" disabled/>
-    </form>
-</div>
+<form asp-action="PlaceOrder" method="post">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow rounded-4">
+                    <label class="text-center">Delivery Option</label><br />
+                    <div class="row align-item-center">
+                        <div class="form-check col-md-5">
+                            <input class="form-check-input" type="radio" name="DeliveryOption" value="Schedule" />
+                            <label class="form-check-label">Deliver now</label>
+                        </div>
+                        <div class="form-check col-md-5">
+                            <input class="form-check-input" type="radio" name="DeliveryOption" value="Schedule" />
+                            <label class="form-check-label">Schedule Delivery</label>
+                        </div>
+                    </div>
+                </div> <br />
+
+                <div class="card shadow rounded-4">
+                    <label class="text-center">Your Information</label><br />
+                    <div class="mb-3">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="Fullname" value="@Model.Fullname" readonly />
+                    </div>
+                    <div class="mb-3">
+                        <label>Phone Number</label>
+                        <input type="text" class="form-control" name="PhoneNumber" value="@Model.PhoneNumber" readonly />
+                    </div>
+                    <div class="mb-3">
+                        <label>Address</label>
+                        <textarea class="form-control" name="Address" rows="3" readonly>@Model.Address</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="DeliveryNote" class="form-label">Delivery Note(Optional)</label>
+                        <textarea class="form-control" asp-for="DeliveryNote" rows="4" placeholder="Note to rider"></textarea>
+                    </div>
+                </div> <br />
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow rounded-4">
+                    <h4>Table summary</h4><br />
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Product</th>
+                                <th>Qty</th>
+                                <th>Price</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.CartItems)
+                            {
+                                <tr>
+                                    <td>@item.Product.Name</td>
+                                    <td>
+                                        @if (!string.IsNullOrEmpty(item.Product.ImageUrl))
+                                        {
+                                            <img src="@item.Product.ImageUrl" width="80" height="80" class="img-thumbnail" />
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">No image</span>
+                                        }
+                                    </td>
+                                    <td><label>x</label>@item.Quantity</td>
+                                    <td>₱@item.Price.ToString("N2")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <div class="col">
+                            <label>Total:</label>
+                        </div>
+                        <div class="col">
+                            <h5>₱@Model.CartItems.Sum(x => x.Price * x.Quantity).ToString("N2")</h5>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary w-100">Place Order</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</form>
+

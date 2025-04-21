@@ -73,7 +73,7 @@ namespace OrderingSystem.Services
             {
                 Fullname = user.FullName,
                 Username = user.UserName,
-                PhoneNumber = user.PhoneNumber,
+                PhoneNumber = user.ContactNumber,
                 Address = user.Address
             }; 
         }
