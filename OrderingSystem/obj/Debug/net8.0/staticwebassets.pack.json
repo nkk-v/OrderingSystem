@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\cart.css"
     },
     {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\checkout.css",
+      "PackagePath": "staticwebassets\\css\\checkout.css"
+    },
+    {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
@@ -35,6 +39,10 @@
     {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\js\\changePassword.js",
       "PackagePath": "staticwebassets\\js\\changePassword.js"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\js\\checkout.js",
+      "PackagePath": "staticwebassets\\js\\checkout.js"
     },
     {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\js\\product.js",
@@ -287,6 +295,10 @@
     {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\images\\DC-logo.jpg",
       "PackagePath": "staticwebassets\\uploads\\images\\DC-logo.jpg"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\images\\icon-gcash@3x.png",
+      "PackagePath": "staticwebassets\\uploads\\images\\icon-gcash@3x.png"
     },
     {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\images\\side-picture.jpg",

@@ -184,9 +184,6 @@ C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\OrderingSystem.MvcApplicat
 C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\OrderingSystem.RazorAssemblyInfo.cache
 C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\OrderingSystem.RazorAssemblyInfo.cs
 C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\OrderingSystem.sourcelink.json
-C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\OrderingSystem.dll
-C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\refint\OrderingSystem.dll
-C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\OrderingSystem.pdb
 C:\Git\OrderingSystem\OrderingSystem\bin\Debug\net8.0\appsettings.Development.json
 C:\Git\OrderingSystem\OrderingSystem\bin\Debug\net8.0\appsettings.json
 C:\Git\OrderingSystem\OrderingSystem\bin\Debug\net8.0\OrderingSystem.staticwebassets.runtime.json
@@ -351,5 +348,8 @@ C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\scopedcss\Views\Shared\_La
 C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\scopedcss\bundle\OrderingSystem.styles.css
 C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\scopedcss\projectbundle\OrderingSystem.bundle.scp.css
 C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\Ordering.A96C7BA5.Up2Date
+C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\OrderingSystem.dll
+C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\refint\OrderingSystem.dll
+C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\OrderingSystem.pdb
 C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\OrderingSystem.genruntimeconfig.cache
 C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\ref\OrderingSystem.dll

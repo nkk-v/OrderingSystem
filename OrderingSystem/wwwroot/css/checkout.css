@@ -1,0 +1,24 @@
+﻿#card-shadow{
+    padding: 15px;
+}
+
+textarea{
+    resize: none;
+}
+
+
+
+.schedule-options{
+    display: none;
+}
+
+.total-container{
+    padding: .5rem .5rem;
+}
+.icon-gcash {
+    height: 2.375rem;
+    width: 2.375rem;
+    background-image: url('../uploads/images/icon-gcash@3x.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}

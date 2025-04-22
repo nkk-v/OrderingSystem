@@ -1,26 +1,44 @@
 ﻿@model OrderingSystem.ViewModels.CheckoutViewModel
 @{
 }
+<link rel="stylesheet" href="~/css/checkout.css" asp-append-version="true" />
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- Flatpickr -->
+<link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 <form asp-action="PlaceOrder" method="post">
     <div class="container py-5">
         <div class="row">
             <div class="col-md-6">
-                <div class="card shadow rounded-4">
-                    <label class="text-center">Delivery Option</label><br />
-                    <div class="row align-item-center">
-                        <div class="form-check col-md-5">
-                            <input class="form-check-input" type="radio" name="DeliveryOption" value="Schedule" />
+                <div class="card shadow rounded-4" id="card-shadow">
+                    <h5 class="fw-bold mb-3">Delivery Option</h5>
+
+                    <label class="mb-2">Choose delivery time</label>
+                    <div class="d-flex gap-5 align-items-center justify-content-between">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="deliveryOption" id="deliverNow" value="now" checked />
                             <label class="form-check-label">Deliver now</label>
                         </div>
-                        <div class="form-check col-md-5">
-                            <input class="form-check-input" type="radio" name="DeliveryOption" value="Schedule" />
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="deliveryOption" id="deliverLater" value="later" />
                             <label class="form-check-label">Schedule Delivery</label>
+                        </div>
+                    </div>
+
+                    <div class="row schedule-options mt-2">
+                        <div class="col mb-2">
+                            <input type="text" class="form-control" id="scheduleDate" placeholder="Select Date" />
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id="scheduleTime" placeholder="Select Time" />
                         </div>
                     </div>
                 </div> <br />
 
-                <div class="card shadow rounded-4">
-                    <label class="text-center">Your Information</label><br />
+                <div class="card shadow rounded-4" id="card-shadow">
+                    <h5 class="fw-bold mb-3">Your Information</h5>
                     <div class="mb-3">
                         <label>Name</label>
                         <input type="text" class="form-control" name="Fullname" value="@Model.Fullname" readonly />
@@ -40,47 +58,46 @@
                 </div> <br />
 
             </div>
-
             <div class="col-md-6">
-                <div class="card shadow rounded-4">
-                    <h4>Table summary</h4><br />
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Product</th>
-                                <th>Qty</th>
-                                <th>Price</th>
-                                <th></th>
-                            </tr>
-                        </thead>
+                <div class="card shadow rounded-4" id="card-shadow">
+                    <h5 class="fw-bold mb-4">Payment Details</h5>
+                    <label></label>
+                    <!-- GCash -->
+                    <div class="payment-option d-flex align-items-center justify-content-between ">
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="icon-gcash"></i>
+                            <div>
+                                <div class="fw-bold text-primary">GCash</div>
+                                <small>Pay online</small>
+                            </div>
+                        </div>
+                        <input type="radio" class="form-check-input payment-radio" name="PaymentMethod" value="gcash" checked />
+                    </div>
+                </div> <br />
+
+
+                <div class="card shadow rounded-4" id="card-shadow">
+                    <h5 class="fw-bold mb-3">Order Details</h5>
+                    <table class="table table-borderless">
+
                         <tbody>
                             @foreach (var item in Model.CartItems)
                             {
                                 <tr>
                                     <td>@item.Product.Name</td>
-                                    <td>
-                                        @if (!string.IsNullOrEmpty(item.Product.ImageUrl))
-                                        {
-                                            <img src="@item.Product.ImageUrl" width="80" height="80" class="img-thumbnail" />
-                                        }
-                                        else
-                                        {
-                                            <span class="text-muted">No image</span>
-                                        }
-                                    </td>
-                                    <td><label>x</label>@item.Quantity</td>
-                                    <td>₱@item.Price.ToString("N2")</td>
+                                    <td align="right">₱ @item.Price.ToString("N2")</td>
                                 </tr>
                             }
                         </tbody>
                     </table>
-                    <div class="row">
+
+                    <div class="border-bottom"></div><br />
+                    <div class="d-flex">
                         <div class="col">
-                            <label>Total:</label>
+                            <p>Subtotal:</p>
                         </div>
-                        <div class="col">
-                            <h5>₱@Model.CartItems.Sum(x => x.Price * x.Quantity).ToString("N2")</h5>
+                        <div class="col text-end total-container">
+                            <p>₱ @Model.CartItems.Sum(x => x.Price * x.Quantity).ToString("N2")</p>
                         </div>
                     </div>
 
@@ -92,4 +109,6 @@
         </div>
     </div>
 </form>
+
+<script src="~/js/checkout.js" asp-append-version="true"></script>
 

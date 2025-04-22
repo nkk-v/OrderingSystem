@@ -17,9 +17,15 @@ namespace OrderingSystem.Controllers
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var model = await _checkoutService.GetCheckoutViewModelAsync(userId);   
+            var model = await _checkoutService.GetCheckoutViewModelAsync(userId);
 
             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PlaceOrder()
+        {
+            return View();
         }
     }
 }
