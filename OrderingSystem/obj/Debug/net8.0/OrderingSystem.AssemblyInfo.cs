@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OrderingSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ebf3ad7c6abc9c7d0dcaec1a12dcbc34accabf75")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0071ec51a9b483b8b1df3bf028952207a062f6d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("OrderingSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OrderingSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

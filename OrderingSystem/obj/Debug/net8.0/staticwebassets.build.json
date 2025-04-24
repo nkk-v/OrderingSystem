@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GzOszSKPm7ufo/EaRW96vd2hfJ29P1cPmUg099WAZWU=",
+  "Hash": "GdpO70g0Ia6xHXlGydOTBxSau0DJTFAtYUxvDfNoW9A=",
   "Source": "OrderingSystem",
   "BasePath": "_content/OrderingSystem",
   "Mode": "Default",
@@ -1461,6 +1461,25 @@
       "OriginalItemSpec": "wwwroot\\uploads\\images\\icon-gcash@3x.png"
     },
     {
+      "Identity": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\images\\payment-success.png",
+      "SourceId": "OrderingSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\",
+      "BasePath": "_content/OrderingSystem",
+      "RelativePath": "uploads/images/payment-success.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\images\\payment-success.png"
+    },
+    {
       "Identity": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\images\\side-picture.jpg",
       "SourceId": "OrderingSystem",
       "SourceType": "Discovered",
@@ -1478,6 +1497,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\images\\side-picture.jpg"
+    },
+    {
+      "Identity": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\6408f3fb-3e3e-471a-b0c3-8350b64c1b5c.jpg",
+      "SourceId": "OrderingSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\",
+      "BasePath": "_content/OrderingSystem",
+      "RelativePath": "uploads/product/6408f3fb-3e3e-471a-b0c3-8350b64c1b5c.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\product\\6408f3fb-3e3e-471a-b0c3-8350b64c1b5c.jpg"
     },
     {
       "Identity": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\6be2f78b-90d9-4a3b-be31-7b7adb23d289.png",
@@ -1556,6 +1594,25 @@
       "OriginalItemSpec": "wwwroot\\uploads\\product\\b67dc2b9-2745-4318-b9ee-06d3d988d479.png"
     },
     {
+      "Identity": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\d508ee25-5331-4c78-a089-50910363a26a.jpg",
+      "SourceId": "OrderingSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\",
+      "BasePath": "_content/OrderingSystem",
+      "RelativePath": "uploads/product/d508ee25-5331-4c78-a089-50910363a26a.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\product\\d508ee25-5331-4c78-a089-50910363a26a.jpg"
+    },
+    {
       "Identity": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\ebfc62c4-95ba-45e9-bafd-7d7f2e1697c9.png",
       "SourceId": "OrderingSystem",
       "SourceType": "Discovered",
@@ -1573,6 +1630,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\product\\ebfc62c4-95ba-45e9-bafd-7d7f2e1697c9.png"
+    },
+    {
+      "Identity": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\f064604d-f3ae-4d3d-a53b-4ea2d2f0c94d.jpg",
+      "SourceId": "OrderingSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\",
+      "BasePath": "_content/OrderingSystem",
+      "RelativePath": "uploads/product/f064604d-f3ae-4d3d-a53b-4ea2d2f0c94d.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\product\\f064604d-f3ae-4d3d-a53b-4ea2d2f0c94d.jpg"
     },
     {
       "Identity": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\f898f926-35e7-40ef-beba-78533ea725a8.png",

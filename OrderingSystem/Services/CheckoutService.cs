@@ -27,11 +27,11 @@ namespace OrderingSystem.Services
                 CartItems = cart.CartItems.Select(x => new CartItemViewModel
                 {
                     Id = x.Id,
-                    ProductId = x.ProductId,
-                    Product = x.Product,
                     CartId = x.CartId,
-                    Cart = x.Cart,
-                    Quantity = x.Quantity
+                    ProductId = x.ProductId,
+                    ProductName = x.ProductName,
+                    Quantity = x.Quantity,
+                    Price = x.Price
 
                 }).ToList()
             };

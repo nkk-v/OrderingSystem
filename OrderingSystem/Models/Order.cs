@@ -5,14 +5,18 @@ namespace OrderingSystem.Models
     public class Order
     {
         public int Id { get; set; }
-        public Guid OrderId { get; set; }
+        public Guid OrderNum { get; set; }
         public string UserId { get; set; }
-        public DateTime OrderDate { get; set; }
+        public DateTime? OrderDate { get; set; }
         public double TotalAmount { get; set; }
         [StringLength(15)]
         public string Status { get; set; } // Example: Pending, Shipped, Delivered
-        public string DeliverySchedule { get; set; }
+        public DateTime? ScheduledDate { get; set; }
         public string? DeliveryNote { get; set; }
-        public List<OrderItem> OrderItems { get; set; }
+        [StringLength(11)]
+        public string PhoneNumber { get; set; }
+        public string Address { get; set; }
+        public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+        public List<User> Users { get; set; } = new List<User>();
     }
 }

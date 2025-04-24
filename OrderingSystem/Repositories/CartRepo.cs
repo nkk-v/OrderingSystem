@@ -84,5 +84,19 @@ namespace OrderingSystem.Repositories
                 x => x.CartId == cart.Id
                 ).CountAsync();
         }
+
+        public async Task ClearCartItem(string userId)
+        {
+            var cart = await _dbContext.tblCarts
+                 .Include(c => c.CartItems)
+                 .ThenInclude(p => p.Product)
+                 .FirstOrDefaultAsync(c => c.UserId == userId);
+
+            var cartItems = await _dbContext.tblCartItems.Where(x => x.CartId == cart.Id).ToListAsync();
+
+            _dbContext.tblCartItems.RemoveRange(cartItems);
+            await _dbContext.SaveChangesAsync();
+
+        }
     }
 }

@@ -10,5 +10,6 @@ namespace OrderingSystem.Services
         Task UpdateCart(int cartItemId, int quantity);
         Task RemoveItem(int cartItemId);
         Task<int> GetItemCount(string userId);
+        Task ClearCartItems(string userId);
     }
 }

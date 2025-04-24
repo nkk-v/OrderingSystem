@@ -12,8 +12,8 @@ using OrderingSystem.Data;
 namespace OrderingSystem.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250411073751_UpdatetblProducts")]
-    partial class UpdatetblProducts
+    [Migration("20250424055112_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -166,20 +166,39 @@ namespace OrderingSystem.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("tblCarts");
+                });
+
+            modelBuilder.Entity("OrderingSystem.Models.CartItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CartId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("CartId");
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("tblCarts");
+                    b.ToTable("tblCartItems");
                 });
 
             modelBuilder.Entity("OrderingSystem.Models.Category", b =>
@@ -214,11 +233,25 @@ namespace OrderingSystem.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("DeliverySchedule")
+                    b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("OrderDate")
+                    b.Property<string>("DeliveryNote")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("OrderNum")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
+
+                    b.Property<DateTime?>("ScheduledDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Status")
@@ -306,7 +339,7 @@ namespace OrderingSystem.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("CategoryId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -462,13 +495,21 @@ namespace OrderingSystem.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("OrderingSystem.Models.Cart", b =>
+            modelBuilder.Entity("OrderingSystem.Models.CartItem", b =>
                 {
+                    b.HasOne("OrderingSystem.Models.Cart", "Cart")
+                        .WithMany("CartItems")
+                        .HasForeignKey("CartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("OrderingSystem.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Cart");
 
                     b.Navigation("Product");
                 });
@@ -507,9 +548,16 @@ namespace OrderingSystem.Migrations
                 {
                     b.HasOne("OrderingSystem.Models.Category", "Category")
                         .WithMany("Products")
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("OrderingSystem.Models.Cart", b =>
+                {
+                    b.Navigation("CartItems");
                 });
 
             modelBuilder.Entity("OrderingSystem.Models.Category", b =>

@@ -9,5 +9,6 @@ namespace OrderingSystem.Repositories
         Task UpdateCart(int cartItemId, int quantity);
         Task RemoveItem(int cartItemId);
         Task<int> GetCartItemCountByUser(string userId);
+        Task ClearCartItem(string userId);
     }
 }

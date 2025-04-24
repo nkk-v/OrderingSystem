@@ -29,11 +29,11 @@ else
             @foreach (var item in Model.CartItems)
             {
                 <tr>
-                    <td>@item.Product.Name</td>
+                    <td>@item.ProductName</td>
                     <td>
-                        @if (!string.IsNullOrEmpty(item.Product.ImageUrl))
+                        @if (!string.IsNullOrEmpty(item.ImageUrl))
                         {
-                            <img src="@item.Product.ImageUrl" width="80" height="80" class="img-thumbnail" />
+                            <img src="@item.ImageUrl" width="80" height="80" class="img-thumbnail" />
                         }
                         else
                         {
@@ -47,7 +47,7 @@ else
                 <button type="submit" class="btn btn-sm btn-outline-primary">Update</button>
                 </form> *@
 
-                        <div class="quantity-controls input-group" data-id="@item.Id" data-price="@item.Product.Price">
+                        <div class="quantity-controls input-group" data-id="@item.Id" data-price="@item.Price">
                             <button class="btn btn-outline-secondary btn-sm minus">−</button>
                             <input type="text" class="qty form-control d-inline-block text-center" value="@item.Quantity" readonly />
                             <button class="btn btn-outline-secondary btn-sm plus">+</button>
@@ -55,8 +55,8 @@ else
 
 
                     </td>
-                    <td>₱@item.Product.Price.ToString("N2")</td>
-                    <td id="subtotal-@item.Id">₱@((item.Product.Price * item.Quantity).ToString("N2"))</td>
+                    <td>₱@item.Price.ToString("N2")</td>
+                    <td id="subtotal-@item.Id">₱@((item.Price * item.Quantity).ToString("N2"))</td>
                     <td>
                         <a asp-action="Remove" asp-route-cartItemId="@item.Id" class="btn btn-sm btn-danger">Remove</a>
                     </td>
@@ -67,7 +67,7 @@ else
     <h5 class="text-end">
         Total:₱
         <span id="overall-total">
-            @Model.CartItems.Sum(x => x.Product.Price * x.Quantity).ToString("N2")
+            @Model.CartItems.Sum(x => x.Price * x.Quantity).ToString("N2")
         </span>
     </h5>
 

@@ -1,4 +1,5 @@
-﻿using OrderingSystem.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using OrderingSystem.Data;
 using OrderingSystem.Models;
 
 namespace OrderingSystem.Repositories
@@ -24,14 +25,24 @@ namespace OrderingSystem.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
-        public Task<List<Order>> GetAllOrders()
+        public async Task<List<Order>> GetAllOrders()
         {
-            throw new NotImplementedException();
+            return await _dbContext.tblOrders.Include(x => x.Users).OrderByDescending(x => x.OrderDate).ToListAsync();
         }
 
-        public Task<Order> GetOrderById(Guid orderId)
+        public async Task<Order?> GetOrderById(int Id)
         {
-            throw new NotImplementedException();
+            return await _dbContext.tblOrders.Include(o => o.Users).FirstOrDefaultAsync(x => x.Id == Id);
+        }
+
+        public async Task UpdateOrderStatus(int Id, string status)
+        {
+            var order = await _dbContext.tblOrders.FindAsync(Id);
+            if(order != null)
+            {
+                order.Status = status;
+                await _dbContext.SaveChangesAsync();
+            }
         }
     }
 }

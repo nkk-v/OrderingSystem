@@ -18,6 +18,11 @@ namespace OrderingSystem.Services
              await _cartRepo.AddtoCart(userId, productId, quantity); 
         }
 
+        public async Task ClearCartItems(string userId)
+        {
+            await _cartRepo.ClearCartItem(userId);
+        }
+
         public async Task<int> GetItemCount(string userId)
         {
             return await _cartRepo.GetCartItemCountByUser(userId);
@@ -36,9 +41,10 @@ namespace OrderingSystem.Services
                     Id = item.Id,
                     CartId = item.CartId,
                     ProductId = item.ProductId,
-                    Cart = item.Cart,
-                    Product = item.Product,
-                    Quantity = item.Quantity
+                    ProductName = item.Product.Name,
+                    ImageUrl = item.Product.ImageUrl,
+                    Quantity = item.Quantity,
+                    Price = item.Price
 
                 }).ToList(),
                 Total = cart.CartItems.Sum(x => x.Price * x.Quantity)

@@ -29,10 +29,10 @@
 
                     <div class="row schedule-options mt-2">
                         <div class="col mb-2">
-                            <input type="text" class="form-control" id="scheduleDate" placeholder="Select Date" />
+                            <input type="text" class="form-control" id="scheduleDate" asp-for="ScheduledDate" placeholder="Select Date" />
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" id="scheduleTime" placeholder="Select Time" />
+                            <input type="text" class="form-control" id="scheduleTime" asp-for="ScheduledTime" placeholder="Select Time" />
                         </div>
                     </div>
                 </div> <br />
@@ -84,9 +84,15 @@
                             @foreach (var item in Model.CartItems)
                             {
                                 <tr>
-                                    <td>@item.Product.Name</td>
+                                    <td>@item.ProductName</td>
                                     <td align="right">₱ @item.Price.ToString("N2")</td>
                                 </tr>
+                            }
+                            @for (int i = 0; i < Model.CartItems.Count; i++)
+                            {
+                                <input type="hidden" name="CartItems[@i].ProductId" value="@Model.CartItems[i].ProductId" />
+                                <input type="hidden" name="CartItems[@i].Price" value="@Model.CartItems[i].Price" />
+                                <input type="hidden" name="CartItems[@i].Quantity" value="@Model.CartItems[i].Quantity" />
                             }
                         </tbody>
                     </table>
@@ -101,13 +107,14 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-primary w-100">Place Order</button>
+                    <button class="btn btn-primary w-100" asp-action="PlaceOrder">Place Order</button>
                 </div>
 
             </div>
 
         </div>
     </div>
+
 </form>
 
 <script src="~/js/checkout.js" asp-append-version="true"></script>

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace OrderingSystem.Migrations
 {
     /// <inheritdoc />
-    public partial class OrderingSystem : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -54,12 +54,27 @@ namespace OrderingSystem.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "tblCarts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tblCarts", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "tblCategories",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -72,11 +87,15 @@ namespace OrderingSystem.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    OrderNum = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    OrderDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     TotalAmount = table.Column<double>(type: "float", nullable: false),
                     Status = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
-                    DeliverySchedule = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ScheduledDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeliveryNote = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -198,7 +217,7 @@ namespace OrderingSystem.Migrations
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Price = table.Column<double>(type: "float", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -235,20 +254,26 @@ namespace OrderingSystem.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "tblCarts",
+                name: "tblCartItems",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    CartId = table.Column<int>(type: "int", nullable: false),
                     ProductId = table.Column<int>(type: "int", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false)
+                    Quantity = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tblCarts", x => x.Id);
+                    table.PrimaryKey("PK_tblCartItems", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_tblCarts_tblProducts_ProductId",
+                        name: "FK_tblCartItems_tblCarts_CartId",
+                        column: x => x.CartId,
+                        principalTable: "tblCarts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_tblCartItems_tblProducts_ProductId",
                         column: x => x.ProductId,
                         principalTable: "tblProducts",
                         principalColumn: "Id",
@@ -323,8 +348,13 @@ namespace OrderingSystem.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_tblCarts_ProductId",
-                table: "tblCarts",
+                name: "IX_tblCartItems_CartId",
+                table: "tblCartItems",
+                column: "CartId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_tblCartItems_ProductId",
+                table: "tblCartItems",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
@@ -367,7 +397,7 @@ namespace OrderingSystem.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "tblCarts");
+                name: "tblCartItems");
 
             migrationBuilder.DropTable(
                 name: "tblOrderItems");
@@ -380,6 +410,9 @@ namespace OrderingSystem.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "tblCarts");
 
             migrationBuilder.DropTable(
                 name: "tblProducts");

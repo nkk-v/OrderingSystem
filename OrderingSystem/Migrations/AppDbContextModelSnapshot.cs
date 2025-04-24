@@ -230,18 +230,26 @@ namespace OrderingSystem.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("DeliveryNote")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DeliverySchedule")
+                    b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("OrderDate")
+                    b.Property<string>("DeliveryNote")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("OrderDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("OrderId")
+                    b.Property<Guid>("OrderNum")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
+
+                    b.Property<DateTime?>("ScheduledDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Status")
                         .IsRequired()

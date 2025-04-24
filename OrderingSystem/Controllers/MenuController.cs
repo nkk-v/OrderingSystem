@@ -1,16 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using OrderingSystem.Models;
 using OrderingSystem.Services;
 using OrderingSystem.ViewModels;
 
 namespace OrderingSystem.Controllers
 {
-    public class OrderController : Controller
+    public class MenuController : Controller
     {
         private readonly ICategoryService _categoryService;
         private readonly IProductService _productService;
         private readonly ICartService _cartService;
 
-        public OrderController(ICategoryService categoryService, IProductService productService, ICartService cartService)
+        public MenuController(ICategoryService categoryService, IProductService productService, ICartService cartService)
         {
             _categoryService = categoryService;
             _productService = productService;
@@ -29,6 +31,9 @@ namespace OrderingSystem.Controllers
             return View(model);
         }
 
+     
+
+       
         
     }
 }
