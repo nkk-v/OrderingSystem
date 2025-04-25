@@ -39,7 +39,9 @@ namespace OrderingSystem.Services
                 ScheduledDate = scheduleDeliver,
                 DeliveryNote = model.DeliveryNote,
                 PhoneNumber = model.PhoneNumber,
-                Address = model.Address
+                Address = model.Address,
+                fullname = model.Fullname
+                
 
             };
 
@@ -58,6 +60,48 @@ namespace OrderingSystem.Services
             await _orderRepo.AddOrderItem(orderItems);
 
             return order.Id;
+
+        }
+
+        public async Task<List<OrderViewModel>> GetAllOrders()
+        {
+            var order = await _orderRepo.GetAllOrders();
+
+            return order.Select(o => new OrderViewModel
+            {
+                Id = o.Id,
+                UserId = o.UserId,
+                OrderNum = o.OrderNum,
+                DeliveryDate = o.OrderDate ?? o.ScheduledDate,
+                ContactNumber = o.PhoneNumber,
+                Address = o.Address,
+                DeliveryNote = o.DeliveryNote,
+                TotalAmount = o.TotalAmount, 
+                Status = o.Status,
+                Fullname = o.fullname,
+                OrderItems = o.OrderItems.Select(oi => new OrderItemViewModel
+                {
+                    ProductName = oi.Product.Name,
+                    Quantity = oi.Quantity
+                }).ToList()
+
+            }).ToList();
+           
+            
+
+        }
+
+        public async Task UpdateOrderStatus(int OrderId, string newStatus)
+        {
+            var order = await _orderRepo.GetOrderById(OrderId);
+
+            if(order != null)
+            {
+                order.Status = newStatus;
+                await _orderRepo.UpdateOrderStatus(order);
+            }
+
+
 
         }
     }

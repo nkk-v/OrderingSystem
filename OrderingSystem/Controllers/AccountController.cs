@@ -48,7 +48,7 @@ namespace OrderingSystem.Controllers
 
            if (ModelState.IsValid)
             {
-                var success = await _accountService.Login(model);
+               var success = await _accountService.Login(model);
                 if (!success)
                 {
                     ViewData["error"] = "Username or Password is incorrect.";
@@ -64,7 +64,7 @@ namespace OrderingSystem.Controllers
                         return RedirectToAction("Index", "Admin");
                     }else if (await _userManager.IsInRoleAsync(user, "Customer"))
                     {
-                        return RedirectToAction("Index", "Order");
+                        return RedirectToAction("Index", "Menu");
                     }
 
                     return View(model);

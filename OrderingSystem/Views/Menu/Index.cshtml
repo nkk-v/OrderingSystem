@@ -8,12 +8,12 @@
             <h5 class="mb-3">Categories</h5>
             <ul class="list-group">
                 <li class="list-group-item @(Model.SelectedCategoryId == null ? "active" : "")">
-                    <a href="@Url.Action("Index", "Order")" class="text-decoration-none @(Model.SelectedCategoryId == null ? "text-white" : "")">All</a>
+                    <a href="@Url.Action("Index", "Menu")" class="text-decoration-none @(Model.SelectedCategoryId == null ? "text-white" : "")">All</a>
                 </li>
                 @foreach (var category in Model.categories)
                 {
                     <li class="list-group-item @(Model.SelectedCategoryId == category.Id ? "active" : "")">
-                        <a href="@Url.Action("Index", "Order", new { categoryId = category.Id })" class="text-decoration-none @(Model.SelectedCategoryId == category.Id ? "text-white" : "")">
+                        <a href="@Url.Action("Index", "Menu", new { categoryId = category.Id })" class="text-decoration-none @(Model.SelectedCategoryId == category.Id ? "text-white" : "")">
                             @category.Name
                         </a>
                     </li>

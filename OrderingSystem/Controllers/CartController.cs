@@ -37,7 +37,7 @@ namespace OrderingSystem.Controllers
             if (userId == null) return RedirectToAction("login", "Account");
 
             await _cartService.AddtoCart(userId, productId);
-            return RedirectToAction("Index", "Order");
+            return RedirectToAction("Index", "Menu");
         }
 
         [HttpPost]

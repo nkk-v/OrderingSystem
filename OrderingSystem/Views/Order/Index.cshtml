@@ -1,0 +1,69 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model IEnumerable<OrderingSystem.ViewModels.OrderViewModel>
+
+
+
+<div class="container mt-5">
+    <h2>Manage Orders</h2>
+    <table class="table table-borderless">
+        <thead class="table-dark">
+            <tr>
+                <th>Order number</th>
+                <th>Customer name</th>
+                <th>Address</th>
+                <th>Contact</th>
+                <th>Delivery date</th>
+                <th>Total Amount</th>
+                <th>Delivery Note</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <td>@order.OrderNum</td>
+                    <td>@order.Fullname</td>
+                    <td>@order.Address</td>
+                    <td>@order.ContactNumber</td>
+                    <td>@order.DeliveryDate</td>
+                    <td>₱ @order.TotalAmount.ToString("N2")</td>
+                    <td>@order.DeliveryNote</td>
+                  <td>
+                        <form asp-action="UpdateStatus" method="post" class="d-flex">
+                            <input type="hidden" name="orderId" value="@order.Id" />
+                            <select name="newStatus" class="form-select form-select-sm w-auto">
+                                <option value="Pending" selected="@("Pending" == order.Status)">Pending</option>
+                                <option value="Preparing" selected="@("Preparing" == order.Status)">Preparing</option>
+                                <option value="Shipping" selected="@("Shipping" == order.Status)">Shipping</option>
+                                <option value="Delivered" selected="@("Delivered" == order.Status)">Delivered</option>
+                                <option value="Cancelled" selected="@("Cancelled" == order.Status)">Cancelled</option>
+                            </select>
+                            <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                        </form>
+                  </td>
+                </tr>
+                <tr class="table-light">
+                    <td colspan="6">
+                        <strong>Items:</strong>
+                        <ul>
+                            @foreach (var item in order.OrderItems)
+                            {
+                                <li>
+                                    @item.ProductName - @item.Quantity
+                                </li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+            }
+           
+        </tbody>
+    </table>
+</div>

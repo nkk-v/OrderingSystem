@@ -13,10 +13,11 @@ namespace OrderingSystem.Models
         public string Status { get; set; } // Example: Pending, Shipped, Delivered
         public DateTime? ScheduledDate { get; set; }
         public string? DeliveryNote { get; set; }
+        [StringLength(50)]
+        public string fullname { get; set; }
         [StringLength(11)]
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
-        public List<User> Users { get; set; } = new List<User>();
     }
 }

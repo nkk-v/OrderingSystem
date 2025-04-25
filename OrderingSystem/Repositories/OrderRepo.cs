@@ -27,22 +27,23 @@ namespace OrderingSystem.Repositories
 
         public async Task<List<Order>> GetAllOrders()
         {
-            return await _dbContext.tblOrders.Include(x => x.Users).OrderByDescending(x => x.OrderDate).ToListAsync();
+            return await _dbContext.tblOrders
+                .Include(o => o.OrderItems)
+                    .ThenInclude(oi => oi.Product)
+                .OrderByDescending(x => x.OrderDate)
+                .ToListAsync();
         }
 
         public async Task<Order?> GetOrderById(int Id)
         {
-            return await _dbContext.tblOrders.Include(o => o.Users).FirstOrDefaultAsync(x => x.Id == Id);
+            return await _dbContext.tblOrders
+                .FirstOrDefaultAsync(x => x.Id == Id);
         }
 
-        public async Task UpdateOrderStatus(int Id, string status)
+        public async Task UpdateOrderStatus(Order order)
         {
-            var order = await _dbContext.tblOrders.FindAsync(Id);
-            if(order != null)
-            {
-                order.Status = status;
-                await _dbContext.SaveChangesAsync();
-            }
+           _dbContext.tblOrders.Update(order);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

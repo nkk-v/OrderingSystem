@@ -8,6 +8,6 @@ namespace OrderingSystem.Repositories
         Task<Order> GetOrderById(int Id);
         Task AddtoOrder(Order order);
         Task AddOrderItem(IEnumerable<OrderItem> orderItems);
-        Task UpdateOrderStatus(int Id, string status);
+        Task UpdateOrderStatus(Order order);
     }
 }
