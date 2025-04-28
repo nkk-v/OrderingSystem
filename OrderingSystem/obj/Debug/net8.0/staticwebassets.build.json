@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GdpO70g0Ia6xHXlGydOTBxSau0DJTFAtYUxvDfNoW9A=",
+  "Hash": "G7kCwJWZqb7YCTSCsWZOH5YGmU2WVpHa4R3mMPIySLE=",
   "Source": "OrderingSystem",
   "BasePath": "_content/OrderingSystem",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\login.css"
+    },
+    {
+      "Identity": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\profile.css",
+      "SourceId": "OrderingSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\",
+      "BasePath": "_content/OrderingSystem",
+      "RelativePath": "css/profile.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\profile.css"
     },
     {
       "Identity": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\site.css",
@@ -1364,6 +1383,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\practice.css",
+      "SourceId": "OrderingSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\",
+      "BasePath": "_content/OrderingSystem",
+      "RelativePath": "practice.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\practice.css"
     },
     {
       "Identity": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\7a871f0e-eefc-4f93-8c85-2ad96d7daee8.jpg",

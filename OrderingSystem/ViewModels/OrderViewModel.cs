@@ -1,10 +1,14 @@
-﻿namespace OrderingSystem.ViewModels
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace OrderingSystem.ViewModels
 {
     public class OrderViewModel
     {
         public int Id { get; set; }
         public string UserId { get; set; }
-        public Guid OrderNum { get; set; }
+        public string OrderNum { get; set; }
         public DateTime? DeliveryDate { get; set; }
         public string Fullname { get; set; }
         public string ContactNumber { get; set; }

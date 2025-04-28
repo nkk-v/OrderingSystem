@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using OrderingSystem.Services;
 using OrderingSystem.ViewModels;
 
@@ -13,9 +14,11 @@ namespace OrderingSystem.Controllers
             _orderService = orderService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string status = "All")
         {
-            var orders = await _orderService.GetAllOrders();
+            var orders = await _orderService.GetAllOrders(status);
+
+            
             return View(orders);
         }
 

@@ -1,4 +1,5 @@
-﻿using OrderingSystem.Models;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using OrderingSystem.Models;
 using OrderingSystem.Repositories;
 using OrderingSystem.ViewModels;
 
@@ -13,7 +14,27 @@ namespace OrderingSystem.Services
             _orderRepo = orderRepo;
         }
 
-        public async Task<int> AddOrder(CheckoutViewModel model, string userId)
+        public async Task<string> GenerateOrderNumber()
+        {
+            string datePart = DateTime.Now.ToString("yyMMdd");
+
+            var latestOR = (await _orderRepo.GetLatestOrder())
+                .Where(x => x.OrderNum.StartsWith($"ORD-{datePart}"))
+                .OrderByDescending(x => x.DateCreated)
+                .FirstOrDefault();
+
+            int newSequence = 1;
+            if(latestOR != null)
+            {
+                string lastSequence = latestOR.OrderNum.Substring(datePart.Length + 5);
+                newSequence = int.Parse(lastSequence) + 1;
+            }
+
+
+            return $"ORD-{datePart}-{newSequence:D4}";
+        }
+
+        public async Task<string> AddOrder(CheckoutViewModel model, string userId)
         {
             DateTime? scheduleDeliver = null;
             DateTime? orderDate = null;
@@ -29,9 +50,12 @@ namespace OrderingSystem.Services
                 orderDate = DateTime.Now;
             }
 
+            string newOrderNumber = await GenerateOrderNumber();
+
+
             var order = new Order
             {
-                OrderNum = Guid.NewGuid(),
+                OrderNum = newOrderNumber,
                 UserId = userId,
                 OrderDate = orderDate,
                 TotalAmount = model.TotalAmout,
@@ -40,8 +64,8 @@ namespace OrderingSystem.Services
                 DeliveryNote = model.DeliveryNote,
                 PhoneNumber = model.PhoneNumber,
                 Address = model.Address,
-                fullname = model.Fullname
-                
+                fullname = model.Fullname,
+                DateCreated = DateTime.Now
 
             };
 
@@ -59,13 +83,13 @@ namespace OrderingSystem.Services
 
             await _orderRepo.AddOrderItem(orderItems);
 
-            return order.Id;
+            return order.OrderNum;
 
         }
 
-        public async Task<List<OrderViewModel>> GetAllOrders()
+        public async Task<List<OrderViewModel>> GetAllOrders(string status)
         {
-            var order = await _orderRepo.GetAllOrders();
+            var order = await _orderRepo.GetAllOrders(status);
 
             return order.Select(o => new OrderViewModel
             {
@@ -85,7 +109,7 @@ namespace OrderingSystem.Services
                     Quantity = oi.Quantity
                 }).ToList()
 
-            }).ToList();
+        }).ToList();
            
             
 

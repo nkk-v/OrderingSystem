@@ -17,4 +17,5 @@ namespace OrderingSystem.Data
         public DbSet<Product> tblProducts { get; set; }
         public DbSet<CartItem> tblCartItems { get; set; }
     }
+    
 }

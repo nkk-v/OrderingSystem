@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using OrderingSystem.Models;
+using OrderingSystem.Repositories;
 using OrderingSystem.ViewModels;
 
 namespace OrderingSystem.Services
@@ -9,12 +10,14 @@ namespace OrderingSystem.Services
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IOrderRepo _orderRepo;
 
-        public AccountService(SignInManager<User> signInManager, UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
+        public AccountService(SignInManager<User> signInManager, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IOrderRepo orderRepo)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _roleManager = roleManager;
+            _orderRepo = orderRepo;
         }
 
         public async Task<bool> ChangePassword(string userId, ChangePasswordViewModel model)
@@ -69,12 +72,29 @@ namespace OrderingSystem.Services
         public async Task<UserAccountViewModel> GetUserDetails(string userId)
         {
             var user = await _userManager.FindByIdAsync(userId);
+            var order = await _orderRepo.OrderHistoryByUser(userId);
+
+
             return new UserAccountViewModel
             {
                 Fullname = user.FullName,
                 Username = user.UserName,
                 PhoneNumber = user.ContactNumber,
-                Address = user.Address
+                Address = user.Address,
+                Orders = order.Select(x => new OrderViewModel
+                {
+                    OrderNum = x.OrderNum,
+                    DeliveryDate = x.OrderDate == null ? x.ScheduledDate : x.OrderDate,
+                    Fullname = x.fullname,
+                    TotalAmount = x.TotalAmount,
+                    Status = x.Status,
+                    OrderItems = x.OrderItems.Select(oi => new OrderItemViewModel
+                    {
+                        ProductName = oi.Product.Name,
+                        Quantity = oi.Quantity
+                    }).ToList()
+                }).ToList(),
+               
             }; 
         }
 

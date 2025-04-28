@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\profile.css",
+      "PackagePath": "staticwebassets\\css\\profile.css"
+    },
+    {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -279,6 +283,10 @@
     {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\practice.css",
+      "PackagePath": "staticwebassets\\practice.css"
     },
     {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\7a871f0e-eefc-4f93-8c85-2ad96d7daee8.jpg",

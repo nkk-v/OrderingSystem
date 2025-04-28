@@ -25,19 +25,50 @@ namespace OrderingSystem.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<List<Order>> GetAllOrders()
+        public async Task<List<Order>> GetAllOrders(string status)
         {
-            return await _dbContext.tblOrders
+            //return await _dbContext.tblOrders
+            //    .Include(o => o.OrderItems)
+            //        .ThenInclude(oi => oi.Product)
+            //    .OrderByDescending(x => x.OrderDate)
+            //    .ToListAsync();
+            var query =  _dbContext.tblOrders
                 .Include(o => o.OrderItems)
                     .ThenInclude(oi => oi.Product)
-                .OrderByDescending(x => x.OrderDate)
-                .ToListAsync();
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(status) && status != "All")
+            {
+                query = query.Where(o => o.Status == status);
+            }
+
+            return await query.ToListAsync();
+        }
+
+        public async Task<List<Order>> GetLatestOrder()
+        {
+            return await _dbContext.tblOrders.ToListAsync();
         }
 
         public async Task<Order?> GetOrderById(int Id)
         {
             return await _dbContext.tblOrders
                 .FirstOrDefaultAsync(x => x.Id == Id);
+        }
+
+        public async Task<List<Order>> OrderHistoryByUser(string userId)
+        {
+            var query = _dbContext.tblOrders
+                .Include(o => o.OrderItems)
+                    .ThenInclude(oi => oi.Product)
+                .OrderByDescending(x => x.OrderNum)
+                .AsQueryable();
+
+
+            query = query.Where(x =>  x.UserId == userId);
+
+
+            return await query.ToListAsync();
         }
 
         public async Task UpdateOrderStatus(Order order)

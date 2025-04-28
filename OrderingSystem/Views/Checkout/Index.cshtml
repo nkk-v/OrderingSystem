@@ -41,15 +41,15 @@
                     <h5 class="fw-bold mb-3">Your Information</h5>
                     <div class="mb-3">
                         <label>Name</label>
-                        <input type="text" class="form-control" name="Fullname" value="@Model.Fullname" readonly />
+                        <input type="text" class="form-control" name="Fullname" value="@Model.Fullname" asp-for="Fullname" />
                     </div>
                     <div class="mb-3">
                         <label>Phone Number</label>
-                        <input type="text" class="form-control" name="PhoneNumber" value="@Model.PhoneNumber" readonly />
+                        <input type="text" class="form-control" name="PhoneNumber" value="@Model.PhoneNumber" asp-for="PhoneNumber"/>
                     </div>
                     <div class="mb-3">
                         <label>Address</label>
-                        <textarea class="form-control" name="Address" rows="3" readonly>@Model.Address</textarea>
+                        <textarea class="form-control" name="Address" rows="3" asp-for="Address">@Model.Address</textarea>
                     </div>
                     <div class="mb-3">
                         <label asp-for="DeliveryNote" class="form-label">Delivery Note(Optional)</label>

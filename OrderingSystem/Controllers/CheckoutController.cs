@@ -38,15 +38,18 @@ namespace OrderingSystem.Controllers
             if (!ModelState.IsValid) return View(model);
 
             var userId = _userManager.GetUserId(User);
-            await _orderService.AddOrder(model, userId);
+
+
+            string OrderNumber = await _orderService.AddOrder(model, userId);
             await _cartService.ClearCartItems(userId);
 
            
-            return RedirectToAction("Success");
+            return RedirectToAction("Success", new {orderNum = OrderNumber});
         }
 
-        public IActionResult Success()
+        public IActionResult Success(string orderNum)
         {
+            ViewBag.orderNum = orderNum;
             return View();
         }
     }
