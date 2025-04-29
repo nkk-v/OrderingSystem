@@ -38,7 +38,9 @@ namespace OrderingSystem.Services
                 Price = model.Price,
                 Description = model.Description,
                 ImageUrl = imagePath,
-                CategoryId = model.CategoryId
+                CategoryId = model.CategoryId,
+                IsActive = model.IsActive,
+                DateCreated = DateTime.Now
             };
 
             await _productRepo.AddProduct(product);
@@ -70,7 +72,7 @@ namespace OrderingSystem.Services
 
             if (!string.IsNullOrEmpty(searchTerm))
             {
-                product = product.Where(x => x.Name.ToLower().Contains(searchTerm.ToLower())).OrderBy(
+                product = product.Where(x => x.Name.ToLower().Contains(searchTerm.ToLower()) && x.IsActive).OrderBy(
                     x => x.Id).ToList();
             }
             
@@ -102,6 +104,7 @@ namespace OrderingSystem.Services
                 Description = product.Description,
                 ImageUrl = product.ImageUrl,
                 CategoryId = product.CategoryId,
+                IsActive = product.IsActive,
                 Categories = categories.Select(c => new SelectListItem
                 {
                     Value = c.Id.ToString(),
@@ -150,6 +153,7 @@ namespace OrderingSystem.Services
             product.Price = model.Price;
             product.Description = model.Description;
             product.CategoryId = model.CategoryId;
+            product.IsActive = model.IsActive;
 
             if (model.ImageFile != null)
             {

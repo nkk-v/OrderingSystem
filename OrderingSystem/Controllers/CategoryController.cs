@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using OrderingSystem.Services;
 using OrderingSystem.ViewModels;
 
 namespace OrderingSystem.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OrderingSystem.Models;
 using OrderingSystem.Services;
@@ -7,6 +8,7 @@ using System.Security.Claims;
 
 namespace OrderingSystem.Controllers
 {
+    [Authorize(Roles = "Customer")]
     public class CheckoutController : Controller
     {
         private readonly ICheckoutService _checkoutService;
@@ -32,6 +34,7 @@ namespace OrderingSystem.Controllers
         }
 
         [HttpPost]
+        [AutoValidateAntiforgeryToken]
 
         public async Task<IActionResult> PlaceOrder(CheckoutViewModel model)
         {

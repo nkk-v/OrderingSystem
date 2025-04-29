@@ -1,20 +1,26 @@
-﻿
-.login-container-body{
+﻿body{
+    background-color: purple;
+}
+
+.login-container-body {
     display: flex;
     justify-content: center;
     align-items: center;
-
-h3{
-    text-align: center;
+    height: 70vh;
+    padding-top: 0;
+    
 }
 
-.login-container{
-    border: 1px solid #e91414;
-    background-color: white;
-    padding: 25px 30px;
-    border-radius: 4px;
-    max-width: 400px;
-    width: 100%;
+.login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 50rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 2rem;
+    border-radius: .75rem;
+    background-color: #fff;
 }
 
 .register-container {
@@ -24,17 +30,9 @@ h3{
     border-radius: 4px;
 }
 
-
-.cart-container{
-    position: relative;
+.btn-success{
+    background-color: purple;
 }
-
-.cart-button{
-    border: none;
-}
-
-.button-cart label {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
+    .btn-success:hover {
+        background-color: #ba09ba;
+    }

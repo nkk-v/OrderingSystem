@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OrderingSystem.Models;
 using System.Diagnostics;
@@ -12,7 +13,6 @@ namespace OrderingSystem.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
             return View();

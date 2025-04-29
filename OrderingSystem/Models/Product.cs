@@ -14,5 +14,7 @@ namespace OrderingSystem.Models
         public string? ImageUrl { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
+        public bool IsActive { get; set; }
+        public DateTime DateCreated { get; set; }
     }
 }

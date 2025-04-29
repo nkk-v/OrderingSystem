@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using OrderingSystem.Services;
 using OrderingSystem.ViewModels;
 
 namespace OrderingSystem.Controllers
 {
+
+    [Authorize(Roles = "Administrator")]
     public class OrderController : Controller
     {
         private readonly IOrderService _orderService;

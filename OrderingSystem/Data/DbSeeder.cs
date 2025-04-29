@@ -6,7 +6,7 @@ namespace OrderingSystem.Data
     {
         public static async Task IdentitySeeder(RoleManager<IdentityRole> roleManager)
         {
-            var roleNames = new[] { "Admin", "Customer" };
+            var roleNames = new[] { "Administrator", "Customer" };
 
             foreach (var role in roleNames) 
             {

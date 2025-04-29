@@ -21,7 +21,7 @@ namespace OrderingSystem.ViewModels
         public string? ImageUrl { get; set; }
         public int CategoryId { get; set; }
         public string? CategoryName { get; set; }
-        //public List<int> SelectedCategoryId { get; set; } = new List<int>();
+        public bool IsActive { get; set; } = true;
         public IEnumerable<SelectListItem>? Categories { get; set; }
 
 

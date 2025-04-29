@@ -27,7 +27,7 @@
                     <form asp-action="ChangeUserRoles" method="post" class="d-flex gap-2">
                         <input type="hidden" name="userId" value="@user.UserId" />
                         <select name="newRole" class="form-select form-select-sm w-auto">
-                            <option value="Admin">Admin</option>
+                            <option value="Administrator">Administrator</option>
                             <option value="Customer">Customer</option>
                         </select>
                         <input type="submit" class="btn btn-sm btn-primary" value="Update" />

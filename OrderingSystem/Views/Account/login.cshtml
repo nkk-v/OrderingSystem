@@ -2,13 +2,17 @@
     // Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
 
+<link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+
 @model OrderingSystem.ViewModels.LoginViewModel
 
 
 <div class="login-container-body">
     <div class="login-container">
+        <div>
+            <h3 class="mb-3">Welcome Back</h3>
 
-        <h3 class="mb-3">Login</h3>
+        </div>
 
         @if (ViewData["error"] != null)
         {
@@ -17,18 +21,19 @@
 
         <form asp-action="login" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="mb-3">
-                <input type="text" class="form-control" asp-for="Username" id="username" placeholder="Enter your username" />
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" asp-for="Username" id="username" placeholder="Username"/>
+                <label asp-for="Username">Username</label>
                 <span asp-validation-for="Username" class="text-danger"></span>
             </div>
-            <div class="mb-3">
-                <input type="password" class="form-control" asp-for="Password" id="password" placeholder="Enter your password" />
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" asp-for="Password" id="password" placeholder="Password"/>
+                <label asp-for="Password">Password</label>
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
                 <p>Don't have an account? <a asp-action="register">Signup</a> </p>
-                <span><a asp-action="register">Forgot Password</a></span>
             </div>
 
             <div>

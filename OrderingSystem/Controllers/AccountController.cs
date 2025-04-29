@@ -59,7 +59,7 @@ namespace OrderingSystem.Controllers
 
                 if (user != null)
                 {
-                    if(await _userManager.IsInRoleAsync(user, "Admin"))
+                    if(await _userManager.IsInRoleAsync(user, "Administrator"))
                     {
                         return RedirectToAction("Index", "Admin");
                     }else if (await _userManager.IsInRoleAsync(user, "Customer"))
@@ -109,7 +109,7 @@ namespace OrderingSystem.Controllers
             return RedirectToAction("Index","Home");
         }
 
-
+        [Authorize]
         public async Task<IActionResult> Profile()
         {
             var user = await _userManager.GetUserAsync(User);

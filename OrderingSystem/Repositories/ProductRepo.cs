@@ -43,8 +43,13 @@ namespace OrderingSystem.Repositories
 
             if (categoryId.HasValue)
             {
-                query = query.Where(x => x.CategoryId == categoryId);
+                query = query.Where(x => x.CategoryId == categoryId && x.IsActive);
             }
+            else
+            {
+                query = query.Where(x => x.IsActive);
+            }
+
             return await query.ToListAsync();
         }
 
