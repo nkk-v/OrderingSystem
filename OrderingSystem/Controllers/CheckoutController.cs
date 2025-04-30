@@ -34,7 +34,7 @@ namespace OrderingSystem.Controllers
         }
 
         [HttpPost]
-        [AutoValidateAntiforgeryToken]
+        [ValidateAntiForgeryToken]
 
         public async Task<IActionResult> PlaceOrder(CheckoutViewModel model)
         {

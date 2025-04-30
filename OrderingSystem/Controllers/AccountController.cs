@@ -87,9 +87,10 @@ namespace OrderingSystem.Controllers
 
                 if (success)
                 {
-                    ViewData["Message"] = "Account register successfully. ";
-                    return View(model);
+                    //ViewData["Message"] = "Account register successfully. ";
+                    //return View(model);
                     //return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Menu");
                 }
                 else
                 {

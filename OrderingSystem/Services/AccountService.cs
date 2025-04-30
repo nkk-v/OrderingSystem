@@ -77,7 +77,7 @@ namespace OrderingSystem.Services
 
             return new UserAccountViewModel
             {
-                Fullname = user.FullName,
+                Fullname = user.Fullname,
                 Username = user.UserName,
                 PhoneNumber = user.ContactNumber,
                 Address = user.Address,
@@ -113,7 +113,9 @@ namespace OrderingSystem.Services
         {
             User user = new User
             {
-                FullName = model.Fullname,
+                //FullName = model.Fullname,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
                 UserName = model.Username,
                 Address = model.Address,
                 ContactNumber = model.ContactNumber,
@@ -124,6 +126,8 @@ namespace OrderingSystem.Services
             if(result.Succeeded)
             {
                 await _userManager.AddToRoleAsync(user, "Customer");
+
+                await _signInManager.PasswordSignInAsync(model.Username, model.Password, false, false);
             }
             return result.Succeeded;
         }

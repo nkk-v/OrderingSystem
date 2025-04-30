@@ -26,10 +26,13 @@
                 <label asp-for="Username">Username</label>
                 <span asp-validation-for="Username" class="text-danger"></span>
             </div>
-            <div class="form-floating mb-3">
-                <input type="password" class="form-control" asp-for="Password" id="password" placeholder="Password"/>
+            <div class="form-floating position-relative">
+                <input asp-for="Password" class="form-control pe-5" placeholder="Password" type="password" id="passwordField">
                 <label asp-for="Password">Password</label>
-                <span asp-validation-for="Password" class="text-danger"></span>
+                <span asp-validation-for="Password" class="text-danger small"></span>
+                <span class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor:pointer;" onclick="togglePassword('passwordField', 'toggleIcon1')">
+                    <i class="bi bi-eye-fill" id="toggleIcon1"></i>
+                </span>
             </div>
 
             <div class="mb-3">

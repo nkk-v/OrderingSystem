@@ -5,8 +5,8 @@
 
 
 <div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-5">
+    <div class="row justify-content-center" style="margin-top: 50px;">
+        <div class="col-md-6 col-lg-7">
             <!-- Controls width on different screen sizes -->
             <div class="card shadow rounded-4">
                 <div class="card-body p-4">
@@ -18,53 +18,81 @@
                     }
                     <h3 class="text-center mb-4">Create an Account</h3>
                     <form asp-action="register" method="post">
-                     
-                        <div class="form-floating mb-3">
-                            <input asp-for="Fullname" class="form-control" placeholder="Username">
-                            <label asp-for="Fullname">Name</label>
-                            <span asp-validation-for="Fullname" class="text-danger small"></span>
-                        </div>
+                     <div class="row mb-3">
+                         <div class="col">
+                                <div class="form-floating">
+                                    <input asp-for="FirstName" class="form-control" placeholder="Username">
+                                    <label asp-for="FirstName">Firstname</label>
+                                    <span asp-validation-for="FirstName" class="text-danger small"></span>
+                                </div>
+                         </div>
+                         <div class="col">
+                                <div class="form-floating">
+                                    <input asp-for="LastName" class="form-control" placeholder="LastName">
+                                    <label asp-for="LastName">Lastname</label>
+                                    <span asp-validation-for="LastName" class="text-danger small"></span>
+                                </div>
+                         </div>
+                     </div>
+                       
                         <div class="form-floating mb-3">
                             <input asp-for="Address" class="form-control" placeholder="Username">
                             <label asp-for="Address">Address</label>
                             <span asp-validation-for="Address" class="text-danger small"></span>
                         </div>
-                        <div class="form-floating mb-3">
-                            <input asp-for="ContactNumber" class="form-control" placeholder="Username">
-                            <label asp-for="ContactNumber">Contact Number</label>
-                            <span asp-validation-for="ContactNumber" class="text-danger small"></span>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <div class="form-floating">
+                                    <input asp-for="ContactNumber" class="form-control" placeholder="Username" oninput="this.value=this.value.replace(/[^0-9]/g,'')" maxlength="11">
+                                    <label asp-for="ContactNumber">Contact Number</label>
+                                    <span asp-validation-for="ContactNumber" class="text-danger small"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-floating">
+                                    <input asp-for="Username" class="form-control" placeholder="Username">
+                                    <label asp-for="Username">Username</label>
+                                    <span asp-validation-for="Username" class="text-danger small"></span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-floating mb-3">
-                            <input asp-for="Username" class="form-control" placeholder="Username">
-                            <label asp-for="Username">Username</label>
-                            <span asp-validation-for="Username" class="text-danger small"></span>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <input asp-for="Password" class="form-control" placeholder="Password" type="password">
-                            <label asp-for="Password">Password</label>
-                            <span asp-validation-for="Password" class="text-danger small"></span>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password" type="password">
-                            <label asp-for="ConfirmPassword">Confirm Password</label>
-                            <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+                       
+                        
+                        <div class="row mb-3">
+                            <div class="col">
+                                <div class="form-floating position-relative">
+                                    <input asp-for="Password" class="form-control pe-5" placeholder="Password" type="password" id="passwordField">
+                                    <label asp-for="Password">Password</label>
+                                    <span asp-validation-for="Password" class="text-danger small"></span>
+                                    <span class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor:pointer;" onclick="togglePassword('passwordField', 'toggleIcon1')">
+                                        <i class="bi bi-eye-fill" id="toggleIcon1"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-floating position-relative">
+                                    <input asp-for="ConfirmPassword" class="form-control pe-5" placeholder="Confirm Password" type="password" id="confirmedPasswordField">
+                                    <label asp-for="ConfirmPassword">Confirm Password</label>
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+                                    <span class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor:pointer;" onclick="togglePassword('confirmedPasswordField', 'toggleIcon2')">
+                                        <i class="bi bi-eye-fill" id="toggleIcon2"></i>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary btn-lg">Register</button>
                         </div>
 
-                        <div class="text-center mt-3">
-                            <a asp-action="Login">Already have an account? Log in</a>
-                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 
 
 @* <div class="register-container">

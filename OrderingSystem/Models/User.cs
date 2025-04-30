@@ -7,12 +7,16 @@ namespace OrderingSystem.Models
     {
         [Required]
         [StringLength(50)]
-        public string FullName { get; set; }
+        public string FirstName { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string LastName { get; set; }
         [Required]
         [StringLength(11)]
         public string ContactNumber { get; set; }
         [Required]
         [StringLength(100)]
         public string Address { get; set; }
+        public string Fullname => FirstName + " " + LastName;
     }
 }

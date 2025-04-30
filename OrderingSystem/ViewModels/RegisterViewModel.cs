@@ -5,7 +5,9 @@ namespace OrderingSystem.ViewModels
     public class RegisterViewModel
     {
         [Required(ErrorMessage = "Name is required.")]
-        public string Fullname { get; set; }
+        public string FirstName { get; set; }
+        [Required(ErrorMessage = "Name is required.")]
+        public string LastName { get; set; }
         [Required(ErrorMessage = "Contact Number is required.")]
         public string ContactNumber { get; set; }
         [Required(ErrorMessage = "Address is required.")]
