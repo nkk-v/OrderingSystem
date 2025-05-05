@@ -18,6 +18,7 @@ namespace OrderingSystem.ViewModels
 
         [Required(ErrorMessage = "Password is required.")]
         [DataType(DataType.Password)]
+        [MinLength(8, ErrorMessage = "Password must be at least 8 characters.")]
         [Display(Name = "Password")]
         public string Password { get; set; }
 

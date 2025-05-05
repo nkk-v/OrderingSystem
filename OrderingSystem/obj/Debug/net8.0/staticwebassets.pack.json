@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\checkout.css"
     },
     {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
+    },
+    {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
@@ -303,6 +307,18 @@
     {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\category\\82dc5d33-b5ed-4ad5-a06a-426d91c82efc.jpg",
       "PackagePath": "staticwebassets\\uploads\\category\\82dc5d33-b5ed-4ad5-a06a-426d91c82efc.jpg"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\icons\\facebook.png",
+      "PackagePath": "staticwebassets\\uploads\\icons\\facebook.png"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\icons\\instagram.png",
+      "PackagePath": "staticwebassets\\uploads\\icons\\instagram.png"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\icons\\tiktok.png",
+      "PackagePath": "staticwebassets\\uploads\\icons\\tiktok.png"
     },
     {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\images\\DC-logo.jpg",

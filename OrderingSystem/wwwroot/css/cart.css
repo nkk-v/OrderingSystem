@@ -1,7 +1,7 @@
 ﻿
-.cart-container{
+.cart-container {
     position: relative;
-    color: black;
+    color: #cbbde2;
 }
 .cart-count-label{
     position: absolute;

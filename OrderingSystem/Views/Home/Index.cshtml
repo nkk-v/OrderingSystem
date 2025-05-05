@@ -2,15 +2,22 @@
     ViewData["Title"] = "Home Page";
 }
 
-<section class="bg-light text-dark py-5">
-    <div class="container d-flex flex-column flex-md-row align-items-center">
-        <div class="col-md-6">
-            <h1 class="fw-bold">Be The Fastest In<br />Delivery Your <span class="text-warning">Food</span></h1>
-            <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet</p>
-            <a asp-controller="Menu" asp-action="Index" class="btn btn-warning mt-3">Order now</i></a>
+<link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+<div class="container my-5">
+    <div class="row align-items-center text-center text-lg-start">
+        <div class="col-lg-6 mb-4">
+            <h1 class="hero-title">Be The Fastest In<br />Delivery Your <span class="highlight">Food</span></h1>
+            <p class="hero-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet</p>
+            <a asp-controller="Menu" asp-action="Index" class="btn order-btn mt-3 px-4 py-2">Order now</a>
         </div>
-        <div class="col-md-6 text-center mt-4 mt-md-0">
-            <img src="~/uploads/images/side-picture.jpg" class="img-fluid shadow" style="width: 200px; margin: 10px;" />
+        <div class="col-lg-6 d-flex justify-content-center align-items-center">
+
+            <div class="image-stack">
+                <img src="~/uploads/images/side-picture.jpg" alt="Food 1" class="img-fluid" />
+                <img src="~/uploads/images/picture2.jpg" alt="Food 2" class="img-fluid" />
+            </div>
+
         </div>
+
     </div>
-</section>
+</div>

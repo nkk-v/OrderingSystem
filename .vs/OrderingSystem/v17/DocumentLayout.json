@@ -3,43 +3,87 @@
   "WorkspaceRootPath": "C:\\Git\\OrderingSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\views\\menu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\menu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\views\\checkout\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\checkout\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\wwwroot\\js\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\wwwroot\\js\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\wwwroot\\css\\cart.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\wwwroot\\css\\cart.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\wwwroot\\css\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\viewmodels\\useraccountviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\viewmodels\\changepasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\viewmodels\\changepasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\viewmodels\\useraccountviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\viewmodels\\useraccountviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\views\\product\\_productform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\product\\_productform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\wwwroot\\js\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\wwwroot\\js\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -47,15 +91,11 @@
       "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\account\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\controllers\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\controllers\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -63,16 +103,8 @@
       "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|c:\\git\\orderingsystem\\orderingsystem\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\wwwroot\\css\\cart.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\wwwroot\\css\\cart.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -87,10 +119,6 @@
       "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\views\\menu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\menu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -99,16 +127,8 @@
       "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\viewmodels\\productviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\views\\product\\_productform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\views\\product\\_productform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|solutionrelative:orderingsystem\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{06024276-7B81-40B1-97F7-447D39431FE2}|OrderingSystem\\OrderingSystem.csproj|C:\\Git\\OrderingSystem\\orderingsystem\\repositories\\productrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -130,11 +150,75 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
+              "Title": "home.css",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\home.css",
+              "RelativeDocumentMoniker": "OrderingSystem\\wwwroot\\css\\home.css",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\home.css",
+              "RelativeToolTip": "OrderingSystem\\wwwroot\\css\\home.css",
+              "ViewState": "AQIAABIAAAAAAAAAAAAqwCIAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-05T10:05:03.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "OrderingSystem\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "OrderingSystem\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAAAoAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-29T08:55:30.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "OrderingSystem\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "OrderingSystem\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAACIAAAAAAAAAAAAAACUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-01T07:28:34.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "OrderingSystem\\Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "OrderingSystem\\Views\\Product\\Index.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAAoAAAB2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-01T06:28:28.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Account\\Profile.cshtml",
+              "RelativeDocumentMoniker": "OrderingSystem\\Views\\Account\\Profile.cshtml",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Account\\Profile.cshtml",
+              "RelativeToolTip": "OrderingSystem\\Views\\Account\\Profile.cshtml",
+              "ViewState": "AQIAAGcAAAAAAAAAAAAAAHIAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-01T06:25:26.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "login.js",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\js\\login.js",
               "RelativeDocumentMoniker": "OrderingSystem\\wwwroot\\js\\login.js",
@@ -142,38 +226,88 @@
               "RelativeToolTip": "OrderingSystem\\wwwroot\\js\\login.js",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-30T08:12:54.994Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T08:12:54.994Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "OrderingSystem\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "OrderingSystem\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAAAE0AAABDAAAA",
+              "ViewState": "AQIAACMAAAAAAAAAAAAAADIAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-30T07:55:42.777Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Cart\\Index.cshtml",
               "RelativeDocumentMoniker": "OrderingSystem\\Views\\Cart\\Index.cshtml",
               "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Cart\\Index.cshtml",
               "RelativeToolTip": "OrderingSystem\\Views\\Cart\\Index.cshtml",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-30T07:55:24.252Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Menu\\Index.cshtml",
+              "RelativeDocumentMoniker": "OrderingSystem\\Views\\Menu\\Index.cshtml",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Menu\\Index.cshtml",
+              "RelativeToolTip": "OrderingSystem\\Views\\Menu\\Index.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAC8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-29T08:04:25.013Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "cart.css",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\cart.css",
+              "RelativeDocumentMoniker": "OrderingSystem\\wwwroot\\css\\cart.css",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\cart.css",
+              "RelativeToolTip": "OrderingSystem\\wwwroot\\css\\cart.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-29T09:13:08.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Checkout\\Index.cshtml",
+              "RelativeDocumentMoniker": "OrderingSystem\\Views\\Checkout\\Index.cshtml",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Checkout\\Index.cshtml",
+              "RelativeToolTip": "OrderingSystem\\Views\\Checkout\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-01T07:24:58.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ChangePasswordViewModel.cs",
+              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\ViewModels\\ChangePasswordViewModel.cs",
+              "RelativeDocumentMoniker": "OrderingSystem\\ViewModels\\ChangePasswordViewModel.cs",
+              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\ViewModels\\ChangePasswordViewModel.cs",
+              "RelativeToolTip": "OrderingSystem\\ViewModels\\ChangePasswordViewModel.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwBUAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T06:56:54.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "UserAccountViewModel.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\ViewModels\\UserAccountViewModel.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\ViewModels\\UserAccountViewModel.cs",
@@ -181,25 +315,11 @@
               "RelativeToolTip": "OrderingSystem\\ViewModels\\UserAccountViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T07:08:17.548Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T07:08:17.548Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "RegisterViewModel.cs",
-              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\ViewModels\\RegisterViewModel.cs",
-              "RelativeDocumentMoniker": "OrderingSystem\\ViewModels\\RegisterViewModel.cs",
-              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\ViewModels\\RegisterViewModel.cs",
-              "RelativeToolTip": "OrderingSystem\\ViewModels\\RegisterViewModel.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAAwBQAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T06:57:42.432Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 20,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Models\\User.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\Models\\User.cs",
@@ -207,12 +327,11 @@
               "RelativeToolTip": "OrderingSystem\\Models\\User.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T06:53:59.602Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T06:53:59.602Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 17,
               "Title": "register.cshtml",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Account\\register.cshtml",
               "RelativeDocumentMoniker": "OrderingSystem\\Views\\Account\\register.cshtml",
@@ -220,12 +339,11 @@
               "RelativeToolTip": "OrderingSystem\\Views\\Account\\register.cshtml",
               "ViewState": "AQIAADcAAAAAAAAAAAAAAEUAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-30T06:52:24.618Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T06:52:24.618Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 23,
               "Title": "CartController.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\Controllers\\CartController.cs",
@@ -233,12 +351,11 @@
               "RelativeToolTip": "OrderingSystem\\Controllers\\CartController.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAYwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T06:45:42.388Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T06:45:42.388Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 25,
               "Title": "OrderService.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Services\\OrderService.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\Services\\OrderService.cs",
@@ -246,24 +363,11 @@
               "RelativeToolTip": "OrderingSystem\\Services\\OrderService.cs",
               "ViewState": "AQIAADsAAAAAAAAAAAAgwEwAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T06:36:18.051Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T06:36:18.051Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "cart.css",
-              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\cart.css",
-              "RelativeDocumentMoniker": "OrderingSystem\\wwwroot\\css\\cart.css",
-              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\cart.css",
-              "RelativeToolTip": "OrderingSystem\\wwwroot\\css\\cart.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-29T09:13:08.846Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 19,
               "Title": "login.css",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\css\\login.css",
               "RelativeDocumentMoniker": "OrderingSystem\\wwwroot\\css\\login.css",
@@ -271,12 +375,11 @@
               "RelativeToolTip": "OrderingSystem\\wwwroot\\css\\login.css",
               "ViewState": "AQIAABsAAAAAAAAAAAAAACcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-29T09:08:04.125Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T09:08:04.125Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 16,
               "Title": "login.cshtml",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Account\\login.cshtml",
               "RelativeDocumentMoniker": "OrderingSystem\\Views\\Account\\login.cshtml",
@@ -284,24 +387,11 @@
               "RelativeToolTip": "OrderingSystem\\Views\\Account\\login.cshtml",
               "ViewState": "AQIAABIAAAAAAAAAAAAAACIAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-29T09:01:09.448Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T09:01:09.448Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "OrderingSystem\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "OrderingSystem\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAB4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-29T08:55:30.122Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 26,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\Controllers\\HomeController.cs",
@@ -313,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 28,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Order\\Index.cshtml",
               "RelativeDocumentMoniker": "OrderingSystem\\Views\\Order\\Index.cshtml",
@@ -325,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 21,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Account\\Index.cshtml",
               "RelativeDocumentMoniker": "OrderingSystem\\Views\\Account\\Index.cshtml",
@@ -333,25 +423,24 @@
               "RelativeToolTip": "OrderingSystem\\Views\\Account\\Index.cshtml",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAACMAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-29T08:44:32.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T08:44:32.224Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\Controllers\\AccountController.cs",
               "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Controllers\\AccountController.cs",
               "RelativeToolTip": "OrderingSystem\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAE4AAAAAAAAAAAASwGEAAAAnAAAA",
+              "ViewState": "AQIAAHkAAAAAAAAAAAArwIcAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-29T08:32:02.893Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 32,
               "Title": "ProductRepo.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Repositories\\ProductRepo.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\Repositories\\ProductRepo.cs",
@@ -363,7 +452,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 22,
               "Title": "MenuController.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Controllers\\MenuController.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\Controllers\\MenuController.cs",
@@ -371,36 +460,23 @@
               "RelativeToolTip": "OrderingSystem\\Controllers\\MenuController.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAAwBcAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T08:05:03.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T08:05:03.203Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Menu\\Index.cshtml",
-              "RelativeDocumentMoniker": "OrderingSystem\\Views\\Menu\\Index.cshtml",
-              "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Menu\\Index.cshtml",
-              "RelativeToolTip": "OrderingSystem\\Views\\Menu\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-29T08:04:25.013Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 14,
               "Title": "_ProductForm.cshtml",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Product\\_ProductForm.cshtml",
               "RelativeDocumentMoniker": "OrderingSystem\\Views\\Product\\_ProductForm.cshtml",
               "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Views\\Product\\_ProductForm.cshtml",
               "RelativeToolTip": "OrderingSystem\\Views\\Product\\_ProductForm.cshtml",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAACgAAABKAAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAAAAACgAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-29T07:57:19.293Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 29,
               "Title": "ProductService.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Services\\ProductService.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\Services\\ProductService.cs",
@@ -412,7 +488,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 30,
               "Title": "ProductViewModel.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\ViewModels\\ProductViewModel.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\ViewModels\\ProductViewModel.cs",
@@ -424,7 +500,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 31,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Models\\Product.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\Models\\Product.cs",
@@ -436,7 +512,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 33,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\Controllers\\CategoryController.cs",
@@ -448,19 +524,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 15,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\Controllers\\ProductController.cs",
               "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Controllers\\ProductController.cs",
               "RelativeToolTip": "OrderingSystem\\Controllers\\ProductController.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAkwDMAAAAIAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwDoAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-29T07:19:51.349Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 27,
               "Title": "OrderController.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\Controllers\\OrderController.cs",
@@ -472,7 +548,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 34,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\Controllers\\AdminController.cs",
@@ -484,20 +560,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "AccountService.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Services\\AccountService.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\Services\\AccountService.cs",
               "ToolTip": "C:\\Git\\OrderingSystem\\OrderingSystem\\Services\\AccountService.cs",
               "RelativeToolTip": "OrderingSystem\\Services\\AccountService.cs",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAkwE8AAAApAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAuwCAAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T06:55:55.009Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T06:55:55.009Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 24,
               "Title": "CheckoutController.cs",
               "DocumentMoniker": "C:\\Git\\OrderingSystem\\OrderingSystem\\Controllers\\CheckoutController.cs",
               "RelativeDocumentMoniker": "OrderingSystem\\Controllers\\CheckoutController.cs",
@@ -505,8 +580,7 @@
               "RelativeToolTip": "OrderingSystem\\Controllers\\CheckoutController.cs",
               "ViewState": "AQIAABcAAAAAAAAAAAAQwCQAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T06:30:06.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T06:30:06.034Z"
             }
           ]
         }
