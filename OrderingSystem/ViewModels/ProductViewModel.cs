@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using OrderingSystem.Models;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OrderingSystem.ViewModels
 {
@@ -13,8 +14,8 @@ namespace OrderingSystem.ViewModels
         [StringLength(50)]
         public string Name { get; set; }
         [Required]
-        [Range(0.01, double.MaxValue)]
-        public double Price { get; set; }
+        [Column(TypeName = "decimal(18,5)")]
+        public decimal Price { get; set; }
         [Required]
         public string? Description { get; set; }
         public IFormFile? ImageFile { get; set; }

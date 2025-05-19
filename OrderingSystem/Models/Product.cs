@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OrderingSystem.Models
 {
@@ -8,7 +9,8 @@ namespace OrderingSystem.Models
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
-        public double Price { get; set; }
+        [Column(TypeName = "decimal(18,4)")]
+        public decimal Price { get; set; }
         [Required]
         public string? Description { get; set; }
         public string? ImageUrl { get; set; }

@@ -1,13 +1,16 @@
-﻿using OrderingSystem.ViewModels;
+﻿using OrderingSystem.Models;
+using OrderingSystem.ViewModels;
 
 namespace OrderingSystem.Services
 {
     public interface IOrderService
     {
-        Task<string> AddOrder(CheckoutViewModel model, string userId);
+        Task<int> AddOrder(CheckoutViewModel model, string userId);
         Task<List<OrderViewModel>> GetAllOrders(string status);
-        Task UpdateOrderStatus(int OrderId, string newStatus);
+        Task UpdateDeliveryStatus(int OrderId, string newStatus);
+        Task UpdateOrderStatus(int OrderId, string eventType, string RefNo);
         Task<string> GenerateOrderNumber();
+        Task<string> GetLatestOrderByUser(string userId);
        
     }
 }

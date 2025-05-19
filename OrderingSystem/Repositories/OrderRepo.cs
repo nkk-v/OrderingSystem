@@ -39,7 +39,11 @@ namespace OrderingSystem.Repositories
 
             if (!string.IsNullOrEmpty(status) && status != "All")
             {
-                query = query.Where(o => o.Status == status);
+                query = query.Where(o => o.DeliveryStatus == status && o.OrderStatus == "Success");
+            }
+            else
+            {
+                query = query.Where(o => o.OrderStatus == "Success");
             }
 
             return await query.ToListAsync();
@@ -65,13 +69,13 @@ namespace OrderingSystem.Repositories
                 .AsQueryable();
 
 
-            query = query.Where(x =>  x.UserId == userId);
+            query = query.Where(x =>  x.UserId == userId && x.OrderStatus == "Success");
 
 
             return await query.ToListAsync();
         }
 
-        public async Task UpdateOrderStatus(Order order)
+        public async Task UpdateStatus(Order order)
         {
            _dbContext.tblOrders.Update(order);
             await _dbContext.SaveChangesAsync();

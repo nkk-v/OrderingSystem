@@ -353,3 +353,6 @@ C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\refint\OrderingSystem.dll
 C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\OrderingSystem.pdb
 C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\OrderingSystem.genruntimeconfig.cache
 C:\Git\OrderingSystem\OrderingSystem\obj\Debug\net8.0\ref\OrderingSystem.dll
+C:\Git\OrderingSystem\OrderingSystem\bin\Debug\net8.0\RestSharp.dll
+C:\Git\OrderingSystem\OrderingSystem\bin\Debug\net8.0\appsetting.Development.json
+C:\Git\OrderingSystem\OrderingSystem\bin\Debug\net8.0\Newtonsoft.Json.dll

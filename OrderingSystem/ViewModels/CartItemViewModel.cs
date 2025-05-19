@@ -1,4 +1,5 @@
 ﻿using OrderingSystem.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OrderingSystem.ViewModels
 {
@@ -10,6 +11,7 @@ namespace OrderingSystem.ViewModels
         public string? ImageUrl { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }
-        public double Price { get; set; }
+        [Column(TypeName = "decimal(18,4)")]
+        public decimal Price { get; set; }
     }
 }

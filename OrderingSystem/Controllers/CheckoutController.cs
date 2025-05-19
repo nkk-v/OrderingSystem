@@ -36,23 +36,40 @@ namespace OrderingSystem.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> PlaceOrder(CheckoutViewModel model)
+        public async Task<IActionResult> CreatePayment(CheckoutViewModel model)
         {
-            if (!ModelState.IsValid) return View(model);
-
             var userId = _userManager.GetUserId(User);
 
+            var checkoutUrl = await _checkoutService.CreatePaymentLinkAsync(model, userId);
+            return Redirect(checkoutUrl);
+            //if (!ModelState.IsValid) return View(model);
 
-            string OrderNumber = await _orderService.AddOrder(model, userId);
-            await _cartService.ClearCartItems(userId);
+            //var userId = _userManager.GetUserId(User);
+
+
+
+            //string OrderNumber = await _orderService.AddOrder(model, userId);
+            //await _cartService.ClearCartItems(userId);
 
            
-            return RedirectToAction("Success", new {orderNum = OrderNumber});
+            //return RedirectToAction("Success", new {orderNum = OrderNumber});
         }
 
-        public IActionResult Success(string orderNum)
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public async Task<IActionResult> Success()
         {
+            var userId = _userManager.GetUserId(User);
+
+            string orderNum = await _orderService.GetLatestOrderByUser(userId);
+
+            await _cartService.ClearCartItems(userId);
+
             ViewBag.orderNum = orderNum;
+            return View();
+        }
+
+        public IActionResult Failed()
+        {
             return View();
         }
     }

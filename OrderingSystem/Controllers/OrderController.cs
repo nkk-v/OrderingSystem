@@ -29,7 +29,7 @@ namespace OrderingSystem.Controllers
         public async Task<IActionResult> UpdateStatus(int OrderId, string newStatus)
         {
 
-            await _orderService.UpdateOrderStatus(OrderId, newStatus);
+            await _orderService.UpdateDeliveryStatus(OrderId, newStatus);
             TempData["Success"] = "Order status updated successfully.";
 
             return RedirectToAction("Index");

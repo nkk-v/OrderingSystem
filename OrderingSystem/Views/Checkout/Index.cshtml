@@ -59,7 +59,7 @@
 
             </div>
             <div class="col-md-6">
-                <div class="card shadow rounded-4" id="card-shadow">
+                @* <div class="card shadow rounded-4" id="card-shadow">
                     <h5 class="fw-bold mb-4">Payment Details</h5>
                     <label></label>
                     <!-- GCash -->
@@ -73,7 +73,7 @@
                         </div>
                         <input type="radio" class="form-check-input payment-radio" name="PaymentMethod" value="gcash" checked />
                     </div>
-                </div> <br />
+                </div> <br /> *@
 
 
                 <div class="card shadow rounded-4" id="card-shadow">
@@ -91,6 +91,7 @@
                             @for (int i = 0; i < Model.CartItems.Count; i++)
                             {
                                 <input type="hidden" name="CartItems[@i].ProductId" value="@Model.CartItems[i].ProductId" />
+                                <input type="hidden" name="CartItems[@i].ProductName" value="@Model.CartItems[i].ProductName" />
                                 <input type="hidden" name="CartItems[@i].Price" value="@Model.CartItems[i].Price" />
                                 <input type="hidden" name="CartItems[@i].Quantity" value="@Model.CartItems[i].Quantity" />
                             }
@@ -107,7 +108,7 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-primary w-100" asp-action="PlaceOrder">Place Order</button>
+                    <button class="btn btn-primary w-100" asp-action="CreatePayment">Proceed to Payment</button>
                 </div>
 
             </div>

@@ -9,7 +9,7 @@ namespace OrderingSystem.Repositories
         Task<Order> GetOrderById(int Id);
         Task AddtoOrder(Order order);
         Task AddOrderItem(IEnumerable<OrderItem> orderItems);
-        Task UpdateOrderStatus(Order order);
+        Task UpdateStatus(Order order);
         Task<List<Order>> OrderHistoryByUser(string userId);
         Task<List<Order>> GetLatestOrder();
     }

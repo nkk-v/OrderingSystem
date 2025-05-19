@@ -329,6 +329,14 @@
       "PackagePath": "staticwebassets\\uploads\\images\\icon-gcash@3x.png"
     },
     {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\images\\ngrok-v3-stable-windows-amd64.zip",
+      "PackagePath": "staticwebassets\\uploads\\images\\ngrok-v3-stable-windows-amd64.zip"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\images\\payment-failed.png",
+      "PackagePath": "staticwebassets\\uploads\\images\\payment-failed.png"
+    },
+    {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\images\\payment-success.png",
       "PackagePath": "staticwebassets\\uploads\\images\\payment-success.png"
     },

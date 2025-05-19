@@ -8,10 +8,12 @@ namespace OrderingSystem.Services
     public class OrderService : IOrderService
     {
         private readonly IOrderRepo _orderRepo;
+        private readonly ICartRepo _cartRepo;
 
-        public OrderService(IOrderRepo orderRepo)
+        public OrderService(IOrderRepo orderRepo, ICartRepo cartRepo)
         {
             _orderRepo = orderRepo;
+            _cartRepo = cartRepo;
         }
 
         public async Task<string> GenerateOrderNumber()
@@ -34,7 +36,7 @@ namespace OrderingSystem.Services
             return $"ORD-{datePart}-{newSequence:D4}";
         }
 
-        public async Task<string> AddOrder(CheckoutViewModel model, string userId)
+        public async Task<int> AddOrder(CheckoutViewModel model, string userId)
         {
             DateTime? scheduleDeliver = null;
             DateTime? orderDate = null;
@@ -50,8 +52,14 @@ namespace OrderingSystem.Services
                 orderDate = DateTime.Now;
             }
 
+            //var payment = webHook.Data.Attributes.Data.Attributes;
+
             string newOrderNumber = await GenerateOrderNumber();
 
+            //var metaData = payment.Metadata;
+
+            //DateTime.TryParse(metaData.GetValueOrDefault("OrderDate"), out var orderDate);
+            //DateTime.TryParse(metaData.GetValueOrDefault("ScheduleDate"), out var scheduleDeliver);
 
             var order = new Order
             {
@@ -59,12 +67,13 @@ namespace OrderingSystem.Services
                 UserId = userId,
                 OrderDate = orderDate,
                 TotalAmount = model.TotalAmout,
-                Status = "Pending",
+                DeliveryStatus = "Pending",
                 ScheduledDate = scheduleDeliver,
                 DeliveryNote = model.DeliveryNote,
                 PhoneNumber = model.PhoneNumber,
                 Address = model.Address,
                 fullname = model.Fullname,
+                OrderStatus = "Pending",
                 DateCreated = DateTime.Now
 
             };
@@ -72,6 +81,15 @@ namespace OrderingSystem.Services
             await _orderRepo.AddtoOrder(order);
 
 
+            //var cartItems = await _cartRepo.GetUserCart(userId);
+
+            //var orderItems = cartItems.CartItems.Select(item => new OrderItem
+            //{
+            //    OrderId = order.Id,
+            //    ProductId = item.ProductId,
+            //    Quantity = item.Quantity,
+            //    Price = item.Price,
+            //});
             var orderItems = model.CartItems.Select(item => new OrderItem
             {
                 OrderId = order.Id,
@@ -83,7 +101,7 @@ namespace OrderingSystem.Services
 
             await _orderRepo.AddOrderItem(orderItems);
 
-            return order.OrderNum;
+            return order.Id;
 
         }
 
@@ -101,7 +119,7 @@ namespace OrderingSystem.Services
                 Address = o.Address,
                 DeliveryNote = o.DeliveryNote,
                 TotalAmount = o.TotalAmount, 
-                Status = o.Status,
+                DeliveryStatus = o.DeliveryStatus,
                 Fullname = o.fullname,
                 OrderItems = o.OrderItems.Select(oi => new OrderItemViewModel
                 {
@@ -115,18 +133,52 @@ namespace OrderingSystem.Services
 
         }
 
-        public async Task UpdateOrderStatus(int OrderId, string newStatus)
+        public async Task UpdateDeliveryStatus(int OrderId, string newStatus)
         {
             var order = await _orderRepo.GetOrderById(OrderId);
 
             if(order != null)
             {
-                order.Status = newStatus;
-                await _orderRepo.UpdateOrderStatus(order);
+                order.DeliveryStatus = newStatus;
+                await _orderRepo.UpdateStatus(order);
             }
 
 
+        }
 
+        public async Task<string> GetLatestOrderByUser(string userId)
+        {
+            var latestOrNo = (await _orderRepo.GetLatestOrder())
+                .Where(x => x.UserId == userId)
+                .OrderByDescending(x => x.DateCreated)
+                .FirstOrDefault();
+
+            return latestOrNo.OrderNum;
+        }
+
+        public async Task UpdateOrderStatus(int OrderId, string eventType, string RefNo)
+        {
+            var order = await _orderRepo.GetOrderById(OrderId);
+            if(order != null)
+            {
+                switch (eventType)
+                {
+                    case "checkout_session.payment.paid":
+                        order.OrderStatus = "Success";
+                        break;
+                    case "payment.failed":
+                        order.OrderStatus = "Failed";
+                        break;
+                    //case "payment.expired":
+                    //    order.DeliveryStatus = "Expired";
+                    //    break;
+                    default:
+                        break;
+                }
+
+                order.RefNo = RefNo;
+                await _orderRepo.UpdateStatus(order);
+            }
         }
     }
 }

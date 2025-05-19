@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OrderingSystem.Models
 {
@@ -11,6 +12,9 @@ namespace OrderingSystem.Models
         public string PaymentStatus { get; set; } // Pending, Success, Failed[Required]
         [StringLength(20)]
         public string PaymentMethod { get; set; } // e.g., GCash, PayMaya
-        public double Amount { get; set; }
+        [Column(TypeName = "decimal(18,4)")]
+        public decimal Amount { get; set; }
+        public DateTime PaidAt { get; set; }
+        public DateTime DateCreated { get; set; }
     }
 }

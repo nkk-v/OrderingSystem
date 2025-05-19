@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tyQrzVkiRNT90DSiR5jyXDwXS/VvnxDlCf+I3Amgytc+Ez9bErYRAha00/3mEuw5ATxeMxSUrYmwCWX0/GQLNQ==",
+  "dgSpecHash": "FGqrVwLpSV8V8CBNby/x4Mz5Kpx5+giAnwyPd6GF1+2WRMCPaw0DEIU2guHGCnE8VyE7huT26R3ppestEZFvcQ==",
   "success": true,
   "projectFilePath": "C:\\Git\\OrderingSystem\\OrderingSystem\\OrderingSystem.csproj",
   "expectedPackageFiles": [
@@ -55,6 +55,8 @@
     "C:\\Users\\User\\.nuget\\packages\\microsoft.visualstudio.interop\\17.13.40008\\microsoft.visualstudio.interop.17.13.40008.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\restsharp\\112.1.0\\restsharp.112.1.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",

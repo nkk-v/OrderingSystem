@@ -79,7 +79,7 @@
 
                             </td>
                             <td>₱ @order.TotalAmount.ToString("N2")</td>
-                            <td>@order.Status</td>
+                            <td>@order.DeliveryStatus</td>
 
                         </tr>
                     }
@@ -105,16 +105,35 @@
                 <!-- Form content will be loaded here -->
                 <form asp-action="ChangePassword" method="post" asp-controller="Account">
                     <div class="mb-3">
-                        <label>Current Password</label>
-                        <input type="password" name="CurrentPassword" class="form-control" required />
+                        <div class="form-floating position-relative">
+                            <input type="password" name="CurrentPassword" class="form-control pe-5" id="currentPassword" placeholder="Current Password" required />
+                            <label>Current Password</label>
+                            
+                            <span class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor:pointer;" onclick="togglePassword('currentPassword', 'toggleIcon1')">
+                                <i class="bi-eye-slash-fill" id="toggleIcon1"></i>
+                            </span>
+                        </div>
+                        
                     </div>
                     <div class="mb-3">
-                        <label>New Password</label>
-                        <input type="password" name="NewPassword" class="form-control" required />
+                        <div class="form-floating position-relative">
+                            <input type="password" name="NewPassword" class="form-control pe-5" id="newPassword" placeholder="New Password" required />
+                            <label>New Password</label>
+                            <span class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor:pointer;" onclick="togglePassword('newPassword', 'toggleIcon2')">
+                                <i class="bi-eye-slash-fill" id="toggleIcon2"></i>
+                            </span>
+                        </div>
+                       
                     </div>
                     <div class="mb-3">
-                        <label>Confirm Password</label>
-                        <input type="password" name="ConfirmNewPassword" class="form-control" required />
+                        <div class="form-floating position-relative">
+                            <input type="password" name="ConfirmNewPassword" class="form-control pe-5" id="confirmNewPassword" placeholder="Confirm New Password" required />
+                            <label>Confirm Password</label>
+                            <span class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor:pointer;" onclick="togglePassword('confirmNewPassword', 'toggleIcon3')">
+                                <i class="bi-eye-slash-fill" id="toggleIcon3"></i>
+                            </span>
+                        </div>
+                        
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-primary" type="submit">Change</button>

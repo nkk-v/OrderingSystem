@@ -1,0 +1,6 @@
+{
+  "PayMongo": {
+    "SecretKey": "sk_test_cCuwHZoG8DdQPPntM7yb4CuC",
+    "BaseUrl": "https://api.paymongo.com/v1/links"
+  }
+}

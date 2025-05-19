@@ -68,11 +68,11 @@
                             <form asp-action="UpdateStatus" method="post" class="d-flex gap-2">
                                 <input type="hidden" name="orderId" value="@order.Id" />
                                 <select name="newStatus" class="form-select form-select-sm w-auto">
-                                    <option value="Pending" selected="@("Pending" == order.Status)">Pending</option>
-                                    <option value="Preparing" selected="@("Preparing" == order.Status)">Preparing</option>
-                                    <option value="Shipping" selected="@("Shipping" == order.Status)">Shipping</option>
-                                    <option value="Delivered" selected="@("Delivered" == order.Status)">Delivered</option>
-                                    <option value="Cancelled" selected="@("Cancelled" == order.Status)">Cancelled</option>
+                                    <option value="Pending" selected="@("Pending" == order.DeliveryStatus)">Pending</option>
+                                    <option value="Preparing" selected="@("Preparing" == order.DeliveryStatus)">Preparing</option>
+                                    <option value="Shipping" selected="@("Shipping" == order.DeliveryStatus)">Shipping</option>
+                                    <option value="Delivered" selected="@("Delivered" == order.DeliveryStatus)">Delivered</option>
+                                    <option value="Cancelled" selected="@("Cancelled" == order.DeliveryStatus)">Cancelled</option>
                                 </select>
                                 <button type="submit" class="btn btn-sm btn-primary">Update</button>
                             </form>
