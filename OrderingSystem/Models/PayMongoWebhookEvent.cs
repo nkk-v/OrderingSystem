@@ -23,7 +23,7 @@ namespace OrderingSystem.Models
         [JsonProperty("id")]
         public string Id { get; set; }
         public PayMongoPaymentAttributes Attributes { get; set; }
-        
+
     }
 
     public class PayMongoPaymentAttributes
@@ -34,6 +34,8 @@ namespace OrderingSystem.Models
         public long PaidAtUnix { get; set; }
         public List<PayMongoPayments> payments { get; set; }
 
+        [JsonProperty("payment_intent_id")]
+        public string payment_intent_id { get; set; }
         [JsonIgnore]
         public DateTime PaidAt => DateTimeOffset.FromUnixTimeSeconds(PaidAtUnix).LocalDateTime;
     }
@@ -49,6 +51,7 @@ namespace OrderingSystem.Models
     {
         public decimal Amount { get; set; }
         public string status { get; set; }
+       
         public Source source { get; set; }
     }
 

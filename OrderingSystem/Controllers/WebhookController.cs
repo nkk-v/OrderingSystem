@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using OrderingSystem.Models;
 using OrderingSystem.Services;
@@ -12,12 +13,14 @@ namespace OrderingSystem.Controllers
         private readonly IPaymentService _paymentService;
         private readonly IOrderService _orderService;
         private readonly ICartService _cartService;
+        private readonly UserManager<User> _userManager;
 
-        public WebhookController(IPaymentService paymentService, IOrderService orderService, ICartService cartService)
+        public WebhookController(IPaymentService paymentService, IOrderService orderService, ICartService cartService, UserManager<User> userManager)
         {
             _paymentService = paymentService;
             _orderService = orderService;
             _cartService = cartService;
+            _userManager = userManager;
         }
 
         [HttpPost]
@@ -32,14 +35,14 @@ namespace OrderingSystem.Controllers
                 var webhook = JsonConvert.DeserializeObject<PayMongoWebhookEvent>(body);
 
                 var eventType = webhook?.Data.Attributes.Type;
-                
-                
+
 
                 switch (eventType)
                 {
                     case "checkout_session.payment.paid":
                         var userId = webhook?.Data?.Attributes?.Data?.Attributes?.Metadata["UserId"];
                         var orderId = webhook?.Data?.Attributes?.Data?.Attributes?.Metadata["OrderId"];
+
                         var refNo = webhook?.Data?.Attributes?.Data?.Attributes?.payments[0].Id;
 
                         await _paymentService.SavePayment(webhook, int.Parse(orderId));
@@ -47,9 +50,11 @@ namespace OrderingSystem.Controllers
                         break;
                     case "payment.failed":
                         var failRefNo = webhook?.Data?.Attributes?.Data.Id;
+                        var intentId = webhook?.Data?.Attributes?.Data?.Attributes?.payment_intent_id;
 
-                        //await _paymentService.SavePayment(webhook, int.Parse(orderId));
-                        //await _orderService.UpdateOrderStatus(int.Parse(orderId), eventType, failRefNo);
+                        var FailedOrderId = await _orderService.GetLatestOrderId(intentId);
+                        
+                        await _orderService.UpdateOrderStatus(FailedOrderId, eventType, failRefNo);
                         break;
                     //case "payment.expired":
                     //    await _orderService.UpdateOrderStatus(int.Parse(orderId), eventType, refNo);
@@ -57,19 +62,6 @@ namespace OrderingSystem.Controllers
                     default:
                         break;
                 }
-
-
-
-
-                //if (webhook?.Data?.Attributes?.Data?.Attributes?.Status == "paid")
-                //{
-                //    //var userId = webhook?.Data?.Attributes?.Data?.Attributes?.Metadata["UserId"];
-                //    //var orderId = webhook?.Data?.Attributes?.Data?.Attributes?.Metadata["OrderId"];
-                //    // Save payment to DB
-                //    //var orderId = await _orderService.AddOrder(webhook, userId);
-
-                //    //await _paymentService.SavePayment(webhook, int.Parse(orderId));
-                //}
 
 
                 return Ok(); // Send 200 back to PayMongo

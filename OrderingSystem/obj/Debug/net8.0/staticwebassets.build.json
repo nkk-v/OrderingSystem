@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "t15bJwSHnCXjgLDws/z8f4OHgTEpqrvcUOmgb41MNU4=",
+  "Hash": "AjnoRo4WGgONgFKwTaLPWQN+p739G4Ul1HiR+F/BD6I=",
   "Source": "OrderingSystem",
   "BasePath": "_content/OrderingSystem",
   "Mode": "Default",
@@ -281,6 +281,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\checkout.js"
+    },
+    {
+      "Identity": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\js\\delivery.js",
+      "SourceId": "OrderingSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\",
+      "BasePath": "_content/OrderingSystem",
+      "RelativePath": "js/delivery.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\delivery.js"
     },
     {
       "Identity": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\js\\login.js",

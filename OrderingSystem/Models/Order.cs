@@ -11,6 +11,10 @@ namespace OrderingSystem.Models
         public DateTime? OrderDate { get; set; }
         [Column(TypeName = "decimal(18,4)")]
         public decimal TotalAmount { get; set; }
+        [Column(TypeName = "decimal(18,4)")]
+        public decimal SubTotal { get; set; }
+        [Column(TypeName = "decimal(18,4)")]
+        public decimal DeliveryFee { get; set; }
         [StringLength(15)]
         public string DeliveryStatus { get; set; } // Example: Pending, Shipped, Delivered
         public DateTime? ScheduledDate { get; set; }

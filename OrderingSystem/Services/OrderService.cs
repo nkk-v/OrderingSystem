@@ -18,22 +18,35 @@ namespace OrderingSystem.Services
 
         public async Task<string> GenerateOrderNumber()
         {
-            string datePart = DateTime.Now.ToString("yyMMdd");
-
             var latestOR = (await _orderRepo.GetLatestOrder())
-                .Where(x => x.OrderNum.StartsWith($"ORD-{datePart}"))
+                .Where(x => x.OrderNum.StartsWith("OR"))
                 .OrderByDescending(x => x.DateCreated)
                 .FirstOrDefault();
 
             int newSequence = 1;
-            if(latestOR != null)
+            if (latestOR != null)
             {
-                string lastSequence = latestOR.OrderNum.Substring(datePart.Length + 5);
+                string lastSequence = latestOR.OrderNum.Substring(2);
                 newSequence = int.Parse(lastSequence) + 1;
             }
 
+            return $"OR{newSequence:D13}";
+            //string datePart = DateTime.Now.ToString("yyMMdd");
 
-            return $"ORD-{datePart}-{newSequence:D4}";
+            //var latestOR = (await _orderRepo.GetLatestOrder())
+            //    .Where(x => x.OrderNum.StartsWith($"ORD-{datePart}"))
+            //    .OrderByDescending(x => x.DateCreated)
+            //    .FirstOrDefault();
+
+            //int newSequence = 1;
+            //if(latestOR != null)
+            //{
+            //    string lastSequence = latestOR.OrderNum.Substring(datePart.Length + 5);
+            //    newSequence = int.Parse(lastSequence) + 1;
+            //}
+
+
+            //return $"ORD-{datePart}-{newSequence:D4}";
         }
 
         public async Task<int> AddOrder(CheckoutViewModel model, string userId)
@@ -66,7 +79,9 @@ namespace OrderingSystem.Services
                 OrderNum = newOrderNumber,
                 UserId = userId,
                 OrderDate = orderDate,
-                TotalAmount = model.TotalAmout,
+                TotalAmount = model.TotalAmount,
+                SubTotal = model.SubTotal,
+                DeliveryFee = model.DeliveryFee,
                 DeliveryStatus = "Pending",
                 ScheduledDate = scheduleDeliver,
                 DeliveryNote = model.DeliveryNote,
@@ -118,7 +133,7 @@ namespace OrderingSystem.Services
                 ContactNumber = o.PhoneNumber,
                 Address = o.Address,
                 DeliveryNote = o.DeliveryNote,
-                TotalAmount = o.TotalAmount, 
+                SubTotal = o.SubTotal, 
                 DeliveryStatus = o.DeliveryStatus,
                 Fullname = o.fullname,
                 OrderItems = o.OrderItems.Select(oi => new OrderItemViewModel
@@ -177,6 +192,26 @@ namespace OrderingSystem.Services
                 }
 
                 order.RefNo = RefNo;
+                await _orderRepo.UpdateStatus(order);
+            }
+        }
+
+        public async Task<int> GetLatestOrderId(string paymentId = "", string userId = "")
+        {
+            var order = (await _orderRepo.GetLatestOrder())
+                .Where(x => x.RefNo == paymentId || x.UserId == userId)
+                .OrderByDescending(x => x.DateCreated)
+                .FirstOrDefault();
+
+            return order.Id;
+        }
+
+        public async Task UpdateRefNo(int OrderId, string refNo)
+        {
+            var order = await _orderRepo.GetOrderById(OrderId);
+            if(order != null)
+            {
+                order.RefNo = refNo;
                 await _orderRepo.UpdateStatus(order);
             }
         }

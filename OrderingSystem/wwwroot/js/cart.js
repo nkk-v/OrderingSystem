@@ -11,9 +11,7 @@ $(document).ready(function () {
             minusBtn.prop("disabled", false);
         }
     });
-});
 
-$(document).ready(function () {
     $('.plus, .minus').on('click', function () {
         const button = $(this);
         const container = button.closest('.quantity-controls');
@@ -81,5 +79,9 @@ $(document).ready(function () {
 
         $("#overall-total").text(`${formatted}`);
     }
-
 });
+
+//$(document).ready(function () {
+    
+
+//});

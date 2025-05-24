@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets\\js\\checkout.js"
     },
     {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\js\\delivery.js",
+      "PackagePath": "staticwebassets\\js\\delivery.js"
+    },
+    {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\js\\login.js",
       "PackagePath": "staticwebassets\\js\\login.js"
     },

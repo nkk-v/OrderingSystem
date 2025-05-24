@@ -14,7 +14,9 @@ namespace OrderingSystem.ViewModels
         public string? ScheduledTime { get; set; }
         public string? DeliveryNote { get; set; }
         public List<CartItemViewModel> CartItems { get; set; } = new List<CartItemViewModel>();
+        public decimal SubTotal { get; set; }
+        public decimal DeliveryFee { get; set; }
         [Column(TypeName = "decimal(18,4)")]
-        public decimal TotalAmout => CartItems.Sum(x => x.Price * x.Quantity);
+        public decimal TotalAmount => SubTotal + DeliveryFee;
     }
 }

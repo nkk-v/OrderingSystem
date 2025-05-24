@@ -62,7 +62,7 @@
                                 }
                             </ul>
                         </td>
-                        <td>₱ @order.TotalAmount.ToString("N2")</td>
+                        <td>₱ @order.SubTotal.ToString("N2")</td>
                         <td>@order.DeliveryNote</td>
                         <td>
                             <form asp-action="UpdateStatus" method="post" class="d-flex gap-2">
@@ -84,7 +84,7 @@
             else
             {
                 <tr>
-                    <td colspan="4" class="text-center text-muted">
+                    <td colspan="9" class="text-center text-muted">
                         No orders found.
                     </td>
                 </tr>

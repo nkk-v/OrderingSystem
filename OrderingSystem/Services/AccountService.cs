@@ -86,7 +86,7 @@ namespace OrderingSystem.Services
                     OrderNum = x.OrderNum,
                     DeliveryDate = x.OrderDate == null ? x.ScheduledDate : x.OrderDate,
                     Fullname = x.fullname,
-                    TotalAmount = x.TotalAmount,
+                    SubTotal = x.SubTotal,
                     DeliveryStatus = x.DeliveryStatus,
                     OrderItems = x.OrderItems.Select(oi => new OrderItemViewModel
                     {

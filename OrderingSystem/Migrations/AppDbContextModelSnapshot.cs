@@ -237,6 +237,9 @@ namespace OrderingSystem.Migrations
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
+                    b.Property<decimal>("DeliveryFee")
+                        .HasColumnType("decimal(18,4)");
+
                     b.Property<string>("DeliveryNote")
                         .HasColumnType("nvarchar(max)");
 
@@ -268,6 +271,9 @@ namespace OrderingSystem.Migrations
 
                     b.Property<DateTime?>("ScheduledDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<decimal>("SubTotal")
+                        .HasColumnType("decimal(18,4)");
 
                     b.Property<decimal>("TotalAmount")
                         .HasColumnType("decimal(18,4)");

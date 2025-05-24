@@ -68,8 +68,14 @@ namespace OrderingSystem.Controllers
             return View();
         }
 
-        public IActionResult Failed()
+        public async Task<IActionResult> Failed()
         {
+            var userId = _userManager.GetUserId(User);
+
+            var orderId = await _orderService.GetLatestOrderId("", userId);
+
+            await _orderService.UpdateOrderStatus(orderId, "payment.failed", "");
+
             return View();
         }
     }

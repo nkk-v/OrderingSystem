@@ -10,12 +10,11 @@
             <img src="~/uploads/images/payment-failed.png" alt="Failed" style="width: 100px;" class="mb-4 " />
         </div>
 
-        <h2 class="text-success">Thank You!</h2>
-        <p class="lead">Your payment has been Failed.</p>
+        <p class="lead">Your payment was cancelled or failed.</p>
        
         <hr />
 
-        <p class="mb-1">Please try again later.</p>
+        <p class="mb-1">Please <a asp-controller="Cart" asp-action="Index">try again</a>.</p>
        @*  <small>
             View your pending orders
             <a asp-controller="Account" asp-action="Profile">here</a>
