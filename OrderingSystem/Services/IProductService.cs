@@ -13,5 +13,6 @@ namespace OrderingSystem.Services
         Task<ProductViewModel>PopulateCategory(ProductViewModel model);
         Task<ProductViewModel> PrepareProductCatagory();
         Task<List<Product>> GetProductsAsync(int? categoryId);
+        Task<Product> GetByIdWithVariantsAsync(int productId);
     }
 }

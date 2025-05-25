@@ -55,7 +55,21 @@ namespace OrderingSystem.Repositories
 
         public async Task<Product?> GetByIdAsync(int id)
         {
-            return await _dbContext.tblProducts.FindAsync(id);
+            return await _dbContext.tblProducts
+                .Include(v => v.Variants)
+                .FirstOrDefaultAsync(v => v.Id == id);
+        }
+
+        public async Task RemoveProductVariant(int productId)
+        {
+            var product = await _dbContext.tblProducts
+                .Include(v => v.Variants)
+                .FirstOrDefaultAsync(v => v.Id == productId);
+
+            if (product == null) return;
+
+            _dbContext.tblProductVariant.RemoveRange(product.Variants);
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task UpdateProduct(Product product)

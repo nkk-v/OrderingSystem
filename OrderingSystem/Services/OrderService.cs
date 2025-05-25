@@ -89,7 +89,13 @@ namespace OrderingSystem.Services
                 Address = model.Address,
                 fullname = model.Fullname,
                 OrderStatus = "Pending",
-                DateCreated = DateTime.Now
+                DateCreated = DateTime.Now,
+                OrderItems = model.CartItems.Select(item => new OrderItem
+                {
+                    ProductId = item.ProductId,
+                    Quantity = item.Quantity,
+                    Price = item.Price
+                }).ToList(),
 
             };
 
@@ -105,16 +111,16 @@ namespace OrderingSystem.Services
             //    Quantity = item.Quantity,
             //    Price = item.Price,
             //});
-            var orderItems = model.CartItems.Select(item => new OrderItem
-            {
-                OrderId = order.Id,
-                ProductId = item.ProductId,
-                Quantity = item.Quantity,
-                Price = item.Price,
+            //var orderItems = model.CartItems.Select(item => new OrderItem
+            //{
+            //    OrderId = order.Id,
+            //    ProductId = item.ProductId,
+            //    Quantity = item.Quantity,
+            //    Price = item.Price,
 
-            });
+            //});
 
-            await _orderRepo.AddOrderItem(orderItems);
+            //await _orderRepo.AddOrderItem(orderItems);
 
             return order.Id;
 

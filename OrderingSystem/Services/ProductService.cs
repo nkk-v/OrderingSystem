@@ -21,7 +21,7 @@ namespace OrderingSystem.Services
         {
 
             string? imagePath = null;
-            if(model.ImageFile != null)
+            if (model.ImageFile != null)
             {
                 string fileName = Guid.NewGuid() + Path.GetExtension(model.ImageFile.FileName);
                 string path = Path.Combine(uploadRootPath, fileName);
@@ -35,25 +35,30 @@ namespace OrderingSystem.Services
             var product = new Product
             {
                 Name = model.Name,
-                Price = model.Price,
+                //Price = model.Price,
                 Description = model.Description,
                 ImageUrl = imagePath,
                 CategoryId = model.CategoryId,
                 IsActive = model.IsActive,
-                DateCreated = DateTime.Now
+                DateCreated = DateTime.Now,
+                Variants = model.Variants.Select(v => new ProductVariant
+                {
+                    VariantName = v.VariantName,
+                    Price = v.Price
+                }).ToList(),
             };
 
             await _productRepo.AddProduct(product);
-            
+
         }
 
         public async Task<bool> DeleteProduct(int id, string uploadRootPath)
         {
-           var product = await _productRepo.GetByIdAsync(id);
+            var product = await _productRepo.GetByIdAsync(id);
             if (product == null) return false;
 
             var result = await _productRepo.DeleteProduct(id);
-            if(!result) return false;
+            if (!result) return false;
 
             //delete old image
             if (!string.IsNullOrEmpty(product.ImageUrl))
@@ -75,14 +80,14 @@ namespace OrderingSystem.Services
                 product = product.Where(x => x.Name.ToLower().Contains(searchTerm.ToLower()) && x.IsActive).OrderBy(
                     x => x.Id).ToList();
             }
-            
+
             var categories = await _categoryRepo.GetAllAsync();
 
             return product.Select(x => new ProductViewModel
             {
                 Id = x.Id,
                 Name = x.Name,
-                Price = x.Price,
+                //Price = x.Price,
                 Description = x.Description,
                 ImageUrl = x.ImageUrl,
                 CategoryName = categories.FirstOrDefault(c => c.Id == x.CategoryId)?.Name
@@ -100,7 +105,7 @@ namespace OrderingSystem.Services
             {
                 Id = product.Id,
                 Name = product.Name,
-                Price = product.Price,
+                // Price = product.Price,
                 Description = product.Description,
                 ImageUrl = product.ImageUrl,
                 CategoryId = product.CategoryId,
@@ -109,8 +114,19 @@ namespace OrderingSystem.Services
                 {
                     Value = c.Id.ToString(),
                     Text = c.Name
-                })
+                }),
+                Variants = product.Variants.Select(v => new ProductVariantViewModel
+                {
+                    Id = v.Id,
+                    VariantName = v.VariantName,
+                    Price = v.Price,
+                }).ToList()
             };
+        }
+
+        public async Task<Product> GetByIdWithVariantsAsync(int productId)
+        {
+            return await _productRepo.GetByIdAsync(productId);
         }
 
         public async Task<List<Product>> GetProductsAsync(int? categoryId)
@@ -150,10 +166,21 @@ namespace OrderingSystem.Services
             if (product == null) return false;
 
             product.Name = model.Name;
-            product.Price = model.Price;
+            //product.Price = model.Price;
             product.Description = model.Description;
             product.CategoryId = model.CategoryId;
             product.IsActive = model.IsActive;
+            if (model.Variants != null && model.Variants.Any())
+            {
+                await _productRepo.RemoveProductVariant(product.Id);
+
+                product.Variants = model.Variants.Select(v => new ProductVariant
+                {
+                    VariantName = v.VariantName,
+                    Price = v.Price,
+                }).ToList();
+
+            }
 
             if (model.ImageFile != null)
             {
@@ -175,7 +202,7 @@ namespace OrderingSystem.Services
                 product.ImageUrl = "/uploads/product/" + fileName;
             }
 
-             await _productRepo.UpdateProduct(product);
+            await _productRepo.UpdateProduct(product);
             return true;
         }
     }

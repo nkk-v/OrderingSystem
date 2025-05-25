@@ -25,7 +25,6 @@
             <th>Name</th>
             <th>Description</th>
             <th>Image</th>
-            <th>Price</th>
             <th>Category</th>
             <th>Actions</th>
         </tr>
@@ -50,7 +49,6 @@
                             <span class="text-muted">No Image</span>
                         }
                     </td>
-                    <td>@* ₱ *@@product.Price.ToString("N2")</td>
                     <td>@product.CategoryName</td>
                     <td>
                         <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" 
@@ -71,7 +69,7 @@
         else
         {
             <tr>
-                <td colspan="6" class="text-center text-muted">
+                <td colspan="5" class="text-center text-muted">
                     No products found.
                 </td>
             </tr>
@@ -81,7 +79,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="productModalLabel">Product</h5>

@@ -31,12 +31,12 @@ namespace OrderingSystem.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddToCart(int productId)
+        public async Task<IActionResult> AddToCart(int productId, int variantId)
         {
             var userId = await GetUserId();
             if (userId == null) return RedirectToAction("login", "Account");
 
-            await _cartService.AddtoCart(userId, productId);
+            await _cartService.AddtoCart(userId, productId, variantId);
             return RedirectToAction("Index", "Menu");
         }
 
@@ -52,6 +52,12 @@ namespace OrderingSystem.Controllers
         {
             await _cartService.RemoveItem(cartItemId);
             return RedirectToAction("Index", "Cart");
+        }
+
+        [HttpGet]
+        public IActionResult GetCartCount()
+        {
+            return ViewComponent("CartCount");
         }
     }
 }

@@ -9,8 +9,8 @@ namespace OrderingSystem.Models
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
-        [Column(TypeName = "decimal(18,4)")]
-        public decimal Price { get; set; }
+        //[Column(TypeName = "decimal(18,4)")]
+        //public decimal Price { get; set; }
         [Required]
         public string? Description { get; set; }
         public string? ImageUrl { get; set; }
@@ -18,5 +18,7 @@ namespace OrderingSystem.Models
         public Category Category { get; set; }
         public bool IsActive { get; set; }
         public DateTime DateCreated { get; set; }
+
+        public List<ProductVariant> Variants { get; set; } = new List<ProductVariant>();
     }
 }

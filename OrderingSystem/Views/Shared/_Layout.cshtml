@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - OrderingSystem</title>
+    <title>@ViewData["Title"]Dolce Misu</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/cart.css" asp-append-version="true" />
@@ -35,7 +35,9 @@
                    asp-controller="Cart" asp-action="Index">
                     <i class="bi bi-cart fs-5"></i>
                     @* <span id="cart-count" class="cart-count-label">0</span> *@
-                    @await Component.InvokeAsync("CartCount")
+                    <span id="cart-count">
+                        @await Component.InvokeAsync("CartCount")
+                    </span>
                 </a>
 
                 @if (signInManager.IsSignedIn(User))

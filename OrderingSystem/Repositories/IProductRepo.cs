@@ -11,5 +11,6 @@ namespace OrderingSystem.Repositories
         Task<bool> DeleteProduct(int id);
 
         Task<List<Product>> GetByCategory(int? categoryId);
+        Task RemoveProductVariant(int productId);
     }
 }

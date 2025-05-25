@@ -24,8 +24,17 @@ namespace OrderingSystem.ViewModels
         public string? CategoryName { get; set; }
         public bool IsActive { get; set; } = true;
         public IEnumerable<SelectListItem>? Categories { get; set; }
+        public List<ProductVariantViewModel> Variants { get; set; } = new();
 
+    }
 
-
+    public class ProductVariantViewModel
+    {
+        public int Id { get; set; }
+        public string VariantName { get; set; }
+        [Column(TypeName = "decimal(18,4)")]
+        [Required]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Price must be positive.")]
+        public decimal Price { get; set; }
     }
 }

@@ -31,9 +31,22 @@ namespace OrderingSystem.Controllers
             return View(model);
         }
 
-     
+        [HttpGet]
+        public async Task<IActionResult> GetProductVariants(int productId)
+        {
+            var product = await _productService.GetByIdWithVariantsAsync(productId); // You may implement this if not available
+            if (product == null) return NotFound();
 
-       
-        
+            return Json(product.Variants.Select(v => new
+            {
+                id = v.Id,
+                variantName = v.VariantName,
+                price = v.Price
+            }));
+        }
+
+
+
+
     }
 }

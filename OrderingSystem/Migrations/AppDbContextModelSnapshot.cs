@@ -183,7 +183,13 @@ namespace OrderingSystem.Migrations
                     b.Property<int>("CartId")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,4)");
+
                     b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductVariantId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
@@ -194,6 +200,8 @@ namespace OrderingSystem.Migrations
                     b.HasIndex("CartId");
 
                     b.HasIndex("ProductId");
+
+                    b.HasIndex("ProductVariantId");
 
                     b.ToTable("tblCartItems");
                 });
@@ -387,14 +395,37 @@ namespace OrderingSystem.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,4)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
                     b.ToTable("tblProducts");
+                });
+
+            modelBuilder.Entity("OrderingSystem.Models.ProductVariant", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("VariantName")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("tblProductVariant");
                 });
 
             modelBuilder.Entity("OrderingSystem.Models.User", b =>
@@ -547,9 +578,17 @@ namespace OrderingSystem.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("OrderingSystem.Models.ProductVariant", "productVariant")
+                        .WithMany()
+                        .HasForeignKey("ProductVariantId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("Cart");
 
                     b.Navigation("Product");
+
+                    b.Navigation("productVariant");
                 });
 
             modelBuilder.Entity("OrderingSystem.Models.OrderItem", b =>
@@ -593,6 +632,17 @@ namespace OrderingSystem.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("OrderingSystem.Models.ProductVariant", b =>
+                {
+                    b.HasOne("OrderingSystem.Models.Product", "Product")
+                        .WithMany("Variants")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("OrderingSystem.Models.Cart", b =>
                 {
                     b.Navigation("CartItems");
@@ -606,6 +656,11 @@ namespace OrderingSystem.Migrations
             modelBuilder.Entity("OrderingSystem.Models.Order", b =>
                 {
                     b.Navigation("OrderItems");
+                });
+
+            modelBuilder.Entity("OrderingSystem.Models.Product", b =>
+                {
+                    b.Navigation("Variants");
                 });
 #pragma warning restore 612, 618
         }

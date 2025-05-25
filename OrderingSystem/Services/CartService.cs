@@ -13,9 +13,9 @@ namespace OrderingSystem.Services
             _cartRepo = cartRepo;
         }
 
-        public async Task AddtoCart(string userId, int productId, int quantity = 1)
+        public async Task AddtoCart(string userId, int productId, int variantId, int quantity = 1)
         {
-             await _cartRepo.AddtoCart(userId, productId, quantity); 
+             await _cartRepo.AddtoCart(userId, productId, variantId, quantity); 
         }
 
         public async Task ClearCartItems(string userId)

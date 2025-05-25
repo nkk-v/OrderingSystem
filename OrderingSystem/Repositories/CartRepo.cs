@@ -31,11 +31,11 @@ namespace OrderingSystem.Repositories
             return cart;
         }
 
-        public async Task AddtoCart(string userId, int productId, int quantity = 1)
+        public async Task AddtoCart(string userId, int productId, int variantId, int quantity = 1)
         {
             var cart = await GetUserCart(userId);
 
-            var existingItem = cart.CartItems.FirstOrDefault(x => x.ProductId == productId);
+            var existingItem = cart.CartItems.FirstOrDefault(x => x.ProductId == productId && x.ProductVariantId == variantId);
 
             if (existingItem != null)
             {
@@ -43,10 +43,16 @@ namespace OrderingSystem.Repositories
             }
             else
             {
+                var variant = await _dbContext.tblProductVariant.FirstOrDefaultAsync(x => x.Id == variantId && x.ProductId == productId); 
+                if(variant == null) throw new Exception("Variant not found or does not match product.");
+
+
                 cart.CartItems.Add(new CartItem
                 {
                     ProductId = productId,
-                    Quantity = quantity
+                    ProductVariantId = variantId,
+                    Quantity = quantity,
+                    Price = variant.Price,
                 });
             }
 
