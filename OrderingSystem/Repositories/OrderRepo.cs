@@ -35,6 +35,8 @@ namespace OrderingSystem.Repositories
             var query =  _dbContext.tblOrders
                 .Include(o => o.OrderItems)
                     .ThenInclude(oi => oi.Product)
+                .Include(o => o.OrderItems)
+                    .ThenInclude(oi => oi.ProductVariant)
                 .AsQueryable();
 
             if (!string.IsNullOrEmpty(status) && status != "All")
@@ -51,20 +53,30 @@ namespace OrderingSystem.Repositories
 
         public async Task<List<Order>> GetLatestOrder()
         {
-            return await _dbContext.tblOrders.ToListAsync();
+            return await _dbContext.tblOrders
+                .Include(x => x.OrderItems)
+                    .ThenInclude(x => x.Product)
+                .ToListAsync();
         }
 
         public async Task<Order?> GetOrderById(int Id)
         {
             return await _dbContext.tblOrders
+                .Include (o => o.OrderItems)
+                    .ThenInclude(oi => oi.Product)
+                .Include(o => o.OrderItems)
+                    .ThenInclude(oi => oi.ProductVariant)    
                 .FirstOrDefaultAsync(x => x.Id == Id);
         }
 
+       
         public async Task<List<Order>> OrderHistoryByUser(string userId)
         {
             var query = _dbContext.tblOrders
                 .Include(o => o.OrderItems)
                     .ThenInclude(oi => oi.Product)
+                .Include(o => o.OrderItems)
+                    .ThenInclude(oi => oi.ProductVariant)
                 .OrderByDescending(x => x.OrderNum)
                 .AsQueryable();
 

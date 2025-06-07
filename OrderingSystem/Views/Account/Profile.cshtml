@@ -65,7 +65,7 @@
                         <tr>
 
                             <td>@order.OrderNum</td>
-                            <td>@order.DeliveryDate?.ToString("MM-dd-yyyy hh-mm tt")</td>
+                            <td>@order.DeliveryDate?.ToString("MMM dd, yyyy hh:mm tt")</td>
                             <td>@order.Fullname</td>
                             <td>
                                 <ul>
@@ -80,7 +80,16 @@
                             </td>
                             <td>₱ @order.SubTotal.ToString("N2")</td>
                             <td>@order.DeliveryStatus</td>
-
+                            <td>
+                                <button type="button"
+                                        class="btn btn-sm btn-info view-items-btn"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#orderItemsModal"
+                                        data-order-id="@order.Id"
+                                        data-order-num="@order.OrderNum">
+                                    View Items
+                                </button>
+                            </td>
                         </tr>
                     }
                 </tbody>
@@ -108,12 +117,12 @@
                         <div class="form-floating position-relative">
                             <input type="password" name="CurrentPassword" class="form-control pe-5" id="currentPassword" placeholder="Current Password" required />
                             <label>Current Password</label>
-                            
+
                             <span class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor:pointer;" onclick="togglePassword('currentPassword', 'toggleIcon1')">
                                 <i class="bi-eye-slash-fill" id="toggleIcon1"></i>
                             </span>
                         </div>
-                        
+
                     </div>
                     <div class="mb-3">
                         <div class="form-floating position-relative">
@@ -123,7 +132,7 @@
                                 <i class="bi-eye-slash-fill" id="toggleIcon2"></i>
                             </span>
                         </div>
-                       
+
                     </div>
                     <div class="mb-3">
                         <div class="form-floating position-relative">
@@ -133,7 +142,7 @@
                                 <i class="bi-eye-slash-fill" id="toggleIcon3"></i>
                             </span>
                         </div>
-                        
+
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-primary" type="submit">Change</button>
@@ -145,5 +154,25 @@
     </div>
 </div>
 
+<div class="modal fade" id="orderItemsModal" tabindex="-1" aria-labelledby="orderItemsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    Order Items for
+                    <span id="orderNumberText" class="text-primary fw-bold"></span>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul id="orderItemsList" class="list-group list-group-flush">
+                    <!-- Dynamically loaded items -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
+
+<script src="~/js/profile.js" asp-append-version="true"></script>
 <script src="~/js/login.js" asp-append-version="true"></script>

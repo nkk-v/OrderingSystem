@@ -34,10 +34,13 @@ namespace OrderingSystem.Controllers
         public async Task<IActionResult> AddToCart(int productId, int variantId)
         {
             var userId = await GetUserId();
-            if (userId == null) return RedirectToAction("login", "Account");
+            if (userId == null)
+            {
+                return Json(new { success = false, redirectUrl = Url.Action("Login", "Account") });
+            }
 
             await _cartService.AddtoCart(userId, productId, variantId);
-            return RedirectToAction("Index", "Menu");
+            return Json(new { success = true });
         }
 
         [HttpPost]

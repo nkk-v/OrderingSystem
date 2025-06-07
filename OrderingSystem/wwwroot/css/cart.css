@@ -21,15 +21,14 @@
     width: 10px;
 }
 .checkout-order-container{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+   
 }
 
 .checkout-order-container .btn-warning, .btn-success {
         border-radius: 25px;
-        padding: 8px 20px;
+        padding: 10px;
         border: none;
+        width: 300px;
     }
     .checkout-order-container .btn-warning{
         background-color: #ff6a00;

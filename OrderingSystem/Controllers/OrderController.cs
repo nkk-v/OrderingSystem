@@ -7,7 +7,7 @@ using OrderingSystem.ViewModels;
 namespace OrderingSystem.Controllers
 {
 
-    [Authorize(Roles = "Administrator")]
+    
     public class OrderController : Controller
     {
         private readonly IOrderService _orderService;
@@ -17,6 +17,16 @@ namespace OrderingSystem.Controllers
             _orderService = orderService;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetOrderItems(int orderId)
+        {
+            var order = await _orderService.GetOrderItemById(orderId);
+            if (order == null) return NotFound();
+
+            return Json(order.OrderItems);
+        }
+
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Index(string status = "All")
         {
             var orders = await _orderService.GetAllOrders(status);
@@ -34,5 +44,8 @@ namespace OrderingSystem.Controllers
 
             return RedirectToAction("Index");
         }
+
+       
+
     }
 }

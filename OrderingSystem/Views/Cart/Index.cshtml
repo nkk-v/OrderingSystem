@@ -13,76 +13,57 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Product</th>
-                <th>Qty</th>
-                <th>Price</th>
-                <th>Subtotal</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="container py-4">
+
+        <div class="card shadow rounded-4 p-3">
+            <h5 class="mb-3">Order details</h5>
 
             @foreach (var item in Model.CartItems)
             {
-                <tr>
-                    <td>@item.ProductName</td>
-                    <td>
-                        @if (!string.IsNullOrEmpty(item.ImageUrl))
-                        {
-                            <img src="@item.ImageUrl" width="80" height="80" class="img-thumbnail" />
-                        }
-                        else
-                        {
-                            <span class="text-muted">No Image</span>
-                        }
-                    </td>
-                    <td>
-                        @*  <form asp-action="Update" method="post">
-                <input type="hidden" name="cartItemId" value="@item.Id" />
-                <input type="number" name="quantity" value="@item.Quantity" min="1" class="form-control d-inline" style="width: 60px;" />
-                <button type="submit" class="btn btn-sm btn-outline-primary">Update</button>
-                </form> *@
+                <div class="d-flex justify-content-between">
+                    <p>@item.ProductName</p>
+                    <span id="subtotal-@item.Id">₱ @((item.Price * item.Quantity).ToString("N2"))</span>
+                </div>
+                <div class="d-flex justify-content-between  mb-3">
+                    <a asp-action="Remove" asp-route-cartItemId="@item.Id" class="text-danger fw-bold" style="text-decoration: none;">Remove</a>
+                    <div class="quantity-controls input-group align-content-center" data-id="@item.Id" data-price="@item.Price">
+                        <button class="btn btn-outline-secondary btn-sm minus">−</button>
+                        <input type="text" class="qty form-control d-inline-block text-center bg-transparent border-0" value="@item.Quantity" readonly />
+                        <button class="btn btn-outline-secondary btn-sm plus">+</button>
+                    </div>
+                </div>
 
-                        <div class="quantity-controls input-group" data-id="@item.Id" data-price="@item.Price">
-                            <button class="btn btn-outline-secondary btn-sm minus">−</button>
-                            <input type="text" class="qty form-control d-inline-block text-center" value="@item.Quantity" readonly />
-                            <button class="btn btn-outline-secondary btn-sm plus">+</button>
-                        </div>
-
-
-                    </td>
-                    <td>₱@item.Price.ToString("N2")</td>
-                    <td id="subtotal-@item.Id">₱@((item.Price * item.Quantity).ToString("N2"))</td>
-                    <td>
-                        <a asp-action="Remove" asp-route-cartItemId="@item.Id" class="btn btn-sm btn-danger">Remove</a>
-                    </td>
-                </tr>
             }
-        </tbody>
-    </table>
-    <h5 class="text-end">
-        Total:₱
-        <span id="overall-total">
-            @Model.CartItems.Sum(x => x.Price * x.Quantity).ToString("N2")
-        </span>
-    </h5>
 
-    <div class="checkout-order-container">
+            <div class="border-bottom mb-3"></div>
 
-        <a asp-controller="Menu" class="btn btn-warning text-white">Order more</a>
-        <a asp-controller="Checkout" class="btn btn-success" id="btn-checkout">Checkout</a>
+            <div class="d-flex justify-content-between  mb-3">
+                <strong>Total</strong>
+                <strong>
+                    ₱ 
+                    <span id="overall-total">
+                        @Model.CartItems.Sum(x => x.Price * x.Quantity).ToString("N2")
+                    </span>
+                </strong>
+                
+            </div>
 
+            <div class="checkout-order-container d-flex justify-content-center gap-3">
+                <a asp-controller="Menu" class="btn btn-warning text-white fw-bold">ORDER MORE</a>
+                <a asp-controller="Checkout" class="btn btn-success fw-bold" id="btn-checkout">CHECKOUT</a>
+
+            </div>
+        </div>
+
+       
     </div>
+   
 }
 
 
 <!-- Reloder -->
 <div id="loader" style="display:none">
     <div class="d-flex justify-content-center align-items-center h-100">
-        <div class="spinner-border text-primary" role="status"></div>
+        <div class="spinner-border text-warning" role="status"></div>
     </div>
 </div>

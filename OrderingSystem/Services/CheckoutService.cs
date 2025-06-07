@@ -47,6 +47,7 @@ namespace OrderingSystem.Services
                 
             };
 
+            //await _cartService.ClearCartItems(userId);
 
             var body = new
             {

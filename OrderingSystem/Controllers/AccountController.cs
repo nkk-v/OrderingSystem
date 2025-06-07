@@ -10,6 +10,7 @@ namespace OrderingSystem.Controllers
     public class AccountController : Controller
     {
         private readonly IAccountService _accountService;
+        private readonly IOrderService _orderService;
         private readonly UserManager<User> _userManager;
 
         public AccountController(IAccountService accountService, UserManager<User> userManager)
@@ -110,7 +111,7 @@ namespace OrderingSystem.Controllers
             return RedirectToAction("Index","Home");
         }
 
-        [Authorize]
+        [Authorize(Roles = "Customer")]
         public async Task<IActionResult> Profile()
         {
             var user = await _userManager.GetUserAsync(User);
@@ -118,7 +119,15 @@ namespace OrderingSystem.Controllers
             return View(model);
         }
 
-       
+        [HttpGet]
+        public async Task<IActionResult> GetOrderItems(int orderId)
+        {
+            var order = await _orderService.GetOrderItemById(orderId);
+            if (order == null) return NotFound();
+
+            return Json(order.OrderItems);
+        }
+
         [HttpPost]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
         {

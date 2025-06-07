@@ -65,8 +65,16 @@
       "PackagePath": "staticwebassets\\js\\menu.js"
     },
     {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\js\\orderList.js",
+      "PackagePath": "staticwebassets\\js\\orderList.js"
+    },
+    {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\js\\product.js",
       "PackagePath": "staticwebassets\\js\\product.js"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\js\\profile.js",
+      "PackagePath": "staticwebassets\\js\\profile.js"
     },
     {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\js\\site.js",
@@ -333,6 +341,14 @@
       "PackagePath": "staticwebassets\\uploads\\images\\DC-logo.jpg"
     },
     {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\images\\Home-Welcome-3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\Home-Welcome-3.jpg"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\images\\Home-Welcome-4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\Home-Welcome-4.jpg"
+    },
+    {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\images\\icon-gcash@3x.png",
       "PackagePath": "staticwebassets\\uploads\\images\\icon-gcash@3x.png"
     },
@@ -361,20 +377,16 @@
       "PackagePath": "staticwebassets\\uploads\\product\\06508277-43e0-4c69-8f35-4b57e0951673.jpg"
     },
     {
-      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\08f8c6b7-7602-4142-9602-f8d540e8456e.jpg",
-      "PackagePath": "staticwebassets\\uploads\\product\\08f8c6b7-7602-4142-9602-f8d540e8456e.jpg"
-    },
-    {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\2b569858-6568-4b96-8954-311753b47404.jpg",
       "PackagePath": "staticwebassets\\uploads\\product\\2b569858-6568-4b96-8954-311753b47404.jpg"
     },
     {
-      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\36a3c656-2224-4752-9d44-57bb102a4df1.jpg",
-      "PackagePath": "staticwebassets\\uploads\\product\\36a3c656-2224-4752-9d44-57bb102a4df1.jpg"
-    },
-    {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\6be2f78b-90d9-4a3b-be31-7b7adb23d289.png",
       "PackagePath": "staticwebassets\\uploads\\product\\6be2f78b-90d9-4a3b-be31-7b7adb23d289.png"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\6eee01e0-773a-4034-be60-9134ace20a44.jpg",
+      "PackagePath": "staticwebassets\\uploads\\product\\6eee01e0-773a-4034-be60-9134ace20a44.jpg"
     },
     {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\70554a28-969e-4689-9123-ac0dd421b63e.png",
@@ -399,6 +411,14 @@
     {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\c4ed73b6-8224-45d7-8e0c-e32af0866d3c.jpg",
       "PackagePath": "staticwebassets\\uploads\\product\\c4ed73b6-8224-45d7-8e0c-e32af0866d3c.jpg"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\df872054-50d0-4838-aa50-35c85f79fda3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\product\\df872054-50d0-4838-aa50-35c85f79fda3.jpg"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\e0d5b162-1995-4eff-a603-1ef471e4c8d7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\product\\e0d5b162-1995-4eff-a603-1ef471e4c8d7.jpg"
     },
     {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\e2d970c3-3930-4938-8f6b-74dcd1dff79a.jpg",

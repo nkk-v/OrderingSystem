@@ -59,13 +59,17 @@ namespace OrderingSystem.Controllers
         public async Task<IActionResult> Success()
         {
             var userId = _userManager.GetUserId(User);
-
+            var user = await _userManager.FindByIdAsync(userId);
             string orderNum = await _orderService.GetLatestOrderByUser(userId);
+            var model = await _orderService.GetLatestOrderDetails(orderNum);
+
+
+            ViewBag.orderNum = orderNum;
+            ViewBag.CustomerName = $"{user.FirstName} {user.LastName}";
 
             await _cartService.ClearCartItems(userId);
 
-            ViewBag.orderNum = orderNum;
-            return View();
+            return View(model);
         }
 
         public async Task<IActionResult> Failed()

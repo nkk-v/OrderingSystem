@@ -69,6 +69,7 @@ namespace OrderingSystem.Services
             return model;
         }
 
+
         public async Task<UserAccountViewModel> GetUserDetails(string userId)
         {
             var user = await _userManager.FindByIdAsync(userId);
@@ -83,6 +84,7 @@ namespace OrderingSystem.Services
                 Address = user.Address,
                 Orders = order.Select(x => new OrderViewModel
                 {
+                    Id = x.Id,
                     OrderNum = x.OrderNum,
                     DeliveryDate = x.OrderDate == null ? x.ScheduledDate : x.OrderDate,
                     Fullname = x.fullname,
@@ -90,8 +92,9 @@ namespace OrderingSystem.Services
                     DeliveryStatus = x.DeliveryStatus,
                     OrderItems = x.OrderItems.Select(oi => new OrderItemViewModel
                     {
-                        ProductName = oi.Product.Name,
-                        Quantity = oi.Quantity
+                        ProductName = $"{oi.Product.Name} - {oi.ProductVariant.VariantName}",
+                        Quantity = oi.Quantity,
+                        Price = oi.Price,
                     }).ToList()
                 }).ToList(),
                

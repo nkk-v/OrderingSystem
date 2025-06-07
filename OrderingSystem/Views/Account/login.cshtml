@@ -1,5 +1,5 @@
 ﻿@{
-    // Layout = "~/Views/Shared/_LoginLayout.cshtml";
+     Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
 
 <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
@@ -9,17 +9,16 @@
 
 <div class="login-container-body">
     <div class="login-container">
-        <div>
+        <div class="img-container">
             <h3 class="mb-3">Welcome Back</h3>
 
         </div>
 
-        @if (ViewData["error"] != null)
-        {
-            <div class="alert alert-success">@ViewData["error"]</div>
-        }
-
         <form asp-action="login" method="post">
+            @if (ViewData["error"] != null)
+            {
+                <div class="alert alert-success">@ViewData["error"]</div>
+            }
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" asp-for="Username" id="username" placeholder="Username"/>

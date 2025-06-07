@@ -25,7 +25,7 @@
             </div>
         </div>
     </form>
-    <table class="table table-borderless">
+    <table class="table table-bordered">
         <thead class="table-dark">
             <tr>
                 <th>Order number</th>
@@ -33,11 +33,10 @@
                 <th>Address</th>
                 <th>Contact</th>
                 <th>Delivery date</th>
-                <th>Order Items</th>
                 <th>Total Amount</th>
+                <th>Delivery Fee</th>
                 <th>Delivery Note</th>
                 <th>Status</th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -51,18 +50,9 @@
                         <td>@order.Fullname</td>
                         <td>@order.Address</td>
                         <td>@order.ContactNumber</td>
-                        <td>@order.DeliveryDate?.ToString("MM-dd-yyyy hh:mm tt")</td>
-                        <td>
-                            <ul style="list-style: none">
-                                @foreach (var item in order.OrderItems)
-                                {
-                                    <li>
-                                        @item.Quantity @item.ProductName
-                                    </li>
-                                }
-                            </ul>
-                        </td>
+                        <td>@order.DeliveryDate?.ToString("MMM dd, yyyy hh:mm tt")</td>
                         <td>₱ @order.SubTotal.ToString("N2")</td>
+                        <td>₱ @order.DeliveryFee.ToString("N2")</td>
                         <td>@order.DeliveryNote</td>
                         <td>
                             <form asp-action="UpdateStatus" method="post" class="d-flex gap-2">
@@ -74,12 +64,25 @@
                                     <option value="Delivered" selected="@("Delivered" == order.DeliveryStatus)">Delivered</option>
                                     <option value="Cancelled" selected="@("Cancelled" == order.DeliveryStatus)">Cancelled</option>
                                 </select>
-                                <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                                <button type="submit" class="btn btn-sm btn-success">Update</button>
+                                <button type="button"
+                                        class="btn btn-sm btn-info view-items-btn"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#orderItemsModal"
+                                        data-order-id="@order.Id"
+                                        data-order-num="@order.OrderNum">
+                                    View Items
+                                </button>
                             </form>
                         </td>
+
+                       
                     </tr>
                 }
                 index++;
+
+               
+
             }
             else
             {
@@ -94,3 +97,25 @@
         </tbody>
     </table>
 </div>
+
+<div class="modal fade" id="orderItemsModal" tabindex="-1" aria-labelledby="orderItemsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    Order Items for 
+                    <span id="orderNumberText" class="text-primary fw-bold"></span>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul id="orderItemsList" class="list-group list-group-flush">
+                    <!-- Dynamically loaded items -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/js/orderList.js" asp-append-version="true"></script>

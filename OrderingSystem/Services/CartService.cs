@@ -41,7 +41,7 @@ namespace OrderingSystem.Services
                     Id = item.Id,
                     CartId = item.CartId,
                     ProductId = item.ProductId,
-                    ProductName = item.Product.Name,
+                    ProductName = item.Product.Name + " - " + item.productVariant.VariantName,
                     ImageUrl = item.Product.ImageUrl,
                     Quantity = item.Quantity,
                     Price = item.Price

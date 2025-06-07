@@ -42,6 +42,20 @@ namespace OrderingSystem.Data
                 .WithMany()
                 .HasForeignKey(ci => ci.ProductVariantId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            // Order → OrderItem (Cascade OK)
+            modelBuilder.Entity<OrderItem>()
+                .HasOne(o => o.Order)
+                .WithMany(oi => oi.OrderItems)
+                .HasForeignKey(o => o.OrderId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // OrderItem → ProductVariant (Restrict to avoid multiple cascade path)
+            modelBuilder.Entity<OrderItem>()
+                .HasOne(pv => pv.ProductVariant)
+                .WithMany()
+                .HasForeignKey(pv => pv.ProductVariantId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 

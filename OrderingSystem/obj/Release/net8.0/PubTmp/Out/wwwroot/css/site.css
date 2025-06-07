@@ -1,0 +1,37 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    background-color: whitesmoke;
+}
+header {
+    background-color: #563d7c;
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 15px 30px;
+    width: 100%;
+}
+
+
+.nav-link.active {
+   /* border-bottom: 2px solid #ffc107;*/
+}
+.nav-link {
+    color: #cbbde2;
+}
+
+.navbar-nav .nav-item a{
+    color: black;
+}
+
+
+.nav-item{
+    list-style: none;
+}
+
+.btn-outline-warning {
+    border-radius: 25px;
+    padding: 8px 20px;
+}

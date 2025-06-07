@@ -89,38 +89,32 @@ namespace OrderingSystem.Services
                 Address = model.Address,
                 fullname = model.Fullname,
                 OrderStatus = "Pending",
-                DateCreated = DateTime.Now,
-                OrderItems = model.CartItems.Select(item => new OrderItem
-                {
-                    ProductId = item.ProductId,
-                    Quantity = item.Quantity,
-                    Price = item.Price
-                }).ToList(),
+                DateCreated = DateTime.Now
+                //OrderItems = model.CartItems.Select(item => new OrderItem
+                //{
+                //    ProductId = item.ProductId,
+                //    Quantity = item.Quantity,
+                //    Price = item.Price
+                //}).ToList(),
 
             };
 
             await _orderRepo.AddtoOrder(order);
 
 
-            //var cartItems = await _cartRepo.GetUserCart(userId);
+            var cartItems = await _cartRepo.GetUserCart(userId);
 
-            //var orderItems = cartItems.CartItems.Select(item => new OrderItem
-            //{
-            //    OrderId = order.Id,
-            //    ProductId = item.ProductId,
-            //    Quantity = item.Quantity,
-            //    Price = item.Price,
-            //});
-            //var orderItems = model.CartItems.Select(item => new OrderItem
-            //{
-            //    OrderId = order.Id,
-            //    ProductId = item.ProductId,
-            //    Quantity = item.Quantity,
-            //    Price = item.Price,
+            var orderItems = cartItems.CartItems.Select(item => new OrderItem
+            {
+                OrderId = order.Id,
+                ProductId = item.ProductId,
+                ProductVariantId = item.ProductVariantId,
+                Quantity = item.Quantity,
+                Price = item.Price,
+            });
+            
 
-            //});
-
-            //await _orderRepo.AddOrderItem(orderItems);
+            await _orderRepo.AddOrderItem(orderItems);
 
             return order.Id;
 
@@ -140,11 +134,12 @@ namespace OrderingSystem.Services
                 Address = o.Address,
                 DeliveryNote = o.DeliveryNote,
                 SubTotal = o.SubTotal, 
+                DeliveryFee = o.DeliveryFee,
                 DeliveryStatus = o.DeliveryStatus,
                 Fullname = o.fullname,
                 OrderItems = o.OrderItems.Select(oi => new OrderItemViewModel
                 {
-                    ProductName = oi.Product.Name,
+                    ProductName = oi.Product.Name + " - " + oi.ProductVariant.VariantName,
                     Quantity = oi.Quantity
                 }).ToList()
 
@@ -157,6 +152,7 @@ namespace OrderingSystem.Services
         public async Task UpdateDeliveryStatus(int OrderId, string newStatus)
         {
             var order = await _orderRepo.GetOrderById(OrderId);
+
 
             if(order != null)
             {
@@ -220,6 +216,54 @@ namespace OrderingSystem.Services
                 order.RefNo = refNo;
                 await _orderRepo.UpdateStatus(order);
             }
+        }
+
+        public async Task<OrderViewModel> GetOrderItemById(int orderId)
+        {
+            var order = await _orderRepo.GetOrderById(orderId);
+
+            if (order == null) return null;
+
+            var viewModel = new OrderViewModel
+            {
+                OrderItems = order.OrderItems.Select(i => new OrderItemViewModel
+                {
+                    ProductName = $"{i.Product?.Name ?? "Unknown Product"}{(i.ProductVariant != null ? $" - {i.ProductVariant.VariantName}" : "")}",
+
+                    Quantity = i.Quantity,
+                    Price = i.Price,
+
+                }).ToList()
+            };
+
+            return viewModel;
+        }
+
+        public async Task<OrderViewModel> GetLatestOrderDetails(string OrderNum)
+        {
+            var order = (await _orderRepo.GetLatestOrder())
+                .Where(x => x.OrderNum == OrderNum)
+                .FirstOrDefault();
+
+            var viewModel = new OrderViewModel
+            {
+                SubTotal = order.SubTotal,
+                DeliveryFee = order.DeliveryFee,
+                DeliveryNote = order.DeliveryNote,
+                Address = order.Address,
+                Fullname = order.fullname,
+                ContactNumber = order.PhoneNumber,
+                TotalAmount = order.TotalAmount,
+                OrderItems = order.OrderItems.Select(oi => new OrderItemViewModel {
+                    ProductName = oi.Product?.Name,
+                    ImageUrl = oi.Product?.ImageUrl,
+                    Price = oi.Price,
+                    Quantity = oi.Quantity
+                }).ToList()
+
+            };
+
+            return viewModel;
         }
     }
 }

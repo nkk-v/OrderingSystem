@@ -5,8 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container py-4">
-    <div class="row flex-md-row flex-column-reverse">
+<div class="container px-4 py-5">
+    <div class="row flex-md-row">
         <!-- Sidebar for Categories -->
         <aside class="col-md-3 mb-3">
             <h5 class="mb-3">Categories</h5>
@@ -34,7 +34,7 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
                 @foreach (var product in Model.products)
                 {
-                    <div class="col">
+                    <div class="col-md-3">
                         <div class="card h-100 shadow-sm">
                             <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name" style="height: 200px; object-fit: cover;">
                             <div class="card-body">

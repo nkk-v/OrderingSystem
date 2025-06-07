@@ -13,7 +13,8 @@ namespace OrderingSystem.Services
         Task<string> GenerateOrderNumber();
         Task<string> GetLatestOrderByUser(string userId);
         Task<int> GetLatestOrderId(string paymentId = "", string userId = "");
-
+        Task<OrderViewModel> GetOrderItemById(int orderId);
+        Task<OrderViewModel> GetLatestOrderDetails(string OrderNum);
 
     }
 }

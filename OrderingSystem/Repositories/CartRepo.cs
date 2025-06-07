@@ -18,7 +18,9 @@ namespace OrderingSystem.Repositories
         {
             var cart = await _dbContext.tblCarts
                 .Include(c => c.CartItems)
-                .ThenInclude(p => p.Product)
+                    .ThenInclude(p => p.Product)
+                .Include(c => c.CartItems)
+                    .ThenInclude(pv => pv.productVariant)
                 .FirstOrDefaultAsync(c => c.UserId == userId);
 
             if(cart == null)

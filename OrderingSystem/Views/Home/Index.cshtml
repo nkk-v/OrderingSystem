@@ -1,23 +1,52 @@
-﻿@{
+﻿@model OrderingSystem.ViewModels.ProductCategoryViewModel
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
-<div class="container my-5">
-    <div class="row align-items-center text-center text-lg-start">
-        <div class="col-lg-6 mb-4">
-            <h1 class="hero-title">Be The Fastest In<br />Delivery Your <span class="highlight">Food</span></h1>
-            <p class="hero-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet</p>
-            <a asp-controller="Menu" asp-action="Index" class="btn order-btn mt-3 px-4 py-2">Order now</a>
-        </div>
-        <div class="col-lg-6 d-flex justify-content-center align-items-center">
 
-            <div class="image-stack">
-                <img src="~/uploads/images/side-picture.jpg" alt="Food 1" class="img-fluid" />
-                <img src="~/uploads/images/picture2.jpg" alt="Food 2" class="img-fluid" />
-            </div>
-
-        </div>
-
+<div class="hero-image mb-4">
+    <div class="hero-text">
+        <h1 class="hero-title">SAVOR THE FLAVOR</h1>
+        <p class="hero-subtitle">Craving for the perfect tiramisu? Look no further! We offer premium, handcrafted tiramisu that will delight your taste buds.</p>
+        <a asp-controller="Menu" asp-action="Index" class="btn order-btn mt-3 px-5 py-2">Order now</a>
     </div>
 </div>
+<div class="container-fluid">
+    
+   @*  <div class="row align-items-center text-center text-lg-start">
+        <div class="col-lg-6 mb-4">
+            <h1 class="hero-title">SAVOR THE FLAVOR</h1>
+            <p class="hero-subtitle">Craving for the perfect tiramisu? Look no further! We offer premium, handcrafted tiramisu that will delight your taste buds.</p>
+            <a asp-controller="Menu" asp-action="Index" class="btn order-btn mt-3 px-5 py-2">Order now</a>
+        </div>
+
+        <div class="col-lg-5 mb-4">
+            <img src="~/uploads/images/home-welcome-4.jpg" class="img-fluid rounded shadow-sm" />
+        </div>
+    </div> *@
+
+    <section>
+        <h2 class="text-white">Featured Products</h2><br />
+
+        <div class="border-bottom"></div><br />
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            @foreach (var product in Model.products)
+            {
+                <div class="col">
+                    <div class="card h-100 bg-transparent border-0">
+                        <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name" style="width: 100%; object-fit: cover;">
+                        <div class="card-body">
+                            <h6 class="card-title text-white">@product.Name</h6>
+                            <p class="card-text small text-white">@product.Description</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+    
+</div>
+

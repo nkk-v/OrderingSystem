@@ -16,6 +16,11 @@ namespace OrderingSystem.ViewModels
         public string? DeliveryNote { get; set; }
         [Column(TypeName = "decimal(18,4)")]
         public decimal SubTotal { get; set; }
+        [Column(TypeName = "decimal(18,4)")]
+        public decimal TotalAmount { get; set; }
+
+        [Column(TypeName = "decimal(18,4)")]
+        public decimal DeliveryFee { get; set; }
         public string DeliveryStatus { get; set; }
         public List<OrderItemViewModel> OrderItems { get; set; } = new List<OrderItemViewModel>();
     }
