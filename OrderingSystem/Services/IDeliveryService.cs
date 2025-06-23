@@ -8,5 +8,6 @@ namespace OrderingSystem.Services
         Task<Coordinates?> GeoCodeCoordinate(string address);
         Task<double?> CalculateDistance(Coordinates origin, Coordinates destination);
         Task<AutoCompleteResponseDTO> AutoCompleteAddress(string query);
+        Task<string?> ReverseGeocode(double latitude, double longitude);
     }
 }

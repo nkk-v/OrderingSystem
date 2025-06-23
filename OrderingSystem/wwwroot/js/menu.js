@@ -58,6 +58,13 @@
             .then(res => res.json())
             .then(response => {
                 if (response.success) {
+                    if (
+                        document.activeElement &&
+                        variantModal.contains(document.activeElement)
+                    ) {
+                        document.activeElement.blur();
+                    }
+                        
                     $('#variantModal').modal('hide');
 
                     fetch('/Cart/GetCartCount')

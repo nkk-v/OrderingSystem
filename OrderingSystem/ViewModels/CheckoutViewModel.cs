@@ -1,4 +1,5 @@
 ﻿using OrderingSystem.Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OrderingSystem.ViewModels
@@ -6,11 +7,16 @@ namespace OrderingSystem.ViewModels
     public class CheckoutViewModel
     {
         public string? OrderNum { get; set; }
+        [Required]
         public string Fullname { get; set; }
         public string PhoneNumber { get; set; }
+        [Required]
         public string Address { get; set; }
+        [Required]
         public string DeliveryOption { get; set; }
+        [Required]
         public DateTime? ScheduledDate { get; set; }
+        [Required]
         public string? ScheduledTime { get; set; }
         public string? DeliveryNote { get; set; }
         public List<CartItemViewModel> CartItems { get; set; } = new List<CartItemViewModel>();

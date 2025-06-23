@@ -43,5 +43,15 @@ namespace OrderingSystem.Controllers
 
             return Ok(result); // This returns valid JSON with correct structure
         }
+
+        [HttpGet("reverse-geocode")]
+        public async Task<IActionResult> ReverseGeocode([FromQuery] double lat, [FromQuery] double lon)
+        {
+            var address = await _deliveryService.ReverseGeocode(lat, lon);
+            if (address == null) return BadRequest("Unable to reverse geocode coordinates");
+
+            return Ok(new {address});
+        }
+
     }
 }

@@ -93,5 +93,29 @@ namespace OrderingSystem.Services
                 Latitude = coor[1].GetDouble()
             };
         }
+
+        public async Task<string?> ReverseGeocode(double latitude, double longitude)
+        {
+            var url = $"https://api.openrouteservice.org/geocode/reverse?api_key={_apiKey}&point.lon={longitude}&point.lat={latitude}&size=1";
+
+            var response = await _httpClient.GetAsync(url);
+            if (!response.IsSuccessStatusCode) return null;
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            try
+            {
+                var data = JsonDocument.Parse(json);
+                return data.RootElement
+                           .GetProperty("features")[0]
+                           .GetProperty("properties")
+                           .GetProperty("label")
+                           .GetString();
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

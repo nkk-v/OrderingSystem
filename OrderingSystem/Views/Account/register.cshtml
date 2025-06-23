@@ -5,7 +5,7 @@
 
 
 <div class="container py-5">
-    <div class="row justify-content-center" style="margin-top: 50px;">
+    <div class="row justify-content-center">
         <div class="col-md-6 col-lg-7">
             <!-- Controls width on different screen sizes -->
             <div class="card shadow rounded-4">
@@ -33,6 +33,7 @@
                                     <span asp-validation-for="LastName" class="text-danger small"></span>
                                 </div>
                          </div>
+
                      </div>
                        
                         <div class="form-floating mb-3">
@@ -40,6 +41,7 @@
                             <label asp-for="Address">Address</label>
                             <span asp-validation-for="Address" class="text-danger small"></span>
                         </div>
+
                         <div class="row mb-3">
                             <div class="col">
                                 <div class="form-floating">
@@ -61,21 +63,21 @@
                         <div class="row mb-3">
                             <div class="col">
                                 <div class="form-floating position-relative">
-                                    <input asp-for="Password" class="form-control pe-5" placeholder="Password" type="password" id="passwordField">
+                                    <input asp-for="Password" class="form-control pe-5" placeholder="Password" type="password" id="Password">
                                     <label asp-for="Password">Password</label>
                                     <span asp-validation-for="Password" class="text-danger small"></span>
-                                    <span class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor:pointer;" onclick="togglePassword('passwordField', 'toggleIcon1')">
+                                    <span class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor:pointer;" onclick="togglePassword('Password', 'toggleIcon1')">
                                         <i class="bi-eye-slash-fill" id="toggleIcon1"></i>
                                     </span>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-floating position-relative">
-                                    <input asp-for="ConfirmPassword" class="form-control pe-5" placeholder="Confirm Password" type="password" id="confirmedPasswordField">
+                                    <input asp-for="ConfirmPassword" class="form-control pe-5" placeholder="Confirm Password" type="password" id="ConfirmPassword">
                                     <label asp-for="ConfirmPassword">Confirm Password</label>
                                     <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
-                                    <span class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor:pointer;" onclick="togglePassword('confirmedPasswordField', 'toggleIcon2')">
-                                        <i class="bi-eye-slash-filll" id="toggleIcon2"></i>
+                                    <span class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor:pointer;" onclick="togglePassword('ConfirmPassword', 'toggleIcon2')">
+                                        <i class="bi-eye-slash-fill" id="toggleIcon2"></i>
                                     </span>
                                 </div>
                             </div>

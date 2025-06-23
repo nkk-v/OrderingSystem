@@ -48,7 +48,13 @@ builder.Configuration
     .AddEnvironmentVariables();
 
 
-
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(7248, listenOptions =>
+    {
+        listenOptions.UseHttps();
+    });
+});
 
 var app = builder.Build();
 

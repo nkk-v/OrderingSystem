@@ -7,9 +7,12 @@
 
 @if (!Model.HasItems)
 {
-    <div class="alert alert-warning mt-3 text-center" style="margin-top: 4.5rem">
-        Your cart is empty.
-    </div>
+     <div class="container py-4">
+        <div class="alert alert-warning mt-3 text-center" style="margin-top: 4.5rem">
+            Your cart is empty.
+        </div>
+     </div>
+    
 }
 else
 {
@@ -20,10 +23,20 @@ else
 
             @foreach (var item in Model.CartItems)
             {
-                <div class="d-flex justify-content-between">
-                    <p>@item.ProductName</p>
-                    <span id="subtotal-@item.Id">₱ @((item.Price * item.Quantity).ToString("N2"))</span>
+                <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+                    <div>
+                        <img src="@item.ImageUrl" class="img-thumbnail" width="80px" height="80px" />
+                    </div>
+                    <div class="flex-grow-1">
+                        <p>@item.ProductName</p>
+                    </div>
+                    <div class="flex-grow-1 text-end">
+                        <p><span id="subtotal-@item.Id">₱ @((item.Price * item.Quantity).ToString("N2"))</span></p>
+                    </div>
+                
                 </div>
+
+                
                 <div class="d-flex justify-content-between  mb-3">
                     <a asp-action="Remove" asp-route-cartItemId="@item.Id" class="text-danger fw-bold" style="text-decoration: none;">Remove</a>
                     <div class="quantity-controls input-group align-content-center" data-id="@item.Id" data-price="@item.Price">

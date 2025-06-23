@@ -110,22 +110,22 @@ namespace OrderingSystem.Services
         {
             var user = await _accountService.GetUserDetails(userId);
             var cart = await _cartService.GetUserCart(userId);
-            var origin = new Coordinates { Latitude = 14.59907270949496, Longitude = 121.10925635666807 };
-            var destination = await _deliveryService.GeoCodeCoordinate(user.Address);
+            //var origin = new Coordinates { Latitude = 14.59907270949496, Longitude = 121.10925635666807 };
+            //var destination = await _deliveryService.GeoCodeCoordinate(user.Address);
 
-            var distance = await _deliveryService.CalculateDistance(origin, destination);
-            var ratePerKm = 10;
-            var fee = Math.Max(Math.Ceiling(distance.Value * ratePerKm), 50);
+            //var distance = await _deliveryService.CalculateDistance(origin, destination);
+            //var ratePerKm = 10;
+            //var fee = Math.Max(Math.Ceiling(distance.Value * ratePerKm), 50);
 
             return new CheckoutViewModel
             {
-                
+
 
                 Fullname = user.Fullname,
                 PhoneNumber = user.PhoneNumber,
-                Address = user.Address,
+                //Address = user.Address,
                 SubTotal = cart.CartItems.Sum(x => x.Price * x.Quantity),
-                DeliveryFee = Convert.ToDecimal(fee),
+                DeliveryFee = 0, //Convert.ToDecimal(fee),
                 CartItems = cart.CartItems.Select(x => new CartItemViewModel
                 {
                     Id = x.Id,
