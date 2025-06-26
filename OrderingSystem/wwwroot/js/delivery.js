@@ -34,6 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
     manualOption.addEventListener("change", () => {
         if (manualOption.checked) {
             currentAddress.innerText = "";
+            document.getElementById("hiddenCurrentAddress").value = "";
+            addressInput.removeAttribute("readonly");
+            toggleButton.innerText = "Save";
             toggleButton.disabled = false;
             addressInput.focus();
             paymentBtn.disabled = true;
@@ -44,10 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function getLocation() {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(success, handleGeoError, {
-                timeout: 10000,
-                maximumAge: 60000
-            });
+            navigator.geolocation.getCurrentPosition(success, handleGeoError);
         }
         else {
             alert("Geolocation is not supported by your browser");

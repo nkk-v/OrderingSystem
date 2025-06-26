@@ -31,8 +31,9 @@ namespace OrderingSystem.Controllers
             var success = await _accountService.ChangeUserRole(userId, newRole);
             if (!success) return View();
 
-            await _accountService.Logout();
-            return RedirectToAction("Index", "Home");
+            //await _accountService.Logout();
+            //return RedirectToAction("Index", "Home");
+            return View();
         }
 
 

@@ -15,20 +15,21 @@ header {
 }
 
 
-.nav-link.active {
+
+/*.nav-link.active {*/
    /* border-bottom: 2px solid #ffc107;*/
-}
+/*}
 .nav-link {
     color: #cbbde2;
 }
 
 .navbar-nav .nav-item a{
     color: black;
-}
+}*/
 
 
-.nav-item{
-    list-style: none;
+#userDropdown {
+    padding: 0;
 }
 
 .btn-outline-warning {

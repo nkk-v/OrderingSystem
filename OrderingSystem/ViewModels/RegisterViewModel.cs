@@ -10,8 +10,6 @@ namespace OrderingSystem.ViewModels
         public string LastName { get; set; }
         [Required(ErrorMessage = "Contact Number is required.")]
         public string ContactNumber { get; set; }
-        [Required(ErrorMessage = "Address is required.")]
-        public string Address { get; set; }
 
         [Required(ErrorMessage = "Username is required.")]
         public string Username { get; set; }

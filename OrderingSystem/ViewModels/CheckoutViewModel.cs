@@ -11,7 +11,9 @@ namespace OrderingSystem.ViewModels
         public string Fullname { get; set; }
         public string PhoneNumber { get; set; }
         [Required]
-        public string Address { get; set; }
+        public string ManualAddress { get; set; }
+        [Required]
+        public string CurrentAddress { get; set; }
         [Required]
         public string DeliveryOption { get; set; }
         [Required]

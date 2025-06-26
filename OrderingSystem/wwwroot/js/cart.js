@@ -26,7 +26,9 @@ $(document).ready(function () {
             quantity--;
         }
 
-        $('#loader').fadeIn();
+        //$('#loader').fadeIn();
+        // Show spinner before fetching fee
+        document.getElementById("spinner").style.display = "flex";
 
         $.ajax({
             url: '/Cart/UpdateQuantity',
@@ -57,7 +59,9 @@ $(document).ready(function () {
             },
             complete: function () {
 
-                $('#loader').fadeOut();
+                //$('#loader').fadeOut();
+                // Hide spinner after fee is fetched
+                document.getElementById("spinner").style.display = "none";
             }
         });
     });

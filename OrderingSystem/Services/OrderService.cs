@@ -86,7 +86,7 @@ namespace OrderingSystem.Services
                 ScheduledDate = scheduleDeliver,
                 DeliveryNote = model.DeliveryNote,
                 PhoneNumber = model.PhoneNumber,
-                Address = model.Address,
+                Address = model.CurrentAddress ?? model.ManualAddress,
                 fullname = model.Fullname,
                 OrderStatus = "Pending",
                 DateCreated = DateTime.Now

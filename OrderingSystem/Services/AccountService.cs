@@ -81,7 +81,6 @@ namespace OrderingSystem.Services
                 Fullname = user.Fullname,
                 Username = user.UserName,
                 PhoneNumber = user.ContactNumber,
-                Address = user.Address,
                 Orders = order.Select(x => new OrderViewModel
                 {
                     Id = x.Id,
@@ -90,6 +89,7 @@ namespace OrderingSystem.Services
                     Fullname = x.fullname,
                     SubTotal = x.SubTotal,
                     DeliveryStatus = x.DeliveryStatus,
+                    Address = x.Address,
                     OrderItems = x.OrderItems.Select(oi => new OrderItemViewModel
                     {
                         ProductName = $"{oi.Product.Name} - {oi.ProductVariant.VariantName}",
@@ -120,7 +120,6 @@ namespace OrderingSystem.Services
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 UserName = model.Username,
-                Address = model.Address,
                 ContactNumber = model.ContactNumber,
             };
 
