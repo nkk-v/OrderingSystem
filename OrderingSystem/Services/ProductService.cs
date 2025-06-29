@@ -10,11 +10,14 @@ namespace OrderingSystem.Services
     {
         private readonly IProductRepo _productRepo;
         private readonly ICategoryRepo _categoryRepo;
+        private readonly ICartRepo _cartRepo;
 
-        public ProductService(IProductRepo productRepo, ICategoryRepo categoryRepo)
+
+        public ProductService(IProductRepo productRepo, ICategoryRepo categoryRepo, ICartRepo cartRepo)
         {
             _productRepo = productRepo;
             _categoryRepo = categoryRepo;
+            _cartRepo = cartRepo;
         }
 
         public async Task AddProduct(ProductViewModel model, string uploadRootPath)
@@ -44,9 +47,13 @@ namespace OrderingSystem.Services
                 Variants = model.Variants.Select(v => new ProductVariant
                 {
                     VariantName = v.VariantName,
-                    Price = v.Price
+                    Description = v.Description,
+                    Price = v.Price,
+                    IsActive = true
                 }).ToList(),
             };
+
+            
 
             await _productRepo.AddProduct(product);
 
@@ -119,6 +126,7 @@ namespace OrderingSystem.Services
                 {
                     Id = v.Id,
                     VariantName = v.VariantName,
+                    Description = v.Description,
                     Price = v.Price,
                 }).ToList()
             };
@@ -165,6 +173,14 @@ namespace OrderingSystem.Services
             var product = await _productRepo.GetByIdAsync(model.Id);
             if (product == null) return false;
 
+
+            // Step 1: Delete removed variants + their cart items
+            if (model.RemovedVariantIds != null && model.RemovedVariantIds.Any())
+            {
+                await _cartRepo.RemoveCartItemsByVariantIdsAsync(model.RemovedVariantIds);
+                await _productRepo.RemoveProductVariantsByIdsAsync(model.RemovedVariantIds);
+            }
+
             product.Name = model.Name;
             //product.Price = model.Price;
             product.Description = model.Description;
@@ -172,15 +188,20 @@ namespace OrderingSystem.Services
             product.IsActive = model.IsActive;
             if (model.Variants != null && model.Variants.Any())
             {
-                await _productRepo.RemoveProductVariant(product.Id);
+                var newVariants = model.Variants
+                     .Where(v => v.Id == 0)
+                     .Select(v => new ProductVariant
+                     {
+                         VariantName = v.VariantName,
+                         Price = v.Price,
+                         Description = v.Description,
+                         IsActive = true
+                     }).ToList();
 
-                product.Variants = model.Variants.Select(v => new ProductVariant
-                {
-                    VariantName = v.VariantName,
-                    Price = v.Price,
-                }).ToList();
+                product.Variants.AddRange(newVariants);
 
             }
+
 
             if (model.ImageFile != null)
             {

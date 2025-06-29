@@ -41,6 +41,7 @@ namespace OrderingSystem.Controllers
             {
                 id = v.Id,
                 variantName = v.VariantName,
+                description = v.Description,
                 price = v.Price
             }));
         }

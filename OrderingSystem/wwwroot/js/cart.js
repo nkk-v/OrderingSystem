@@ -48,7 +48,7 @@ $(document).ready(function () {
                     minimumFractionDigits: 2,
                     maximumFractionDigits: 2
                 });
-                $(`#subtotal-${id}`).text(`₱${formattedSubtotal}`);
+                $(`#subtotal-${id}`).text(`${formattedSubtotal}`);
                 updateCartTotal();
                 // Disable minus if quantity is 1, otherwise enable
                 const minusBtn = container.find(".minus");

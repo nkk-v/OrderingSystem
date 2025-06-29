@@ -42,6 +42,7 @@ function initProductFormScripts() {
     $('#addVariantBtn').off('click').on('click', function () {
         const name = $('#variantNameInput').val().trim();
         const price = $('#variantPriceInput').val().trim();
+        const description = $('#variantDescInput').val().trim();
 
         if (name === '' || price === '') {
             alert('Please enter both name and price.');
@@ -53,6 +54,9 @@ function initProductFormScripts() {
                 <input type="hidden" name="Variants[${variantIndex}].Id" value="0" />
                 <div class="col-md-5">
                     <input name="Variants[${variantIndex}].VariantName" class="form-control" value="${name}" readonly />
+                </div>
+                <div class="col-md-4">
+                    <input name="Variants[${variantIndex}].Description" class="form-control" value="${description}" readonly />
                 </div>
                 <div class="col-md-4">
                     <input name="Variants[${variantIndex}].Price" class="form-control" value="${price}" readonly />
@@ -71,7 +75,18 @@ function initProductFormScripts() {
     });
 
     $(document).off('click', '.remove-variant').on('click', '.remove-variant', function () {
-        $(this).closest('.variant-item').remove();
+        //$(this).closest('.variant-item').remove();
+        //reindexVariants();
+
+        const $variantItem = $(this).closest('.variant-item');
+        const variantId = $variantItem.find('input[name$=".Id"]').val();
+
+        if (variantId && parseInt(variantId) !== 0) {
+            // Track the removed variant ID
+            $('#removedVariantContainer').append(`<input type="hidden" name="RemovedVariantIds" value="${variantId}" />`);
+        }
+
+        $variantItem.remove();
         reindexVariants();
     });
 

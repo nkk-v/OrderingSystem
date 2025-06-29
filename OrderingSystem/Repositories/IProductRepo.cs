@@ -12,5 +12,7 @@ namespace OrderingSystem.Repositories
 
         Task<List<Product>> GetByCategory(int? categoryId);
         Task RemoveProductVariant(int productId);
+        Task RemoveProductVariantsByIdsAsync(List<int> variantIds);
+
     }
 }

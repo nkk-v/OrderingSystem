@@ -10,5 +10,7 @@ namespace OrderingSystem.Repositories
         Task RemoveItem(int cartItemId);
         Task<int> GetCartItemCountByUser(string userId);
         Task ClearCartItem(string userId);
+        Task RemoveCartItemsByVariantIdsAsync(List<int> variantIds);
+
     }
 }

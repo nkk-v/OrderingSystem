@@ -25,6 +25,7 @@ namespace OrderingSystem.ViewModels
         public bool IsActive { get; set; } = true;
         public IEnumerable<SelectListItem>? Categories { get; set; }
         public List<ProductVariantViewModel> Variants { get; set; } = new();
+        public List<int> RemovedVariantIds { get; set; } = new List<int>(); // Track removed variant IDs
 
     }
 
@@ -36,5 +37,6 @@ namespace OrderingSystem.ViewModels
         [Required]
         [Range(0.01, double.MaxValue, ErrorMessage = "Price must be positive.")]
         public decimal Price { get; set; }
+        public string? Description { get; set; }
     }
 }

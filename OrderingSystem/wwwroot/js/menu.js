@@ -18,7 +18,7 @@
 
                 variants.forEach(variant => {
                     const html = `
-                            <div class="card border-warning h-100">
+                            <div class="card border-warning">
                             <div class="card-header border-0 bg-transparent">
                                 <div class="form-check">
                                 <input class="form-check-input" type="radio" name="variantId" id="variant${variant.id}" value="${variant.id}" style="vertical-align: middle" required>
@@ -28,6 +28,7 @@
                                         <label class="form-check-label ms-2 card-title" for="variant${variant.id}">
                                          ${variant.variantName}
                                         </label>
+                                        <p class="card-text small text-muted">${variant.description}</p>
                                     <div class="fw-bold fs-5 card-text">
                                         ₱${variant.price.toFixed(2)}
                                     </div>

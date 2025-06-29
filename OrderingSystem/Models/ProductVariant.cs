@@ -10,9 +10,12 @@ namespace OrderingSystem.Models
         public int ProductId { get; set; }
         public Product Product { get; set; }
         [Required]
-        [StringLength(10)]
+        [StringLength(20)]
         public string VariantName { get; set; }
         [Column(TypeName = "decimal(18,4)")]
         public decimal Price { get; set; }
+        public bool IsActive { get; set; } = true;
+        [StringLength(30)]
+        public string? Description { get; set; }
     }
 }

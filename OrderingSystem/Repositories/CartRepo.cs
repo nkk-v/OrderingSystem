@@ -19,7 +19,7 @@ namespace OrderingSystem.Repositories
             var cart = await _dbContext.tblCarts
                 .Include(c => c.CartItems)
                     .ThenInclude(p => p.Product)
-                .Include(c => c.CartItems)
+                .Include(c => c.CartItems.Where(ci => ci.IsActive))
                     .ThenInclude(pv => pv.productVariant)
                 .FirstOrDefaultAsync(c => c.UserId == userId);
 
@@ -85,12 +85,11 @@ namespace OrderingSystem.Repositories
         public async Task<int> GetCartItemCountByUser(string userId)
         {
             
-            var cart = await _dbContext.tblCarts.FirstOrDefaultAsync(x => x.UserId == userId);
+            var cart = await _dbContext.tblCarts.FirstOrDefaultAsync(x => x.UserId == userId );
             if(cart == null) return 0;
             
             return await _dbContext.tblCartItems.Where(
-                x => x.CartId == cart.Id
-                ).CountAsync();
+                x => x.CartId == cart.Id && x.IsActive).CountAsync();
         }
 
         public async Task ClearCartItem(string userId)
@@ -105,6 +104,26 @@ namespace OrderingSystem.Repositories
             _dbContext.tblCartItems.RemoveRange(cartItems);
             await _dbContext.SaveChangesAsync();
 
+        }
+
+        public async Task RemoveCartItemsByVariantIdsAsync(List<int> variantIds)
+        {
+            if (variantIds == null || variantIds.Count == 0) return;
+
+            var cartItems = await _dbContext.tblCartItems
+                            .Where(ci => variantIds.Contains(ci.ProductVariantId))
+                            .ToListAsync();
+
+            if (cartItems.Any())
+            {
+                //_dbContext.tblCartItems.RemoveRange(cartItems);
+                foreach (var item in cartItems)
+                {
+                    item.IsActive = false;
+                }
+                await _dbContext.SaveChangesAsync();
+            }
+            
         }
     }
 }

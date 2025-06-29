@@ -27,11 +27,11 @@ else
                     <div>
                         <img src="@item.ImageUrl" class="img-thumbnail" width="80px" height="80px" />
                     </div>
-                    <div class="flex-grow-1">
+                    <div class="col">
                         <p>@item.ProductName</p>
                     </div>
-                    <div class="flex-grow-1 text-end">
-                        <p><span id="subtotal-@item.Id">₱ @((item.Price * item.Quantity).ToString("N2"))</span></p>
+                    <div class="col text-end">
+                        <p>₱ <span id="subtotal-@item.Id">@((item.Price * item.Quantity).ToString("N2"))</span></p>
                     </div>
                 
                 </div>
@@ -53,9 +53,9 @@ else
             <div class="d-flex justify-content-between  mb-3">
                 <strong>Total</strong>
                 <strong>
-                    ₱ 
+                    ₱
                     <span id="overall-total">
-                        @Model.CartItems.Sum(x => x.Price * x.Quantity).ToString("N2")
+                         @Model.CartItems.Sum(x => x.Price * x.Quantity).ToString("N2")
                     </span>
                 </strong>
                 

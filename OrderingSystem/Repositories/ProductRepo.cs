@@ -56,8 +56,8 @@ namespace OrderingSystem.Repositories
         public async Task<Product?> GetByIdAsync(int id)
         {
             return await _dbContext.tblProducts
-                .Include(v => v.Variants)
-                .FirstOrDefaultAsync(v => v.Id == id);
+                .Include(p => p.Variants.Where(v => v.IsActive))
+                .FirstOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task RemoveProductVariant(int productId)
@@ -69,6 +69,25 @@ namespace OrderingSystem.Repositories
             if (product == null) return;
 
             _dbContext.tblProductVariant.RemoveRange(product.Variants);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task RemoveProductVariantsByIdsAsync(List<int> variantIds)
+        {
+
+            if (variantIds == null || !variantIds.Any()) return;
+
+            var variants = await _dbContext.tblProductVariant
+                            .Where(v => variantIds.Contains(v.Id))
+                            .ToListAsync();
+
+            //_dbContext.tblProductVariant.RemoveRange(variants);
+
+            foreach ( var variant in variants)
+            {
+                variant.IsActive = false;
+            }
+
             await _dbContext.SaveChangesAsync();
         }
 

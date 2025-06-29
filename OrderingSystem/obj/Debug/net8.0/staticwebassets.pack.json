@@ -377,8 +377,28 @@
       "PackagePath": "staticwebassets\\uploads\\product\\06508277-43e0-4c69-8f35-4b57e0951673.jpg"
     },
     {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\1c2506b8-f20b-417c-a0fc-ed9a875c60e9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\product\\1c2506b8-f20b-417c-a0fc-ed9a875c60e9.jpg"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\2634b5c6-78f3-49df-bf7a-a3edcfc712a2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\product\\2634b5c6-78f3-49df-bf7a-a3edcfc712a2.jpg"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\29a6de90-1857-402f-9c40-9157709240e1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\product\\29a6de90-1857-402f-9c40-9157709240e1.jpg"
+    },
+    {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\2b569858-6568-4b96-8954-311753b47404.jpg",
       "PackagePath": "staticwebassets\\uploads\\product\\2b569858-6568-4b96-8954-311753b47404.jpg"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\58429d68-065d-49bc-959c-a7c1943ff011.jpg",
+      "PackagePath": "staticwebassets\\uploads\\product\\58429d68-065d-49bc-959c-a7c1943ff011.jpg"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\5fc93f0b-e382-4ede-99e6-f6830fd75e56.jpg",
+      "PackagePath": "staticwebassets\\uploads\\product\\5fc93f0b-e382-4ede-99e6-f6830fd75e56.jpg"
     },
     {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\6be2f78b-90d9-4a3b-be31-7b7adb23d289.png",
@@ -393,6 +413,10 @@
       "PackagePath": "staticwebassets\\uploads\\product\\70554a28-969e-4689-9123-ac0dd421b63e.png"
     },
     {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\7e287465-b296-4f0d-a48b-a55a4f19604c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\product\\7e287465-b296-4f0d-a48b-a55a4f19604c.jpg"
+    },
+    {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\7ef0e4c9-9621-47a9-855c-8180b64d8481.jpg",
       "PackagePath": "staticwebassets\\uploads\\product\\7ef0e4c9-9621-47a9-855c-8180b64d8481.jpg"
     },
@@ -401,12 +425,24 @@
       "PackagePath": "staticwebassets\\uploads\\product\\97bd4006-7cc6-4434-aeb8-cbd6c56fa908.png"
     },
     {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\b0b0ce59-5eac-4a30-92a3-c03f39c670a0.jpg",
+      "PackagePath": "staticwebassets\\uploads\\product\\b0b0ce59-5eac-4a30-92a3-c03f39c670a0.jpg"
+    },
+    {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\b67dc2b9-2745-4318-b9ee-06d3d988d479.png",
       "PackagePath": "staticwebassets\\uploads\\product\\b67dc2b9-2745-4318-b9ee-06d3d988d479.png"
     },
     {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\b92b3e20-b2d5-4355-bea8-03d6871a5c78.jpg",
+      "PackagePath": "staticwebassets\\uploads\\product\\b92b3e20-b2d5-4355-bea8-03d6871a5c78.jpg"
+    },
+    {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\be8e8420-0e7d-46ae-ab1f-acec70f18b81.jpg",
       "PackagePath": "staticwebassets\\uploads\\product\\be8e8420-0e7d-46ae-ab1f-acec70f18b81.jpg"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\c13148c2-ab53-47ac-9ee3-d774b7445baa.jpg",
+      "PackagePath": "staticwebassets\\uploads\\product\\c13148c2-ab53-47ac-9ee3-d774b7445baa.jpg"
     },
     {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\c4ed73b6-8224-45d7-8e0c-e32af0866d3c.jpg",
@@ -427,6 +463,18 @@
     {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\ebfc62c4-95ba-45e9-bafd-7d7f2e1697c9.png",
       "PackagePath": "staticwebassets\\uploads\\product\\ebfc62c4-95ba-45e9-bafd-7d7f2e1697c9.png"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\f1f81274-5617-4fef-8669-8f52c72f19b5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\product\\f1f81274-5617-4fef-8669-8f52c72f19b5.jpg"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\f416f868-44b8-4f67-b342-2c61cbfd18fc.jpg",
+      "PackagePath": "staticwebassets\\uploads\\product\\f416f868-44b8-4f67-b342-2c61cbfd18fc.jpg"
+    },
+    {
+      "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\f7b9b1c0-270d-4aa8-80a4-bca254dae20e.jpg",
+      "PackagePath": "staticwebassets\\uploads\\product\\f7b9b1c0-270d-4aa8-80a4-bca254dae20e.jpg"
     },
     {
       "Id": "C:\\Git\\OrderingSystem\\OrderingSystem\\wwwroot\\uploads\\product\\f898f926-35e7-40ef-beba-78533ea725a8.png",

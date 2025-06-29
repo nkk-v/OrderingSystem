@@ -52,6 +52,9 @@
                 <div class="col-md-6">
                     <input id="variantNameInput" class="form-control" placeholder="Name" />
                 </div>
+                <div class="col-md-6">
+                    <input id="variantDescInput" class="form-control" placeholder="Description" />
+                </div>
                 <div class="col-md-4">
                     <input id="variantPriceInput" type="text" class="form-control" placeholder="Price" />
                 </div>
@@ -69,6 +72,9 @@
                         <div class="col-md-5">
                             <input name="Variants[@i].VariantName" class="form-control" value="@Model.Variants[i].VariantName" readonly />
                         </div>
+                        <div class="col-md-5">
+                            <input name="Variants[@i].Description" class="form-control" value="@Model.Variants[i].Description" readonly />
+                        </div>
                         <div class="col-md-4">
                             <input name="Variants[@i].Price" class="form-control" value="@Model.Variants[i].Price.ToString("N2")" readonly />
                         </div>
@@ -79,6 +85,7 @@
                 }
             </div>
 
+            <div id="removedVariantContainer"></div>
 
         </div>
     </div>
