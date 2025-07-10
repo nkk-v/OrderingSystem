@@ -259,8 +259,8 @@ namespace OrderingSystem.Migrations
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
-                    b.Property<DateTime?>("OrderDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly?>("OrderDate")
+                        .HasColumnType("date");
 
                     b.Property<string>("OrderNum")
                         .IsRequired()
@@ -280,7 +280,10 @@ namespace OrderingSystem.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<DateTime?>("ScheduledDate")
+                    b.Property<DateTime?>("ScheduledTimeEnd")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ScheduledTimeStart")
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("SubTotal")
@@ -419,8 +422,8 @@ namespace OrderingSystem.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -433,8 +436,8 @@ namespace OrderingSystem.Migrations
 
                     b.Property<string>("VariantName")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 

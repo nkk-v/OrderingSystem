@@ -9,7 +9,9 @@ flatpickr("#scheduleTime", {
     enableTime: true,
     noCalendar: true,
     dateFormat: "h:i K", // 12-hour format with AM/PM
-    time_24hr: false
+    time_24hr: false,
+    minTime: "10:00",
+    maxTime: "17:00"
 });
 
 // Show/hide delivery schedule options

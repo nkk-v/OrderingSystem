@@ -53,7 +53,6 @@
                         <th>Order number</th>
                         <th>Order Date</th>
                         <th>Customer</th>
-                        <th>Order Items</th>
                         <th>Total Amount</th>
                         <th>Order Status</th>
                         <th></th>
@@ -65,19 +64,8 @@
                         <tr>
 
                             <td>@order.OrderNum</td>
-                            <td>@order.DeliveryDate?.ToString("MMM dd, yyyy hh:mm tt")</td>
+                            <td>@order.DeliveryDate?.ToString("MMMM dd, yyyy") <br /> @order.ScheduledTimeStart?.ToString("hh:mmtt") - @order.ScheduledTimeEnd?.ToString("hh:mmtt")</td>
                             <td>@order.Fullname</td>
-                            <td>
-                                <ul>
-                                    @foreach (var item in order.OrderItems)
-                                    {
-                                        <li>
-                                            @item.Quantity @item.ProductName
-                                        </li>
-                                    }
-                                </ul>
-
-                            </td>
                             <td>₱ @order.SubTotal.ToString("N2")</td>
                             <td>@order.DeliveryStatus</td>
                             <td>

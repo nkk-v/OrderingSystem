@@ -44,7 +44,7 @@ namespace OrderingSystem.Services
 
         }
 
-        public async Task<double?> CalculateDistance(Coordinates origin, Coordinates destination)
+        public async Task<DeliveryEstimateDTO?> CalculateDistance(Coordinates origin, Coordinates destination, int itemCount)
         {
             var body = new
             {
@@ -53,7 +53,7 @@ namespace OrderingSystem.Services
                     new[] { origin.Longitude, origin.Latitude },
                     new[] { destination.Longitude, destination.Latitude },
                 },
-                metrics = new[] { "distance" },
+                metrics = new[] { "distance", "duration" },
                 units = "km"
             };
 
@@ -66,11 +66,29 @@ namespace OrderingSystem.Services
 
             var response = await _httpClient.SendAsync(request);
             if (!response.IsSuccessStatusCode) return null;
+            
 
             var json = await response.Content.ReadAsStringAsync();
             var data = JsonDocument.Parse(json);
 
-            return data.RootElement.GetProperty("distances")[0][1].GetDouble();
+            var distance = data.RootElement.GetProperty("distances")[0][1].GetDouble();
+
+            if (distance > 15) return null;
+            
+            var duration = data.RootElement.GetProperty("durations")[0][1].GetDouble();
+            //return data.RootElement.GetProperty("distances")[0][1].GetDouble();
+
+            int preparationMinutes = itemCount * 10;
+            double durationMinutes = duration / 60;
+
+            return new DeliveryEstimateDTO
+            {
+                DistanceKm = distance,
+                DurationMinutes = Math.Round(durationMinutes, 1),
+                PreparationMinutes = preparationMinutes,
+                Eta = DateTime.UtcNow.AddMinutes(preparationMinutes + durationMinutes).ToLocalTime(),
+                DeliveryFee = Math.Max(Math.Ceiling(distance * 10), 50)
+            };
         }
 
         public async Task<Coordinates?> GeoCodeCoordinate(string address)

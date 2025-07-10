@@ -26,7 +26,13 @@ namespace OrderingSystem.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userId = _userManager.GetUserId(User); //User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var cart = await _cartService.GetUserCart(userId);
+            if(cart == null || !cart.HasItems)
+            {
+                return RedirectToAction("Index", "Cart");
+            }
 
             var model = await _checkoutService.GetCheckoutViewModelAsync(userId);
 
@@ -61,6 +67,11 @@ namespace OrderingSystem.Controllers
             var userId = _userManager.GetUserId(User);
             var user = await _userManager.FindByIdAsync(userId);
             string orderNum = await _orderService.GetLatestOrderByUser(userId);
+            if (string.IsNullOrEmpty(orderNum))
+            {
+                return View("Index", "Cart");
+            }
+            
             var model = await _orderService.GetLatestOrderDetails(orderNum);
 
 

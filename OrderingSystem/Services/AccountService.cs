@@ -85,7 +85,9 @@ namespace OrderingSystem.Services
                 {
                     Id = x.Id,
                     OrderNum = x.OrderNum,
-                    DeliveryDate = x.OrderDate == null ? x.ScheduledDate : x.OrderDate,
+                    DeliveryDate = x.OrderDate,
+                    ScheduledTimeStart = x.ScheduledTimeStart,
+                    ScheduledTimeEnd = x.ScheduledTimeEnd,
                     Fullname = x.fullname,
                     SubTotal = x.SubTotal,
                     DeliveryStatus = x.DeliveryStatus,

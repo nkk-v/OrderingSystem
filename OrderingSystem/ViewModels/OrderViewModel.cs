@@ -9,7 +9,9 @@ namespace OrderingSystem.ViewModels
         public int Id { get; set; }
         public string UserId { get; set; }
         public string OrderNum { get; set; }
-        public DateTime? DeliveryDate { get; set; }
+        public DateOnly? DeliveryDate { get; set; }
+        public DateTime? ScheduledTimeStart { get; set; }
+        public DateTime? ScheduledTimeEnd { get; set; }
         public string Fullname { get; set; }
         public string ContactNumber { get; set; }
         public string Address { get; set; }

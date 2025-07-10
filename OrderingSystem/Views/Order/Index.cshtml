@@ -50,7 +50,7 @@
                         <td>@order.Fullname</td>
                         <td>@order.Address</td>
                         <td>@order.ContactNumber</td>
-                        <td>@order.DeliveryDate?.ToString("MMM dd, yyyy hh:mm tt")</td>
+                        <td>@order.DeliveryDate?.ToString("MMMM dd, yyyy") <br /> @order.ScheduledTimeStart?.ToString("hh:mmtt") - @order.ScheduledTimeEnd?.ToString("hh:mmtt")</td>
                         <td>₱ @order.SubTotal.ToString("N2")</td>
                         <td>₱ @order.DeliveryFee.ToString("N2")</td>
                         <td>@order.DeliveryNote</td>

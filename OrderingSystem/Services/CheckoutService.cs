@@ -76,8 +76,8 @@ namespace OrderingSystem.Services
                         }),
                         payment_method_types = new[] { "paymaya", "gcash", "qrph"},
 
-                        success_url = "https://localhost:7248/Checkout/Success",
-                        cancel_url = "https://localhost:7248/Checkout/Failed",
+                        success_url = "https://6d95-2001-4451-423e-5100-c1b1-44e5-b6cb-bda.ngrok-free.app/Checkout/Success",
+                        cancel_url = "https://6d95-2001-4451-423e-5100-c1b1-44e5-b6cb-bda.ngrok-free.app/Checkout/Failed",
                         metadata = metadata
 
                     }
@@ -126,6 +126,7 @@ namespace OrderingSystem.Services
                 //Address = user.Address,
                 SubTotal = cart.CartItems.Sum(x => x.Price * x.Quantity),
                 DeliveryFee = 0, //Convert.ToDecimal(fee),
+                ItemCount = cart.CartItems.Sum(x => x.Quantity),
                 CartItems = cart.CartItems.Select(x => new CartItemViewModel
                 {
                     Id = x.Id,

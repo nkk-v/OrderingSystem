@@ -51,21 +51,20 @@ namespace OrderingSystem.Services
 
         public async Task<int> AddOrder(CheckoutViewModel model, string userId)
         {
-            DateTime? scheduleDeliver = null;
-            DateTime? orderDate = null;
-            if (model.DeliveryOption == "later" && model.ScheduledDate.HasValue && !string.IsNullOrEmpty(model.ScheduledTime))
-            {
-                if (DateTime.TryParse($"{model.ScheduledDate.Value:yyyy-MM-dd} {model.ScheduledTime}", out var parsed))
-                {
-                    scheduleDeliver = parsed;
-                }
-            }
-            else
-            {
-                orderDate = DateTime.Now;
-            }
+            //DateTime? scheduleDeliver = null;
+            //DateTime? orderDate = null;
+            //if (model.DeliveryOption == "later" && model.ScheduledDate.HasValue && !string.IsNullOrEmpty(model.ScheduledTime))
+            //{
+            //    if (DateTime.TryParse($"{model.ScheduledDate.Value:yyyy-MM-dd} {model.ScheduledTime}", out var parsed))
+            //    {
+            //        scheduleDeliver = parsed;
+            //    }
+            //}
+            //else
+            //{
+            //    orderDate = DateTime.Now;
+            //}
 
-            //var payment = webHook.Data.Attributes.Data.Attributes;
 
             string newOrderNumber = await GenerateOrderNumber();
 
@@ -78,12 +77,13 @@ namespace OrderingSystem.Services
             {
                 OrderNum = newOrderNumber,
                 UserId = userId,
-                OrderDate = orderDate,
+                OrderDate = model.ScheduledDate,
                 TotalAmount = model.TotalAmount,
                 SubTotal = model.SubTotal,
                 DeliveryFee = model.DeliveryFee,
                 DeliveryStatus = "Pending",
-                ScheduledDate = scheduleDeliver,
+                ScheduledTimeStart = model.ScheduledTimeStart,
+                ScheduledTimeEnd = model.ScheduledTimeEnd,
                 DeliveryNote = model.DeliveryNote,
                 PhoneNumber = model.PhoneNumber,
                 Address = model.CurrentAddress ?? model.ManualAddress,
@@ -129,7 +129,9 @@ namespace OrderingSystem.Services
                 Id = o.Id,
                 UserId = o.UserId,
                 OrderNum = o.OrderNum,
-                DeliveryDate = o.OrderDate ?? o.ScheduledDate,
+                DeliveryDate = o.OrderDate,
+                ScheduledTimeStart = o.ScheduledTimeStart,
+                ScheduledTimeEnd = o.ScheduledTimeEnd,
                 ContactNumber = o.PhoneNumber,
                 Address = o.Address,
                 DeliveryNote = o.DeliveryNote,
@@ -170,7 +172,7 @@ namespace OrderingSystem.Services
                 .OrderByDescending(x => x.DateCreated)
                 .FirstOrDefault();
 
-            return latestOrNo.OrderNum;
+            return latestOrNo.OrderNum ?? string.Empty;
         }
 
         public async Task UpdateOrderStatus(int OrderId, string eventType, string RefNo)

@@ -24,13 +24,10 @@ namespace OrderingSystem.Controllers
 
             if (destination == null) return BadRequest("Invalid address.");
 
-            var distance = await _deliveryService.CalculateDistance(origin, destination);
-            if (distance == null) return BadRequest("Unable to calculate distance.");
+            var estimate = await _deliveryService.CalculateDistance(origin, destination, dto.ItemCount);
+            if (estimate == null) return BadRequest("Sorry, we can't deliver to your area because it's out of range.");
 
-            var ratePerKm = 10;
-            var fee = Math.Max(Math.Ceiling(distance.Value * ratePerKm), 50);
-
-            return Ok(new { fee, distance });
+            return Ok(estimate);
         }
 
         [HttpGet("autocomplete")]
